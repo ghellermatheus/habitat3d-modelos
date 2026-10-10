@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Habitat3D · Configurador de peças personalizadas</title>
+<meta name="description" content="Escreva o nome, escolha cor e fonte e veja a peça em 3D antes de pedir. Tag pet, chaveiro, porta-incenso e placa de nome. Impressão 3D em Joaçaba e região. Orçamento grátis pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;800&family=Albert+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Habitat3D",
+  "description": "Impressão 3D sob demanda: peças personalizadas, brindes corporativos e produtos prontos em Joaçaba, Videira e região (SC).",
+  "telephone": "+55 49 98845-2253",
+  "url": "https://www.habitat3d.com.br/",
+  "image": "../midia/logo-preto.png",
+  "areaServed": ["Joaçaba", "Videira", "Santa Catarina"],
+  "openingHoursSpecification": [{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"19:00"}],
+  "sameAs": ["https://www.instagram.com/habitat3dsc"]
+}
+</script>
+<style>
+:root{
+  --bone:#f2eee5; --paper:#fbf8f1; --ink:#15120f; --ink2:#2a2521; --red:#d42b24; --red-dk:#a81d18;
+  --muted:#675f55; --line:#d8d0c0; --stage:#151311;
+  --font-d:'Syne',system-ui,sans-serif; --font-b:'Albert Sans',system-ui,sans-serif;
+  --r:18px;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--font-b);color:var(--ink);line-height:1.5;overflow-x:hidden;
+  background:
+    radial-gradient(900px 500px at 105% -5%, rgba(212,43,36,.10), transparent 60%),
+    radial-gradient(700px 500px at -10% 30%, rgba(21,18,15,.06), transparent 60%),
+    repeating-linear-gradient(0deg, rgba(21,18,15,.035) 0 1px, transparent 1px 7px),
+    var(--bone);
+  background-attachment:fixed;
+}
+img,video,svg{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* topo */
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0}
+.top img{height:30px;width:auto}
+.top nav{display:none;gap:22px;font-weight:500;font-size:.95rem}
+.top nav a{text-decoration:none;opacity:.8}
+.top nav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--red)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 18px;border-radius:999px;border:2px solid var(--ink);background:var(--ink);color:#fff;font-weight:700;text-decoration:none;font-size:.95rem;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-2px);background:var(--red);border-color:var(--red)}
+.btn.wa{background:var(--red);border-color:var(--red)}
+.btn.wa:hover{background:var(--red-dk);border-color:var(--red-dk)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn svg{width:18px;height:18px}
+
+/* hero */
+.hero{padding:10px 0 18px}
+.hero .kick{display:inline-flex;gap:8px;align-items:center;font-weight:700;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+.hero .kick i{width:22px;height:2px;background:var(--red);display:block}
+h1,h2,h3{font-family:var(--font-d);line-height:1.02;letter-spacing:-.02em}
+h1{font-size:clamp(2.3rem,9vw,4.6rem);font-weight:800;margin:10px 0 8px}
+h1 em{font-style:normal;color:var(--red)}
+.hero p{max-width:46ch;color:var(--muted);font-size:1.05rem}
+
+/* configurador */
+.cfg{display:grid;gap:18px;padding-bottom:36px}
+.stage-wrap{position:sticky;top:0;z-index:20;margin-inline:-16px}
+.stage{
+  position:relative;height:clamp(210px,33vh,300px);background:var(--stage);overflow:hidden;
+  box-shadow:0 14px 30px -14px rgba(0,0,0,.55);perspective:900px;
+}
+.stage svg.scene{width:100%;height:100%;transition:transform .25s ease-out;will-change:transform}
+.stage .tag{position:absolute;left:12px;top:10px;display:flex;align-items:center;gap:8px;color:#e9e3d6;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;pointer-events:none}
+.stage .tag b{width:8px;height:8px;border-radius:50%;background:var(--red);animation:pulse 1.6s infinite}
+.stage .name{position:absolute;right:12px;top:10px;color:#a79f91;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;pointer-events:none}
+.stage .send{position:absolute;right:10px;bottom:10px}
+.stage .send .btn{min-height:40px;padding:8px 14px;font-size:.85rem}
+.piece-anim{transform-box:fill-box;transform-origin:50% 100%}
+.piece-anim.go{animation:print .7s cubic-bezier(.2,.8,.2,1)}
+.smoke{stroke-dasharray:6 8;animation:smoke 2.4s linear infinite}
+@keyframes print{0%{transform:scaleY(.15);opacity:0}60%{opacity:1}100%{transform:scaleY(1);opacity:1}}
+@keyframes smoke{to{stroke-dashoffset:-56}}
+@keyframes pulse{50%{opacity:.25}}
+
+.panel{background:var(--paper);border:2px solid var(--ink);border-radius:var(--r);padding:16px;box-shadow:6px 6px 0 var(--ink)}
+.step{border:0;padding:0;min-width:0;margin-bottom:18px}
+.step:last-of-type{margin-bottom:0}
+.step legend{font-family:var(--font-d);font-weight:800;font-size:1rem;margin-bottom:9px;display:flex;align-items:center;gap:9px;padding:0}
+.step legend span{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;font-size:.78rem}
+.picker{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.tile{display:flex;align-items:center;gap:10px;padding:10px 12px;border:2px solid var(--line);border-radius:14px;background:#fff;text-align:left;font-weight:700;min-height:52px;transition:border-color .15s,transform .15s}
+.tile svg{width:30px;height:30px;flex:none}
+.tile:hover{border-color:var(--ink)}
+.tile[aria-pressed=true]{border-color:var(--ink);background:var(--ink);color:#fff;transform:translateY(-2px)}
+.tile[aria-pressed=true] svg{color:var(--red)}
+.fld{display:grid;gap:6px;margin-bottom:10px}
+.fld label{font-size:.85rem;color:var(--muted);font-weight:500}
+.fld input{width:100%;min-height:50px;padding:10px 14px;border:2px solid var(--ink);border-radius:12px;background:#fff;font:700 1.2rem var(--font-b);color:var(--ink)}
+.fld input::placeholder{color:#b3aa9b;font-weight:400}
+.count{font-size:.75rem;color:var(--muted);text-align:right}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:42px;padding:8px 14px;border-radius:999px;border:2px solid var(--line);background:#fff;font-weight:700;font-size:.92rem}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+.swatches{display:flex;flex-wrap:wrap;gap:10px}
+.sw{width:44px;height:44px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px var(--line);position:relative;padding:0;transition:transform .15s}
+.sw:hover{transform:scale(1.1)}
+.sw[aria-pressed=true]{box-shadow:0 0 0 3px var(--ink)}
+.sw[aria-pressed=true]::after{content:"";position:absolute;inset:0;margin:auto;width:10px;height:10px;border-radius:50%;background:#fff;mix-blend-mode:difference}
+.aviso{margin-top:8px;padding:8px 12px;border-radius:10px;background:#fde8e6;color:var(--red-dk);font-size:.85rem;font-weight:500}
+.aviso.sutil{background:#efe9da;color:var(--ink2)}
+.qty{display:inline-flex;align-items:center;border:2px solid var(--ink);border-radius:999px;background:#fff;overflow:hidden}
+.qty button{width:46px;height:44px;border:0;background:transparent;font-size:1.3rem;font-weight:700}
+.qty button:hover{background:var(--bone)}
+.qty output{min-width:44px;text-align:center;font-weight:700}
+.resumo{margin-top:16px;padding-top:14px;border-top:2px dashed var(--line);font-size:.95rem}
+.resumo strong{font-family:var(--font-d)}
+.resumo small{display:block;color:var(--muted);margin:4px 0 12px}
+.resumo .btn{width:100%}
+
+/* secoes */
+section{scroll-margin-top:16px}
+.sec{padding:52px 0}
+.sec h2{font-size:clamp(1.9rem,6vw,3.2rem);font-weight:800;margin-bottom:10px}
+.sec .sub{color:var(--muted);max-width:56ch;margin-bottom:26px}
+.kick2{display:block;font-weight:700;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+.steps3{display:grid;gap:14px;counter-reset:s}
+.steps3 li{list-style:none;position:relative;padding:18px 18px 18px 74px;border:2px solid var(--ink);border-radius:var(--r);background:var(--paper)}
+.steps3 li::before{counter-increment:s;content:counter(s);position:absolute;left:16px;top:14px;font:800 2.6rem var(--font-d);color:var(--red);line-height:1}
+.steps3 b{font-family:var(--font-d);display:block;font-size:1.15rem;margin-bottom:2px}
+.steps3 span{color:var(--muted)}
+
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.card{display:flex;flex-direction:column;background:var(--paper);border:2px solid var(--ink);border-radius:var(--r);overflow:hidden;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);box-shadow:5px 5px 0 var(--ink)}
+.card .ph{position:relative;aspect-ratio:4/5;background:#ddd5c5;overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:cover}
+.card .badge{position:absolute;left:8px;top:8px;background:var(--red);color:#fff;font-size:.7rem;font-weight:700;padding:3px 9px;border-radius:999px;letter-spacing:.06em;text-transform:uppercase}
+.card .bd{padding:12px;display:flex;flex-direction:column;gap:4px;flex:1}
+.card small{color:var(--muted);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
+.card h3{font-size:.98rem;font-weight:800;letter-spacing:-.01em;line-height:1.15}
+.card h3 a{text-decoration:none}
+.card .pr{font-weight:700;margin-top:auto;padding-top:6px;font-size:1.05rem}
+.card .pr.q{font-weight:500;color:var(--muted);font-size:.9rem}
+.card .btn{min-height:40px;padding:6px 10px;font-size:.85rem;margin-top:8px;width:100%}
+
+.band{background:var(--ink);color:#f3efe6;border-radius:28px;padding:34px 22px;position:relative;overflow:hidden}
+.band::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.04) 0 1px,transparent 1px 7px);pointer-events:none}
+.band>*{position:relative}
+.band h2{color:#fff}
+.band ul{list-style:none;padding:0;display:grid;gap:8px;margin:14px 0 22px}
+.band li{padding-left:26px;position:relative}
+.band li::before{content:"";position:absolute;left:0;top:.55em;width:14px;height:3px;background:var(--red)}
+.band .btn.ghost{border-color:#f3efe6;color:#f3efe6}
+.band .btn.ghost:hover{background:#f3efe6;color:var(--ink)}
+
+.trust{display:grid;gap:12px}
+.trust div{border-top:3px solid var(--ink);padding-top:12px}
+.trust b{font-family:var(--font-d);font-size:1.1rem;display:block}
+.trust span{color:var(--muted)}
+.ex{margin-top:20px;display:grid;gap:10px}
+.ex p{border:2px dashed var(--line);border-radius:14px;padding:14px;color:var(--muted);font-size:.9rem}
+.ex p b{color:var(--red)}
+
+.mini{display:grid;gap:16px;align-items:center}
+.mini video{width:100%;border-radius:var(--r);border:2px solid var(--ink);aspect-ratio:3/4;object-fit:cover;max-height:520px}
+
+details{border-bottom:2px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:16px 36px 16px 0;font-weight:700;font-size:1.05rem;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:10px;font:800 1.6rem var(--font-d);color:var(--red);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 0 16px;color:var(--muted);max-width:62ch}
+
+.final{text-align:center;padding:60px 0}
+.final h2{font-size:clamp(2rem,7vw,3.6rem);font-weight:800;max-width:16ch;margin:0 auto 12px}
+.final p{color:var(--muted);margin-bottom:22px}
+.final .row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+
+footer{background:var(--ink);color:#d9d2c4;padding:40px 0 90px;font-size:.92rem}
+footer img{height:34px;width:auto;margin-bottom:14px}
+footer .cols{display:grid;gap:22px}
+footer a{color:#fff}
+footer .legal{margin-top:24px;color:#9b9384;font-size:.8rem}
+
+.volta{position:fixed;left:10px;bottom:10px;z-index:60;background:var(--ink);color:#fff;border:2px solid #fff;border-radius:999px;padding:8px 14px;font-size:.78rem;font-weight:700;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.volta:hover{background:var(--red)}
+
+/* entrada */
+.rv{opacity:0;transform:translateY(16px);animation:rv .8s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--i,0)*80ms)}
+@keyframes rv{to{opacity:1;transform:none}}
+
+@media (min-width:700px){
+  .top nav{display:flex}
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .steps3{grid-template-columns:repeat(3,1fr)}
+  .trust{grid-template-columns:repeat(4,1fr)}
+  .ex{grid-template-columns:repeat(3,1fr)}
+  footer .cols{grid-template-columns:2fr 1fr 1fr}
+  .mini{grid-template-columns:1fr 1fr;gap:40px}
+}
+@media (min-width:980px){
+  .cfg{grid-template-columns:1.1fr 1fr;align-items:start;gap:30px}
+  .stage-wrap{top:20px;margin-inline:0}
+  .stage{height:auto;aspect-ratio:4/3;border-radius:26px;box-shadow:0 30px 60px -28px rgba(0,0,0,.6)}
+  .grid{grid-template-columns:repeat(5,1fr)}
+  .band{padding:56px}
+  .picker{grid-template-columns:repeat(4,1fr)}
+  .tile{flex-direction:column;text-align:center;padding:14px 8px;gap:6px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="wrap top">
+  <a href="index.html" aria-label="Habitat3D, página inicial"><img src="../midia/logo-preto.png" width="112" height="32" alt="Habitat3D"></a>
+  <nav aria-label="Principal">
+    <a href="#configurador">Configurar</a>
+    <a href="#prontos">Prontos</a>
+    <a href="#empresas">Empresas</a>
+    <a href="#duvidas">Dúvidas</a>
+  </nav>
+  <a class="btn wa" data-wa="Olá! Vim pelo site da Habitat3D e quero um orçamento." href="https://wa.me/5549988452253">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.200Zm4.500-6.100c-.2-.1-1.500-.7-1.700-.8-.2-.1-.4-.1-.6.100l-.8 1c-.1.200-.3.200-.5.100a6.700 6.700 0 0 1-3.300-2.900c-.2-.4.200-.4.700-1.300.1-.2 0-.3 0-.5l-.8-1.800c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.300 3 3 0 0 0-.9 2.200 5.200 5.200 0 0 0 1.100 2.800 11.800 11.800 0 0 0 4.500 4c1.700.7 2.300.8 3.200.7.500-.1 1.500-.6 1.700-1.200.2-.6.200-1.100.2-1.200-.100-.2-.3-.2-.6-.4Z"/></svg>
+    WhatsApp
+  </a>
+</header>
+
+<main>
+<section class="wrap hero" aria-labelledby="h1">
+  <span class="kick rv" style="--i:0"><i></i> Personalizados Habitat3D</span>
+  <h1 id="h1" class="rv" style="--i:1">Escreva o nome.<br><em>A peça aparece.</em></h1>
+  <p class="rv" style="--i:2">Escolha a peça, digite o texto, mude cor e fonte. Quando gostar, manda tudo pronto para o WhatsApp e a gente confirma o orçamento.</p>
+</section>
+
+<section id="configurador" class="wrap cfg" x-data="configurador()" x-init="iniciar()" aria-label="Configurador de peça personalizada">
+  <div class="stage-wrap rv" style="--i:3">
+    <div class="stage" @pointermove="inclinar($event)" @pointerleave="desinclinar()">
+      <span class="tag"><b></b> Prévia ao vivo</span>
+      <span class="name" x-text="p().nome"></span>
+      <svg class="scene" x-ref="scene" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet" role="img" :aria-label="'Prévia da peça: ' + resumoCurto()">
+        <defs>
+          <pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r=".9" fill="#2f2a26"/></pattern>
+          <radialGradient id="glow" cx="50%" cy="46%" r="60%"><stop offset="0" stop-color="#55291b" stop-opacity=".85"/><stop offset="1" stop-color="#151311" stop-opacity="0"/></radialGradient>
+          <linearGradient id="gloss" gradientUnits="userSpaceOnUse" x1="0" y1="60" x2="0" y2="260"><stop offset="0" stop-color="#fff" stop-opacity=".34"/><stop offset=".5" stop-color="#fff" stop-opacity=".02"/><stop offset="1" stop-color="#000" stop-opacity=".2"/></linearGradient>
+          <filter id="blur" x="-30%" y="-100%" width="160%" height="300%"><feGaussianBlur stdDeviation="7"/></filter>
+          <filter id="ember" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="3"/></filter>
+        </defs>
+        <rect width="400" height="300" fill="#151311"/>
+        <rect width="400" height="300" fill="url(#glow)"/>
+        <rect x="16" y="26" width="368" height="258" rx="14" fill="#1c1a18" stroke="#2f2a26" stroke-width="1.5"/>
+        <rect x="16" y="26" width="368" height="258" rx="14" fill="url(#dots)"/>
+        <g stroke="#6b6254" stroke-width="2" fill="none" stroke-linecap="round"><path d="M16 46V40a14 14 0 0 1 14-14h6"/><path d="M384 46V40a14 14 0 0 0-14-14h-6"/><path d="M16 264v6a14 14 0 0 0 14 14h6"/><path d="M384 264v6a14 14 0 0 1-14 14h-6"/></g>
+        <g class="piece-anim" :class="anim ? 'go' : ''" x-ref="piece" x-html="peca()" x-effect="peca(); $nextTick(() => ajustar())"></g>
+      </svg>
+      <div class="send"><a class="btn wa" :href="linkWa()" target="_blank" rel="noopener">Enviar no WhatsApp</a></div>
+    </div>
+  </div>
+
+  <div class="panel rv" style="--i:4" @pointerdown="demo=false" @keydown="demo=false" @focusin="demo=false">
+    <fieldset class="step">
+      <legend><span>1</span> Escolha a peça</legend>
+      <div class="picker">
+        <template x-for="(d, id) in produtos" :key="id">
+          <button type="button" class="tile" :aria-pressed="prod === id" @click="escolher(id)">
+            <span x-html="d.icone" style="display:contents"></span>
+            <span x-text="d.nome"></span>
+          </button>
+        </template>
+      </div>
+    </fieldset>
+
+    <fieldset class="step">
+      <legend><span>2</span> Escreva o texto</legend>
+      <div class="fld">
+        <label for="t1" x-text="p().label1"></label>
+        <input id="t1" type="text" autocomplete="off" :maxlength="p().max1" :placeholder="p().ph1" x-model="t1">
+        <div class="count" x-text="t1.length + '/' + p().max1"></div>
+      </div>
+      <div class="fld" x-show="p().linha2">
+        <label for="t2" x-text="p().label2"></label>
+        <input id="t2" type="text" autocomplete="off" :maxlength="p().max2" :placeholder="p().ph2" x-model="t2">
+        <div class="count" x-text="t2.length + '/' + p().max2"></div>
+      </div>
+      <div class="chips" role="group" aria-label="Caixa do texto">
+        <button type="button" class="chip" :aria-pressed="!caps" @click="caps=false">Aa Normal</button>
+        <button type="button" class="chip" :aria-pressed="caps" @click="caps=true">AA Caixa alta</button>
+      </div>
+    </fieldset>
+
+    <fieldset class="step">
+      <legend><span>3</span> Formato</legend>
+      <div class="chips">
+        <template x-for="f in p().formas" :key="f.id">
+          <button type="button" class="chip" :aria-pressed="forma === f.id" @click="trocarForma(f.id)" x-text="f.nome"></button>
+        </template>
+      </div>
+    </fieldset>
+
+    <fieldset class="step">
+      <legend><span>4</span> Fonte</legend>
+      <div class="chips">
+        <template x-for="f in fontes" :key="f.id">
+          <button type="button" class="chip" :aria-pressed="fonte === f.id" @click="fonte=f.id" :style="'font-family:' + f.css + ';font-weight:' + f.w" x-text="f.nome"></button>
+        </template>
+      </div>
+    </fieldset>
+
+    <fieldset class="step">
+      <legend><span>5</span> Cor da peça</legend>
+      <div class="swatches">
+        <template x-for="(c, id) in cores" :key="id">
+          <button type="button" class="sw" :style="'background:' + c.hex" :aria-label="'Cor da peça: ' + c.nome" :title="c.nome" :aria-pressed="base === id" @click="base=id"></button>
+        </template>
+      </div>
+      <p class="count" style="text-align:left;margin-top:6px">Selecionada: <b x-text="cores[base].nome"></b></p>
+    </fieldset>
+
+    <fieldset class="step">
+      <legend><span>6</span> Cor do texto</legend>
+      <div class="swatches">
+        <template x-for="(c, id) in cores" :key="id">
+          <button type="button" class="sw" :style="'background:' + c.hex" :aria-label="'Cor do texto: ' + c.nome" :title="c.nome" :aria-pressed="tinta === id" @click="tinta=id"></button>
+        </template>
+      </div>
+      <p class="aviso" x-show="base === tinta" role="status">A cor do texto está igual à da peça: o texto vai sumir. Escolha outra.</p>
+      <p class="aviso sutil">Cores sujeitas ao filamento disponível. A Alessandra confirma antes de produzir.</p>
+    </fieldset>
+
+    <fieldset class="step">
+      <legend><span>7</span> Quantidade</legend>
+      <div class="qty">
+        <button type="button" aria-label="Menos uma unidade" @click="qty = Math.max(1, qty - 1)">−</button>
+        <output x-text="qty" aria-live="polite"></output>
+        <button type="button" aria-label="Mais uma unidade" @click="qty = Math.min(999, qty + 1)">+</button>
+      </div>
+      <p class="aviso sutil" x-show="qty >= 10">Para empresas e revenda há condições especiais por volume. Pergunte no WhatsApp.</p>
+    </fieldset>
+
+    <div class="resumo" aria-live="polite">
+      <strong x-text="resumoCurto()"></strong>
+      <small>Sem preço fechado aqui: orçamento grátis, resposta costuma sair em até 1 hora.</small>
+      <a class="btn wa" :href="linkWa()" target="_blank" rel="noopener">Pedir no WhatsApp com esta prévia</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="como">
+  <div class="wrap">
+    <span class="kick2">Como funciona</span>
+    <h2 id="como">Três passos, nenhum formulário</h2>
+    <ol class="steps3" style="padding:0">
+      <li><b>Monte a peça</b><span>Texto, cor e fonte no configurador. A prévia mostra como a ideia vai ficar.</span></li>
+      <li><b>Envie pelo WhatsApp</b><span>Um toque abre a conversa já com todas as suas escolhas escritas.</span></li>
+      <li><b>A Alessandra confirma</b><span>Ela revisa o pedido, passa o orçamento e o prazo, e só então a peça entra na impressora.</span></li>
+    </ol>
+    <p class="sub" style="margin-top:16px">A prévia é uma aproximação. Proporções e espessura finais são confirmadas no orçamento.</p>
+  </div>
+</section>
+
+<section id="prontos" class="sec" aria-labelledby="h-prontos" style="padding-top:10px">
+  <div class="wrap">
+    <span class="kick2">Prontos para pedir</span>
+    <h2 id="h-prontos">Já saíram da impressora</h2>
+    <p class="sub">Peças fixas do catálogo. Pediu, a gente produz. Quer o nome em alguma? Fala no WhatsApp.</p>
+    <div class="grid">
+      <article class="card">
+        <div class="ph"><img src="../midia/produtos/macaco-das-banana-1.webp" width="563" height="1000" loading="lazy" alt="Macaco segura bananas impresso em 3D, na cor marrom"></div>
+        <div class="bd"><small>Casa e úteis</small><h3>Macaco Segura Bananas</h3><div class="pr">R$ 30,00</div>
+        <a class="btn wa" data-wa="Olá! Quero o produto: Macaco Segura Bananas (R$ 30,00)." href="https://wa.me/5549988452253">Pedir no WhatsApp</a></div>
+      </article>
+      <article class="card">
+        <div class="ph"><img src="../midia/produtos/esqueleto-flexivel-de-tiranossauro-rex-1.webp" width="563" height="1000" loading="lazy" alt="Esqueleto flexível de tiranossauro rex impresso em 3D"></div>
+        <div class="bd"><small>Flexíveis</small><h3><a href="produto.html">Esqueleto Flexível de T-Rex</a></h3><div class="pr">R$ 32,00</div>
+        <a class="btn ghost" href="produto.html">Ver produto</a></div>
+      </article>
+      <article class="card">
+        <div class="ph"><img src="../midia/produtos/porta-incenso-darth-vader-2883115-1.webp" width="563" height="1000" loading="lazy" alt="Porta-incenso ninja impresso em 3D com bastão de incenso"></div>
+        <div class="bd"><small>Filmes e desenhos</small><h3>Porta-incenso Ninja</h3><div class="pr">R$ 87,10</div>
+        <a class="btn wa" data-wa="Olá! Quero o produto: Porta-incenso Ninja (R$ 87,10)." href="https://wa.me/5549988452253">Pedir no WhatsApp</a></div>
+      </article>
+      <article class="card">
+        <div class="ph"><img src="../midia/produtos/presente-de-natal-articulado-774384-1.webp" width="563" height="1000" loading="lazy" alt="Presente de Natal articulado impresso em 3D"></div>
+        <div class="bd"><small>Natal</small><h3>Presente de Natal Articulado</h3><div class="pr">R$ 46,08</div>
+        <a class="btn wa" data-wa="Olá! Quero o produto: Presente de Natal Articulado (R$ 46,08)." href="https://wa.me/5549988452253">Pedir no WhatsApp</a></div>
+      </article>
+      <article class="card">
+        <div class="ph"><span class="badge">Novo</span><img src="../midia/produtos/conjunto-de-cortadores-de-biscoito-de-na-2.webp" width="563" height="1000" loading="lazy" alt="Conjunto de cortadores de biscoito de Natal impressos em 3D"></div>
+        <div class="bd"><small>Natal</small><h3>Cortadores de Biscoito de Natal</h3><div class="pr">R$ 25,33</div>
+        <a class="btn wa" data-wa="Olá! Quero o produto: Conjunto de Cortadores de Biscoito de Natal (R$ 25,33)." href="https://wa.me/5549988452253">Pedir no WhatsApp</a></div>
+      </article>
+      <article class="card">
+        <div class="ph"><img src="../midia/produtos/porta-cartoes-para-dentista-2594018-1.webp" width="604" height="601" loading="lazy" alt="Porta-cartões para dentista impresso em 3D"></div>
+        <div class="bd"><small>Presentes</small><h3>Porta-Cartões para Dentista</h3><div class="pr">R$ 82,32</div>
+        <a class="btn wa" data-wa="Olá! Quero o produto: Porta-Cartões para Dentista (R$ 82,32)." href="https://wa.me/5549988452253">Pedir no WhatsApp</a></div>
+      </article>
+      <article class="card">
+        <div class="ph"><img src="../midia/produtos/apoio-para-paginas-de-livro-1687004-1.webp" width="563" height="1000" loading="lazy" alt="Apoio para páginas de livro impresso em 3D"></div>
+        <div class="bd"><small>Acessórios úteis</small><h3>Apoio para Páginas de Livro</h3><div class="pr">R$ 6,30</div>
+        <a class="btn wa" data-wa="Olá! Quero o produto: Apoio para Páginas de Livro (R$ 6,30)." href="https://wa.me/5549988452253">Pedir no WhatsApp</a></div>
+      </article>
+      <article class="card">
+        <div class="ph"><img src="../midia/polvos.webp" width="675" height="1200" loading="lazy" alt="Chaveiro de polvo articulado vermelho ao lado da impressora 3D" style="object-position:8% 96%"></div>
+        <div class="bd"><small>Chaveiros</small><h3>Polvo Articulado (chaveiro)</h3><div class="pr q">Consulte o valor</div>
+        <a class="btn wa" data-wa="Olá! Quero o produto: Polvo Articulado (chaveiro). Pode me passar o valor?" href="https://wa.me/5549988452253">Pedir no WhatsApp</a></div>
+      </article>
+      <article class="card">
+        <div class="ph"><img src="../midia/ganso.webp" width="675" height="1200" loading="lazy" alt="Porta-vinho em formato de ganso impresso em 3D"></div>
+        <div class="bd"><small>Vinho</small><h3>Porta-vinho Ganso</h3><div class="pr q">Consulte o valor</div>
+        <a class="btn wa" data-wa="Olá! Quero o produto: Porta-vinho Ganso. Pode me passar o valor?" href="https://wa.me/5549988452253">Pedir no WhatsApp</a></div>
+      </article>
+      <article class="card">
+        <div class="ph"><img src="../midia/alexa.webp" width="675" height="1200" loading="lazy" alt="Suporte para Alexa com tema Flamengo impresso em 3D"></div>
+        <div class="bd"><small>Gamer e tech</small><h3>Suporte Alexa Flamengo</h3><div class="pr q">Consulte o valor</div>
+        <a class="btn wa" data-wa="Olá! Quero o produto: Suporte Alexa Flamengo. Pode me passar o valor?" href="https://wa.me/5549988452253">Pedir no WhatsApp</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="h-vid" style="padding-top:10px">
+  <div class="wrap mini">
+    <video muted loop playsinline preload="metadata" poster="../midia/alexa.webp" id="vid" aria-label="Impressora 3D produzindo um suporte de Alexa" autoplay>
+      <source src="../midia/alexa.mp4" type="video/mp4">
+    </video>
+    <div>
+      <span class="kick2">Direto da bancada</span>
+      <h2 id="h-vid" style="font-size:clamp(1.9rem,6vw,3rem);font-weight:800;margin-bottom:10px">Camada por camada, do seu jeito</h2>
+      <p class="sub">Cada peça nasce na nossa impressora, em Joaçaba. Depois passa por revisão e acabamento manual antes de sair.</p>
+      <a class="btn" href="#configurador">Montar a minha</a>
+    </div>
+  </div>
+</section>
+
+<section id="empresas" class="sec" aria-labelledby="h-emp" style="padding-top:10px">
+  <div class="wrap">
+    <div class="band">
+      <span class="kick2" style="color:#ff8a82">Para empresas</span>
+      <h2 id="h-emp">Placa de nome, chaveiro com a sua marca, brinde em quantidade</h2>
+      <ul>
+        <li>Brindes e peças com a identidade da sua marca</li>
+        <li>Chaveiros para revenda, com mostruário em consignação</li>
+        <li>Condições especiais por volume</li>
+        <li>Atendimento dedicado para empresas</li>
+      </ul>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn wa" data-wa="Olá! Sou de uma empresa e quero um orçamento de peças personalizadas. Quantidade aproximada: " href="https://wa.me/5549988452253">Pedir orçamento para empresa</a>
+        <a class="btn ghost" href="#configurador">Testar no configurador</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="h-conf" style="padding-top:10px">
+  <div class="wrap">
+    <span class="kick2">Por que confiar</span>
+    <h2 id="h-conf">Gente de verdade do outro lado</h2>
+    <div class="trust">
+      <div><b>Atendimento humano</b><span>Você fala direto com quem produz, do orçamento à entrega. Atendimento com a Alessandra.</span></div>
+      <div><b>Acabamento manual</b><span>Revisão e acabamento manual em cada peça antes de sair.</span></div>
+      <div><b>Orçamento grátis</b><span>Resposta costuma sair em até 1 hora. Seg a Sáb, das 9h às 19h.</span></div>
+      <div><b>Empresa local</b><span>Joaçaba, Videira e região, em Santa Catarina.</span></div>
+    </div>
+    <div class="ex" aria-label="Espaço reservado para depoimentos de clientes">
+      <p><b>[exemplo]</b> Foto da peça entregue + frase do cliente. Entra aqui quando houver autorização.</p>
+      <p><b>[exemplo]</b> Foto da peça entregue + frase do cliente. Entra aqui quando houver autorização.</p>
+      <p><b>[exemplo]</b> Foto da peça entregue + frase do cliente. Entra aqui quando houver autorização.</p>
+    </div>
+  </div>
+</section>
+
+<section id="duvidas" class="sec" aria-labelledby="h-faq" style="padding-top:10px">
+  <div class="wrap" style="max-width:820px">
+    <span class="kick2">Dúvidas frequentes</span>
+    <h2 id="h-faq">Tudo o que você precisa saber</h2>
+    <details><summary>A prévia é igual à peça final?</summary><p>É uma aproximação para você decidir texto, cor e formato. Antes de produzir, a Alessandra confirma proporções, espessura e cores com você.</p></details>
+    <details><summary>Quanto custa uma peça?</summary><p>Depende do tamanho e do material, por isso o orçamento é feito na hora e sem compromisso: você manda a ideia no WhatsApp e a gente passa o valor certinho.</p></details>
+    <details><summary>Qual é o prazo de produção?</summary><p>O prazo varia conforme a peça e a fila de produção. Ele é informado junto com o orçamento, antes de você confirmar.</p></details>
+    <details><summary>Quais cores e materiais estão disponíveis?</summary><p>Trabalhamos com diversas cores, conforme o filamento disponível. Na hora do pedido te mostramos as opções que combinam com a sua peça.</p></details>
+    <details><summary>Vocês fazem peças totalmente personalizadas?</summary><p>Sim. Pode mandar uma foto ou um desenho que a gente modela e transforma em peça real.</p></details>
+    <details><summary>Tem quantidade mínima?</summary><p>Para quem busca um item único, fazemos o orçamento com análise de viabilidade. Para empresas e revenda, temos condições especiais por volume.</p></details>
+    <p style="margin-top:18px"><a class="btn wa" data-wa="Olá! Tenho uma dúvida sobre as peças personalizadas." href="https://wa.me/5549988452253">Pergunte no WhatsApp</a></p>
+  </div>
+</section>
+
+<section class="wrap final" aria-labelledby="h-final">
+  <h2 id="h-final">Pronto para tirar a ideia do papel?</h2>
+  <p>O orçamento é grátis e a resposta costuma sair em até 1 hora.</p>
+  <div class="row">
+    <a class="btn wa" data-wa="Olá! Quero um orçamento de uma peça personalizada." href="https://wa.me/5549988452253">Pedir no WhatsApp</a>
+    <a class="btn ghost" href="https://www.instagram.com/habitat3dsc" target="_blank" rel="noopener">Ver no Instagram</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <img src="../midia/logo-fundo-escuro.png" width="120" height="34" alt="Habitat3D" loading="lazy">
+        <p>Impressão 3D sob demanda em Santa Catarina. Peças personalizadas, brindes corporativos e produtos prontos com acabamento de verdade.</p>
+      </div>
+      <div>
+        <b style="color:#fff">Navegue</b><br>
+        <a href="#configurador">Configurador</a><br><a href="#prontos">Prontos para pedir</a><br><a href="#empresas">Para empresas</a><br><a href="#duvidas">Dúvidas</a>
+      </div>
+      <div>
+        <b style="color:#fff">Contato</b><br>
+        <a href="https://wa.me/5549988452253" target="_blank" rel="noopener">(49) 98845-2253</a><br>
+        <a href="https://www.instagram.com/habitat3dsc" target="_blank" rel="noopener">@habitat3dsc</a><br>
+        Seg a Sáb · 9h às 19h
+      </div>
+    </div>
+    <p class="legal">© 2026 Habitat3D · Joaçaba, Videira e região (SC) · Protótipo de design, modelo 13.</p>
+  </div>
+</footer>
+
+<a class="volta" href="../index.html">Modelo 13 · Configurador · voltar</a>
+
+<script>
+/* ---------- dados ---------- */
+var WA = '5549988452253';
+var CORES = {
+  preto:{nome:'Preto',hex:'#1d1b1a'}, branco:{nome:'Branco',hex:'#f1efe9'}, vermelho:{nome:'Vermelho',hex:'#d42b24'},
+  laranja:{nome:'Laranja',hex:'#ff7a1a'}, amarelo:{nome:'Amarelo',hex:'#f6c61c'}, verde:{nome:'Verde',hex:'#2f9e58'},
+  azul:{nome:'Azul',hex:'#2a6fdb'}, rosa:{nome:'Rosa',hex:'#ee6aa7'}, cinza:{nome:'Cinza',hex:'#8b8d91'},
+  marrom:{nome:'Marrom',hex:'#6b4426'}, dourado:{nome:'Dourado (silk)',hex:'#c9a24a'}
+};
+var FONTES = [
+  {id:'bloco',nome:'Bloco',css:"'Syne',sans-serif",w:800},
+  {id:'limpa',nome:'Limpa',css:"'Albert Sans',sans-serif",w:700},
+  {id:'classica',nome:'Clássica',css:"Georgia,'Times New Roman',serif",w:700},
+  {id:'maquina',nome:'Máquina',css:"'Courier New',ui-monospace,monospace",w:700},
+  {id:'cursiva',nome:'Cursiva',css:"'Segoe Script','Bradley Hand','Brush Script MT','Comic Sans MS',cursive",w:700}
+];
+var ICO = {
+  tag:'<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="16" cy="19" r="9"/><circle cx="16" cy="13" r="1.6" fill="currentColor"/><path d="M16 4v5"/></svg>',
+  chaveiro:'<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="8" cy="16" r="5"/><rect x="13" y="10" width="16" height="12" rx="4"/></svg>',
+  incenso:'<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><rect x="3" y="21" width="26" height="6" rx="3"/><path d="M8 21 25 6"/></svg>',
+  placa:'<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><rect x="3" y="9" width="26" height="14" rx="2"/><path d="M9 16h14"/></svg>'
+};
+var PRODUTOS = {
+  tag:{nome:'Tag pet',icone:ICO.tag,label1:'Nome do pet',max1:10,ph1:'Thor',linha2:true,label2:'Telefone ou 2ª linha (opcional)',max2:14,ph2:'(49) 9XXXX-XXXX',
+    formas:[{id:'osso',nome:'Osso'},{id:'coracao',nome:'Coração'},{id:'redondo',nome:'Redondo'}],base:'laranja',tinta:'preto',demo:['Thor','Mel','Bidu','Luna']},
+  chaveiro:{nome:'Chaveiro',icone:ICO.chaveiro,label1:'Nome ou frase curta',max1:12,ph1:'Ana',linha2:false,
+    formas:[{id:'retangular',nome:'Retangular'},{id:'pilula',nome:'Pílula'},{id:'escudo',nome:'Escudo'}],base:'vermelho',tinta:'branco'},
+  incenso:{nome:'Porta-incenso',icone:ICO.incenso,label1:'Nome na base',max1:16,ph1:'Paz',linha2:false,
+    formas:[{id:'longa',nome:'Bandeja longa'},{id:'curta',nome:'Bandeja curta'}],base:'preto',tinta:'dourado'},
+  placa:{nome:'Placa de nome',icone:ICO.placa,label1:'Nome',max1:18,ph1:'Carla Souza',linha2:true,label2:'Cargo ou setor (opcional)',max2:24,ph2:'Gerente Comercial',
+    formas:[{id:'reta',nome:'Reta'},{id:'curva',nome:'Cantos curvos'},{id:'chanfro',nome:'Chanfrada'}],base:'azul',tinta:'branco'}
+};
+var TEXTO_INICIAL = {tag:'Thor',chaveiro:'Ana',incenso:'Paz',placa:'Carla Souza'};
+
+/* ---------- utilidades ---------- */
+function sombra(hex, q){
+  var n = parseInt(hex.slice(1), 16), r = n >> 16, g = (n >> 8) & 255, b = n & 255;
+  function m(c){ return Math.round(c * (1 - q)); }
+  return 'rgb(' + m(r) + ',' + m(g) + ',' + m(b) + ')';
+}
+function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+/* ---------- geometria por peça/formato ---------- */
+function geo(prod, forma, dois){
+  var G;
+  if(prod === 'tag'){
+    if(forma === 'redondo') G = {shape:'<circle cx="200" cy="158" r="92"/>',hole:{x:200,y:84,r:6},ring:{x:200,y:70,r:14},sh:{y:254,rx:96},
+      t1:{x:200,y:152,w:140,f:52},t1b:{x:200,y:142,w:130,f:40},t2:{x:200,y:190,w:120,f:20}};
+    if(forma === 'coracao') G = {shape:'<path d="M200 240C90 160 100 70 160 70C185 70 197 88 200 100C203 88 215 70 240 70C300 70 310 160 200 240Z"/>',hole:{x:200,y:120,r:6},ring:{x:200,y:104,r:15},sh:{y:248,rx:80},
+      t1:{x:200,y:160,w:120,f:44},t1b:{x:200,y:152,w:120,f:36},t2:{x:200,y:194,w:86,f:16}};
+    if(forma === 'osso') G = {shape:'<rect x="100" y="120" width="200" height="76" rx="14"/><circle cx="108" cy="122" r="30"/><circle cx="108" cy="194" r="30"/><circle cx="292" cy="122" r="30"/><circle cx="292" cy="194" r="30"/>',hole:{x:120,y:158,r:6},ring:{x:102,y:158,r:17},sh:{y:236,rx:140},
+      t1:{x:214,y:158,w:140,f:46},t1b:{x:214,y:146,w:140,f:34},t2:{x:214,y:182,w:110,f:15}};
+  }
+  if(prod === 'chaveiro'){
+    if(forma === 'retangular') G = {shape:'<rect x="100" y="104" width="220" height="106" rx="16"/>',hole:{x:122,y:157,r:7},ring:{x:100,y:157,r:24},sh:{y:224,rx:120},t1:{x:226,y:157,w:150,f:54}};
+    if(forma === 'pilula') G = {shape:'<rect x="100" y="108" width="220" height="98" rx="49"/>',hole:{x:128,y:157,r:7},ring:{x:102,y:157,r:26},sh:{y:220,rx:120},t1:{x:232,y:157,w:130,f:50}};
+    if(forma === 'escudo') G = {shape:'<path d="M110 100H290V168Q290 214 200 244Q110 214 110 168Z"/>',hole:{x:200,y:122,r:6},ring:{x:200,y:100,r:20},sh:{y:254,rx:100},t1:{x:200,y:172,w:140,f:46}};
+  }
+  if(prod === 'incenso'){
+    if(forma === 'longa') G = {shape:'<rect x="48" y="184" width="304" height="60" rx="30"/>',inner:'<rect x="58" y="192" width="284" height="44" rx="22"/>',sh:{y:256,rx:160},
+      stick:{x1:92,y1:214,x2:300,y2:70},t1:{x:222,y:214,w:160,f:30}};
+    if(forma === 'curta') G = {shape:'<rect x="78" y="184" width="244" height="60" rx="30"/>',inner:'<rect x="88" y="192" width="224" height="44" rx="22"/>',sh:{y:256,rx:130},
+      stick:{x1:118,y1:214,x2:292,y2:80},t1:{x:224,y:214,w:120,f:30}};
+  }
+  if(prod === 'placa'){
+    var base = {hole:null,sh:{y:226,rx:170},t1:{x:200,y:154,w:250,f:58},t1b:{x:200,y:140,w:250,f:46},t2:{x:200,y:186,w:230,f:22}};
+    if(forma === 'reta') G = Object.assign({shape:'<rect x="50" y="98" width="300" height="112" rx="6"/>'}, base);
+    if(forma === 'curva') G = Object.assign({shape:'<rect x="50" y="98" width="300" height="112" rx="34"/>'}, base);
+    if(forma === 'chanfro') G = Object.assign({shape:'<path d="M72 98H328L350 120V188L328 210H72L50 188V120Z"/>'}, base);
+  }
+  G = G || {};
+  G.l1 = dois && G.t1b ? G.t1b : G.t1;
+  G.l2 = dois ? G.t2 : null;
+  return G;
+}
+
+/* ---------- componente Alpine ---------- */
+function configurador(){
+  return {
+    produtos:PRODUTOS, fontes:FONTES, cores:CORES,
+    prod:'tag', t1:'Thor', t2:'', forma:'osso', fonte:'bloco', base:'laranja', tinta:'preto', qty:1, caps:false,
+    demo:true, anim:false, _t:null,
+    p(){ return PRODUTOS[this.prod]; },
+    iniciar(){
+      var self = this;
+      if(document.fonts && document.fonts.ready){ document.fonts.ready.then(function(){ self.ajustar(); }); }
+      if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){ this.demo = false; return; }
+      setTimeout(function(){ self.rodarDemo(0, 0, true); }, 1800);
+    },
+    rodarDemo(i, k, digitando){
+      var self = this, nomes = PRODUTOS.tag.demo;
+      if(!this.demo || this.prod !== 'tag'){ return; }
+      var nome = nomes[i % nomes.length];
+      if(digitando){
+        if(k <= nome.length){ this.t1 = nome.slice(0, k); setTimeout(function(){ self.rodarDemo(i, k + 1, true); }, 140); }
+        else { setTimeout(function(){ self.rodarDemo(i, nome.length, false); }, 1700); }
+      } else {
+        if(k > 0){ this.t1 = nome.slice(0, k - 1); setTimeout(function(){ self.rodarDemo(i, k - 1, false); }, 70); }
+        else { setTimeout(function(){ self.rodarDemo(i + 1, 0, true); }, 250); }
+      }
+    },
+    replay(){ var self = this; this.anim = false; requestAnimationFrame(function(){ requestAnimationFrame(function(){ self.anim = true; }); }); },
+    escolher(id){
+      var d = PRODUTOS[id]; this.demo = false;
+      this.prod = id; this.forma = d.formas[0].id; this.base = d.base; this.tinta = d.tinta;
+      this.t1 = TEXTO_INICIAL[id]; this.t2 = ''; this.replay();
+    },
+    trocarForma(id){ this.forma = id; this.replay(); },
+    texto(s){ return this.caps ? s.toUpperCase() : s; },
+    dois(){ return this.p().linha2 && this.t2.trim().length > 0; },
+    resumoCurto(){
+      var f = this.p().formas.filter(function(x){ return x.id === this.forma; }, this)[0];
+      var t = (this.t1 || this.p().ph1);
+      return this.p().nome + ' · ' + (f ? f.nome.toLowerCase() : '') + ' · "' + this.texto(t) + '" · ' + CORES[this.base].nome.toLowerCase() + ' com texto ' + CORES[this.tinta].nome.toLowerCase() + ' · ' + this.qty + ' un.';
+    },
+    linkWa(){
+      var f = this.p().formas.filter(function(x){ return x.id === this.forma; }, this)[0];
+      var fonte = FONTES.filter(function(x){ return x.id === this.fonte; }, this)[0];
+      var m = 'Olá, Habitat3D! Quero personalizar uma peça:\n' +
+        '• Peça: ' + this.p().nome + '\n' +
+        '• Formato: ' + (f ? f.nome : '') + '\n' +
+        '• Texto: ' + this.texto(this.t1 || this.p().ph1) + '\n' +
+        (this.dois() ? '• 2ª linha: ' + this.texto(this.t2) + '\n' : '') +
+        '• Fonte: ' + fonte.nome + '\n' +
+        '• Cor da peça: ' + CORES[this.base].nome + '\n' +
+        '• Cor do texto: ' + CORES[this.tinta].nome + '\n' +
+        '• Quantidade: ' + this.qty + '\n' +
+        'Pode me passar o orçamento e o prazo?';
+      return 'https://wa.me/' + WA + '?text=' + encodeURIComponent(m);
+    },
+    peca(){
+      var dois = this.dois(), G = geo(this.prod, this.forma, dois);
+      if(!G.shape){ return ''; }
+      var base = CORES[this.base].hex, lado = sombra(base, .42), tinta = CORES[this.tinta].hex, tladO = sombra(tinta, .5);
+      var fonte = FONTES.filter(function(x){ return x.id === this.fonte; }, this)[0];
+      var s = '';
+      if(G.ring){ s += '<circle cx="' + G.ring.x + '" cy="' + G.ring.y + '" r="' + G.ring.r + '" fill="none" stroke="#b9bdc4" stroke-width="4"/><circle cx="' + G.ring.x + '" cy="' + G.ring.y + '" r="' + G.ring.r + '" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="1.2" transform="translate(-1 -1)"/>'; }
+      s += '<ellipse cx="200" cy="' + G.sh.y + '" rx="' + G.sh.rx + '" ry="12" fill="#000" opacity=".55" filter="url(#blur)"/>';
+      s += '<defs><g id="shp">' + G.shape + '</g></defs>';
+      for(var i = 8; i >= 1; i--){ s += '<use href="#shp" fill="' + lado + '" transform="translate(0 ' + (i * 1.25) + ')"/>'; }
+      s += '<use href="#shp" fill="' + base + '"/>';
+      if(G.inner){ s += '<g fill="#000" opacity=".2">' + G.inner + '</g>'; }
+      s += '<clipPath id="clp">' + G.shape + '</clipPath><rect width="400" height="300" fill="url(#gloss)" clip-path="url(#clp)"/>';
+      if(G.hole){ s += '<circle cx="' + G.hole.x + '" cy="' + G.hole.y + '" r="' + G.hole.r + '" fill="#171412"/><circle cx="' + G.hole.x + '" cy="' + G.hole.y + '" r="' + G.hole.r + '" fill="none" stroke="#000" stroke-opacity=".5" stroke-width="1.5"/>'; }
+      var self = this;
+      function linha(k, spec, txt, dim){
+        var o = '', st = 'font-family:' + fonte.css + ';font-weight:' + fonte.w;
+        for(var d = 3; d >= 0; d--){
+          o += '<text data-k="' + k + '"' + (d === 0 ? ' data-top="1"' : '') + ' data-w="' + spec.w + '" data-f="' + spec.f + '" x="' + spec.x + '" y="' + spec.y + '" font-size="' + spec.f + '" text-anchor="middle" dominant-baseline="central" style="' + st + '" fill="' + (d === 0 ? tinta : tladO) + '"' + (d === 0 && dim ? ' opacity=".45"' : '') + (d > 0 ? ' transform="translate(0 ' + d + ')"' : '') + '>' + esc(txt) + '</text>';
+        }
+        return o;
+      }
+      var t1 = this.t1.trim(), vazio = t1.length === 0;
+      s += linha(1, G.l1, this.texto(vazio ? this.p().ph1 : this.t1), vazio);
+      if(G.l2){ s += linha(2, G.l2, this.texto(this.t2)); }
+      if(G.stick){
+        var st = G.stick;
+        s += '<line x1="' + st.x1 + '" y1="' + st.y1 + '" x2="' + st.x2 + '" y2="' + st.y2 + '" stroke="#2b1f17" stroke-width="4" stroke-linecap="round"/>' +
+             '<line x1="' + st.x1 + '" y1="' + (st.y1 - 1) + '" x2="' + st.x2 + '" y2="' + (st.y2 - 1) + '" stroke="#6b4a33" stroke-width="1.2" stroke-linecap="round"/>' +
+             '<circle cx="' + st.x1 + '" cy="' + st.y1 + '" r="6" fill="#171412" opacity=".7"/>' +
+             '<circle cx="' + st.x2 + '" cy="' + st.y2 + '" r="7" fill="#ff7a1a" filter="url(#ember)"/><circle cx="' + st.x2 + '" cy="' + st.y2 + '" r="2.6" fill="#ffd9a0"/>' +
+             '<path class="smoke" d="M' + st.x2 + ' ' + (st.y2 - 6) + 'c-10 -14 10 -22 0 -36s8 -18 2 -30" fill="none" stroke="#e8e1d2" stroke-opacity=".5" stroke-width="2.2" stroke-linecap="round"/>';
+      }
+      return s;
+    },
+    ajustar(){
+      var g = this.$refs.piece; if(!g){ return; }
+      ['1', '2'].forEach(function(k){
+        var top = g.querySelector('text[data-k="' + k + '"][data-top]'); if(!top){ return; }
+        var f = parseFloat(top.getAttribute('data-f')), w = parseFloat(top.getAttribute('data-w'));
+        top.setAttribute('font-size', f);
+        var real = top.getBBox().width, fs = real > w ? Math.max(8, f * w / real) : f;
+        g.querySelectorAll('text[data-k="' + k + '"]').forEach(function(t){ t.setAttribute('font-size', fs.toFixed(2)); });
+      });
+    },
+    inclinar(e){
+      if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){ return; }
+      var r = e.currentTarget.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      this.$refs.scene.style.transform = 'rotateX(' + (-y * 7).toFixed(2) + 'deg) rotateY(' + (x * 9).toFixed(2) + 'deg)';
+    },
+    desinclinar(){ this.$refs.scene.style.transform = ''; }
+  };
+}
+
+/* ---------- links de WhatsApp dos cartões ---------- */
+document.querySelectorAll('[data-wa]').forEach(function(a){
+  a.href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(a.getAttribute('data-wa'));
+  if(a.target !== '_blank'){ a.target = '_blank'; a.rel = 'noopener'; }
+});
+
+/* ---------- vídeo: respeita movimento reduzido ---------- */
+(function(){
+  var v = document.getElementById('vid');
+  if(v && window.matchMedia('(prefers-reduced-motion: reduce)').matches){ v.removeAttribute('autoplay'); v.pause(); v.controls = true; }
+})();
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
+</html>

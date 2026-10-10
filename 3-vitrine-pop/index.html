@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Habitat3D — Modelo 3 · Vitrine Pop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#fff6e3;--red:#E11D2A;--green:#0f6b4a;--yellow:#ffc928;--pink:#ff9ecb;--ink:#17110d;--sky:#bfe6ff}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--cream);color:var(--ink);font:500 17px/1.5 'Bricolage Grotesque',sans-serif;overflow-x:hidden;background-image:radial-gradient(rgba(23,17,13,.13) 1.3px,transparent 1.4px);background-size:22px 22px}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:'Bagel Fat One',cursive;font-weight:400;line-height:.98;letter-spacing:.005em}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.bx{border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);border-radius:20px;background:#fff}
+.btn{display:inline-block;border:3px solid var(--ink);background:var(--yellow);box-shadow:5px 5px 0 var(--ink);padding:14px 26px;border-radius:99px;font:800 17px 'Bricolage Grotesque';transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+.btn.red{background:var(--red);color:#fff}.btn.w{background:#fff}
+header{position:sticky;top:0;z-index:60;background:var(--cream);border-bottom:3px solid var(--ink)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:72px}
+header img{height:30px}
+nav{display:flex;gap:10px}
+nav a{padding:8px 16px;border:2px solid transparent;border-radius:99px;font-weight:800;transition:all .15s}
+nav a:hover{border-color:var(--ink);background:var(--pink)}
+/* faixa topo */
+.strip{background:var(--red);color:#fff;border-bottom:3px solid var(--ink);overflow:hidden;font:400 18px 'Bagel Fat One'}
+.strip div{display:flex;gap:40px;width:max-content;padding:9px 0;animation:mq 30s linear infinite;white-space:nowrap}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* hero */
+.hero{padding:56px 0 70px;position:relative}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(46px,7.4vw,108px);margin-bottom:24px}
+.hero h1 mark{background:var(--yellow);padding:0 .12em;border:3px solid var(--ink);border-radius:14px;display:inline-block;transform:rotate(-2.5deg);box-shadow:5px 5px 0 var(--ink)}
+.hero h1 .g{color:var(--green)}
+.hero p{font-size:20px;max-width:30em;margin-bottom:30px}
+.hero .btns{display:flex;gap:14px;flex-wrap:wrap}
+.stage{position:relative;height:540px}
+.stage .main{position:absolute;inset:20px 40px 20px 20px;overflow:hidden;transform:rotate(3deg);background:var(--sky)}
+.stage .main img{width:100%;height:100%;object-fit:cover;animation:bob 6s ease-in-out infinite}
+@keyframes bob{50%{transform:scale(1.06) rotate(-1deg)}}
+.sticker{position:absolute;z-index:3;font:400 22px/1 'Bagel Fat One';padding:14px 18px;border:3px solid var(--ink);border-radius:99px;box-shadow:4px 4px 0 var(--ink);animation:wig 3.2s ease-in-out infinite}
+.s1{top:0;left:-6px;background:var(--yellow);transform:rotate(-8deg)}
+.s2{bottom:30px;left:-14px;background:var(--pink);transform:rotate(5deg);animation-delay:-1s}
+.s3{top:60px;right:-8px;background:var(--green);color:#fff;transform:rotate(9deg);animation-delay:-2s}
+@keyframes wig{50%{translate:0 -8px}}
+.mini{position:absolute;right:-6px;bottom:-4px;width:150px;aspect-ratio:1;z-index:4;border-radius:50%;overflow:hidden;border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);background:#000;transform:rotate(-6deg)}
+.mini video{width:100%;height:100%;object-fit:cover}
+.neve{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.neve i{position:absolute;top:-20px;font-style:normal;color:#fff;text-shadow:0 0 0 #fff;animation:fall linear infinite;opacity:.9;-webkit-text-stroke:1.5px var(--ink)}
+@keyframes fall{to{transform:translateY(700px) rotate(300deg)}}
+section{padding:80px 0;position:relative}
+.h{display:flex;justify-content:space-between;gap:30px;align-items:end;flex-wrap:wrap;margin-bottom:44px}
+.h h2{font-size:clamp(36px,5.4vw,76px)}
+.h p{max-width:380px}
+.chip{display:inline-block;border:2.5px solid var(--ink);border-radius:99px;padding:5px 14px;font:800 13px 'Bricolage Grotesque';text-transform:uppercase;letter-spacing:.06em;background:#fff;margin-bottom:12px}
+/* linhas */
+.four{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.tile{padding:26px 24px 30px;transition:transform .2s;position:relative;overflow:hidden}
+.tile:nth-child(1){background:var(--yellow)}.tile:nth-child(2){background:var(--pink)}.tile:nth-child(3){background:var(--sky)}.tile:nth-child(4){background:#c4f0a4}
+.tile:hover{transform:translate(-4px,-6px) rotate(-1.2deg)}
+.tile .e{font-size:46px;display:block;margin-bottom:20px}
+.tile h3{font-size:28px;margin-bottom:10px}
+.tile p{font-size:15px;margin-bottom:18px}
+.tile b{border-bottom:3px solid var(--ink)}
+/* catálogo */
+.shelf{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.prod{padding:12px 12px 18px;transition:transform .25s}
+.prod:nth-child(odd){transform:rotate(-1.4deg)}.prod:nth-child(even){transform:rotate(1.2deg)}
+.prod:hover{transform:rotate(0) translateY(-8px) scale(1.03);z-index:5}
+.prod img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px;border:2.5px solid var(--ink);background:var(--sky)}
+.prod h4{font:400 21px 'Bagel Fat One';margin:14px 6px 4px}
+.prod span{margin:0 6px;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--red)}
+/* b2b */
+.b2b{background:var(--green);color:#fff;border-block:3px solid var(--ink)}
+.b2b .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+.b2b h2{font-size:clamp(38px,5.8vw,82px);margin-bottom:18px}
+.b2b h2 u{text-decoration:none;color:var(--yellow)}
+.b2b ul{list-style:none;padding:0;margin:24px 0 32px;display:grid;gap:12px}
+.b2b li{background:#fff;color:var(--ink);border:3px solid var(--ink);border-radius:14px;padding:14px 18px;font-weight:800;box-shadow:4px 4px 0 var(--ink);transition:transform .2s}
+.b2b li:hover{transform:translateX(8px)}
+.b2b .pic{transform:rotate(3deg);overflow:hidden;aspect-ratio:1}
+.b2b .pic img{width:100%;height:100%;object-fit:cover}
+/* sobre */
+.sobre .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center}
+.sobre .pic{transform:rotate(-3deg);overflow:hidden;aspect-ratio:4/5}
+.sobre .pic img{width:100%;height:100%;object-fit:cover}
+.sobre h2{font-size:clamp(34px,4.8vw,66px);margin-bottom:20px}
+.vals{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+.vals div{padding:16px;font-size:14px}
+.vals b{display:block;font:400 18px 'Bagel Fat One';margin-bottom:4px}
+.fq{max-width:860px;margin:0 auto;display:grid;gap:14px}
+details{padding:18px 24px;transition:background .2s}
+details[open]{background:var(--yellow)}
+summary{cursor:pointer;font:400 22px 'Bagel Fat One';list-style:none;display:flex;justify-content:space-between;gap:14px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin-top:10px}
+.final{background:var(--red);color:#fff;text-align:center;border-top:3px solid var(--ink);padding:96px 0;overflow:hidden}
+.final h2{font-size:clamp(40px,7vw,100px);max-width:13ch;margin:0 auto 18px}
+.final p{font-size:19px;margin-bottom:30px}
+footer{padding:34px 0;font-weight:800;border-top:3px solid var(--ink)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.rv{opacity:0;transform:translateY(40px) scale(.97);transition:opacity .6s,transform .6s cubic-bezier(.3,1.5,.5,1)}
+.rv.on{opacity:1;transform:none}
+.model-tag{position:fixed;left:14px;bottom:14px;z-index:99;background:var(--ink);color:#fff;font:800 12px 'Bricolage Grotesque';padding:8px 14px;border-radius:99px}
+.model-tag a{text-decoration:underline}
+@media(max-width:900px){nav{display:none}.hero .wrap,.b2b .wrap,.sobre .wrap{grid-template-columns:1fr}.four,.shelf{grid-template-columns:1fr 1fr}.stage{height:420px}.vals{grid-template-columns:1fr}}
+@media(max-width:520px){.four,.shelf{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a href="#"><img src="../midia/logo-preto.png" alt="Habitat3D"></a>
+<nav><a href="#linhas">Linhas</a><a href="#catalogo">Catálogo</a><a href="#empresas">Empresas</a><a href="#sobre">Sobre</a><a href="#faq">Dúvidas</a></nav>
+<a class="btn red" href="https://wa.me/5549988452253">WhatsApp</a></div></header>
+<div class="strip"><div><span>🎄 Natal personalizado</span><span>★</span><span>Brindes de Natal para empresas</span><span>★</span><span>Presentes com nome</span><span>★</span><span>Orçamento grátis em até 1 hora</span><span>★</span>
+<span>🎄 Natal personalizado</span><span>★</span><span>Brindes de Natal para empresas</span><span>★</span><span>Presentes com nome</span><span>★</span><span>Orçamento grátis em até 1 hora</span><span>★</span></div></div>
+
+<section class="hero" style="padding-top:56px"><div class="neve" id="neve"></div><div class="wrap" style="position:relative;z-index:1">
+<div>
+<span class="chip">Impressão 3D · Joaçaba, Videira e região</span>
+<h1>A solução <mark>exata</mark> para a sua <span class="g">casa, loja</span> ou empresa!</h1>
+<p>Feito sob encomenda, do seu jeito. Personalização em 3D com o seu nome ou tema, prontinho pra presentear.</p>
+<div class="btns"><a class="btn red" href="https://wa.me/5549988452253">Pedir no WhatsApp</a><a class="btn w" href="#catalogo">Ver peças prontas</a></div>
+</div>
+<div class="stage">
+<div class="main bx"><img src="../midia/papai-noel-duo.jpg" alt="Papai Noel de tricô"></div>
+<span class="sticker s1">Feito à mão!</span><span class="sticker s2">Com o seu nome</span><span class="sticker s3">Natal 2026</span>
+<div class="mini"><video src="../midia/ganso.mp4" autoplay muted loop playsinline></video></div>
+</div></div></section>
+
+<section id="linhas" style="padding-top:30px"><div class="wrap">
+<div class="h rv"><div><span class="chip">O que a gente faz</span><h2>Uma linha para cada necessidade</h2></div><p>Do brinde da sua empresa ao chaveiro da sua loja: escolha um segmento e veja como podemos ajudar.</p></div>
+<div class="four">
+<a class="tile bx rv" href="#"><span class="e">🏢</span><h3>Personalizados para Empresas</h3><p>Brindes, peças com a sua marca, expositores e soluções sob medida.</p><b>Ver no catálogo →</b></a>
+<a class="tile bx rv" href="#"><span class="e">🔑</span><h3>Chaveiros &amp; Mostruários</h3><p>Linhas completas para revenda, com mostruário pronto para a sua loja vender mais.</p><b>Ver no catálogo →</b></a>
+<a class="tile bx rv" href="#"><span class="e">🐾</span><h3>Linha Pet</h3><p>Tags de identificação, comedouros, brinquedos e acessórios para quem ama pets.</p><b>Ver no catálogo →</b></a>
+<a class="tile bx rv" href="#"><span class="e">🧰</span><h3>Acessórios Úteis</h3><p>Organizadores, suportes e utilidades que resolvem o seu dia a dia.</p><b>Ver no catálogo →</b></a>
+</div></div></section>
+
+<section id="catalogo" style="background:#ffe9a8;border-block:3px solid var(--ink)"><div class="wrap">
+<div class="h rv"><div><span class="chip">Catálogo</span><h2>Peças que já saíram da impressora</h2></div><p>Alguns destaques prontos para pedir. Tem muito mais no catálogo completo.</p></div>
+<div class="shelf">
+<a class="prod bx rv" href="#"><img src="../midia/boneco-neve.jpg" alt=""><h4>Boneco de neve</h4><span>Natal</span></a>
+<a class="prod bx rv" href="#"><img src="../midia/rena.jpg" alt=""><h4>Rena de tricô</h4><span>Natal</span></a>
+<a class="prod bx rv" href="#"><img src="../midia/urso.jpg" alt=""><h4>Urso polar</h4><span>Natal</span></a>
+<a class="prod bx rv" href="#"><img src="../midia/pernudo-bola.jpg" alt=""><h4>Pernudo bola de árvore</h4><span>Natal</span></a>
+<a class="prod bx rv" href="#"><img src="../midia/cachorro.jpg" alt=""><h4>Cachorrinho</h4><span>Natal</span></a>
+<a class="prod bx rv" href="#"><img src="../midia/guardanapo.jpg" alt=""><h4>Porta-guardanapo</h4><span>Mesa posta</span></a>
+<a class="prod bx rv" href="#"><img src="../midia/ganso.jpg" alt=""><h4>Ganso porta-vinho</h4><span>Casa &amp; vinho</span></a>
+<a class="prod bx rv" href="#"><img src="../midia/arvore.jpg" alt=""><h4>Árvore articulada</h4><span>Decoração</span></a>
+</div>
+<p style="text-align:center;margin-top:36px"><a class="btn red" href="#">Ver catálogo completo</a></p>
+</div></section>
+
+<section id="empresas" class="b2b"><div class="wrap">
+<div class="rv"><span class="chip" style="color:var(--ink)">Para empresas · B2B</span><h2>Sua empresa com <u>peças sob encomenda.</u></h2>
+<p style="font-size:19px;max-width:34em">De brindes que ninguém joga fora a peças técnicas. Tudo com a identidade da sua marca, no seu prazo e na quantidade que você precisa.</p>
+<ul><li>🎁 Brindes e peças com a sua marca</li><li>🏭 Produção sob demanda, do protótipo à série</li><li>🤝 Atendimento dedicado para empresas</li></ul>
+<a class="btn" href="https://wa.me/5549988452253">Solicitar um orçamento</a></div>
+<div class="pic bx rv"><img src="../midia/papai-noel.jpg" alt=""></div>
+</div></section>
+
+<section id="sobre" class="sobre"><div class="wrap">
+<div class="pic bx rv"><img src="../midia/anjinho.jpg" alt=""></div>
+<div class="rv"><span class="chip">Quem faz acontecer</span><h2>Uma marca feita à mão, peça por peça</h2>
+<p style="font-size:18px;margin-bottom:12px">A Habitat3D nasceu para transformar ideias em coisas reais. Uma grande vontade de empreender e um pouco de coragem foram o pontapé para comprarmos a nossa primeira impressora.</p>
+<p style="margin-bottom:24px">Somos gente que gosta do que faz e trata o seu pedido como se fosse o nosso. É por isso que a sua primeira compra não será a única.</p>
+<a class="btn red" href="https://wa.me/5549988452253">Falar com a Alessandra</a>
+<div class="vals"><div class="bx"><b>Atendimento humano</b>Você fala direto com quem produz, do orçamento à entrega.</div><div class="bx"><b>Qualidade que se vê</b>Revisão e acabamento manual em cada peça.</div><div class="bx"><b>Compromisso com o prazo</b>A gente combina e cumpre.</div></div></div>
+</div></section>
+
+<section id="faq" style="background:var(--sky);border-block:3px solid var(--ink)"><div class="wrap">
+<div class="h rv" style="justify-content:center;text-align:center"><div><span class="chip">Dúvidas frequentes</span><h2>Tudo o que você precisa saber</h2></div></div>
+<div class="fq">
+<details class="bx"><summary>Quanto custa uma peça?</summary><p>Depende do tamanho e do material, por isso o orçamento é feito na hora e sem compromisso: você manda a ideia no WhatsApp e a gente passa o valor certinho.</p></details>
+<details class="bx"><summary>Qual é o prazo de produção?</summary><p>O prazo varia conforme a peça e a fila de produção. Ele é informado junto com o orçamento, antes de você confirmar.</p></details>
+<details class="bx"><summary>Quais cores e materiais estão disponíveis?</summary><p>Trabalhamos com diversas cores. Na hora do pedido mostramos as opções que combinam com a sua peça.</p></details>
+<details class="bx"><summary>Vocês fazem peças totalmente personalizadas?</summary><p>Sim! Pode mandar uma foto ou um desenho: a gente modela e transforma em peça real.</p></details>
+<details class="bx"><summary>Tem quantidade mínima?</summary><p>Para um item único, fazemos orçamento para análise de viabilidade. Para empresas e revenda, há condições especiais por volume.</p></details>
+</div></div></section>
+
+<section class="final"><div class="wrap rv"><h2>Pronto para tirar sua ideia do papel?</h2><p>Manda uma mensagem agora. O orçamento é grátis e a resposta costuma sair em até 1 hora.</p>
+<div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap"><a class="btn" href="https://wa.me/5549988452253">Pedir no WhatsApp</a><a class="btn w" href="https://www.instagram.com/habitat3dsc">Ver no Instagram</a></div></div></section>
+<footer><div class="wrap"><span>© 2026 Habitat3D · Manufatura aditiva</span><span>(49) 98845-2253 · Santa Catarina · Seg a Sáb, 9h às 19h</span></div></footer>
+<div class="model-tag">Modelo 3 · Vitrine Pop · <a href="../index.html">voltar</a></div>
+<script>
+var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}})},{threshold:.1});
+document.querySelectorAll('.rv').forEach(function(e,i){e.style.transitionDelay=(i%4)*70+'ms';io.observe(e)});
+var n=document.getElementById('neve');for(var i=0;i<26;i++){var s=document.createElement('i');s.textContent='✻';s.style.left=Math.random()*100+'%';s.style.fontSize=(12+Math.random()*22)+'px';s.style.animationDuration=(7+Math.random()*9)+'s';s.style.animationDelay=(-Math.random()*12)+'s';n.appendChild(s)}
+</script>
+</body>
+</html>

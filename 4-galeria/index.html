@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Habitat3D — Modelo 4 · Galeria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,500&family=Hanken+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0908;--bg2:#12100e;--gold:#d9b46c;--gold2:#f2dba3;--ink:#efe8da;--mute:#9a9082;--line:#2b2620}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--bg);color:var(--ink);font:300 17px/1.7 'Hanken Grotesk',sans-serif;overflow-x:hidden}
+/* holofote que segue o cursor */
+#spot{position:fixed;inset:0;pointer-events:none;z-index:1;background:radial-gradient(520px circle at var(--x,50%) var(--y,30%),rgba(217,180,108,.11),transparent 65%)}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:300;letter-spacing:-.01em;line-height:1}
+em{font-style:italic;color:var(--gold)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px;position:relative;z-index:2}
+.k{font:400 11px 'Hanken Grotesk';letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
+header{position:fixed;top:0;left:0;right:0;z-index:70;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
+header.sc{background:rgba(10,9,8,.86);backdrop-filter:blur(14px);border-color:var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:78px}
+header img{height:28px}
+nav{display:flex;gap:38px}
+nav a{font:400 12px 'Hanken Grotesk';letter-spacing:.22em;text-transform:uppercase;color:var(--mute);transition:color .3s}
+nav a:hover{color:var(--gold2)}
+.cta{display:inline-block;border:1px solid var(--gold);color:var(--gold2);padding:14px 30px;font:400 12px 'Hanken Grotesk';letter-spacing:.24em;text-transform:uppercase;position:relative;overflow:hidden;transition:color .4s}
+.cta::before{content:"";position:absolute;inset:0;background:var(--gold);transform:translateY(101%);transition:transform .45s cubic-bezier(.2,.8,.2,1);z-index:-1}
+.cta{z-index:0}
+.cta:hover{color:#0a0908}.cta:hover::before{transform:none}
+.cta.solid{background:var(--gold);color:#0a0908}.cta.solid::before{background:var(--gold2)}
+/* hero vídeo */
+.hero{height:100svh;min-height:640px;position:relative;display:grid;align-items:end;overflow:hidden}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55;filter:saturate(.85) contrast(1.1);transform:scale(1.04);animation:push 22s ease-out forwards}
+@keyframes push{to{transform:scale(1.14)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,9,8,.55) 0%,transparent 35%,rgba(10,9,8,.96) 100%)}
+.hero .wrap{padding-bottom:90px;z-index:3}
+.hero h1{font-size:clamp(54px,9.4vw,150px);max-width:11ch;margin:20px 0 30px}
+.hero h1 span{display:inline-block;opacity:0;transform:translateY(30px);filter:blur(10px);animation:in 1.2s cubic-bezier(.2,.8,.2,1) forwards}
+.hero h1 span:nth-child(2){animation-delay:.15s}.hero h1 span:nth-child(3){animation-delay:.3s}.hero h1 span:nth-child(4){animation-delay:.45s}.hero h1 span:nth-child(5){animation-delay:.6s}
+@keyframes in{to{opacity:1;transform:none;filter:none}}
+.hero .row{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;opacity:0;animation:in 1.2s .9s forwards}
+.hero p{max-width:440px;color:#cfc6b5}
+.scroll{position:absolute;right:32px;bottom:34px;z-index:4;writing-mode:vertical-rl;font:400 11px 'Hanken Grotesk';letter-spacing:.34em;text-transform:uppercase;color:var(--mute)}
+section{position:relative;z-index:2;padding:130px 0}
+.hd{margin-bottom:60px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end}
+.hd h2{font-size:clamp(40px,6vw,88px);margin-top:16px}
+.hd p{color:var(--mute);max-width:420px;justify-self:end}
+/* linhas */
+.salas{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.sala{padding:44px 28px 52px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;transition:background .5s}
+.sala:last-child{border-right:0}
+.sala:hover{background:linear-gradient(180deg,rgba(217,180,108,.07),transparent)}
+.sala .i{font:italic 300 22px 'Cormorant Garamond';color:var(--gold)}
+.sala h3{font-size:34px;margin:48px 0 16px;font-weight:500}
+.sala p{color:var(--mute);font-size:15px}
+.sala a{display:inline-block;margin-top:26px;font:400 11px 'Hanken Grotesk';letter-spacing:.26em;text-transform:uppercase;color:var(--gold2);border-bottom:1px solid var(--gold);padding-bottom:5px}
+/* galeria horizontal */
+.gal{background:var(--bg2);border-block:1px solid var(--line);padding:110px 0 130px;overflow:hidden}
+.track{display:flex;gap:34px;padding:0 32px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;cursor:grab}
+.track::-webkit-scrollbar{display:none}
+.piece{flex:0 0 min(380px,78vw);scroll-snap-align:start}
+.piece .fr{aspect-ratio:3/4;overflow:hidden;position:relative;border:1px solid var(--line);background:#000}
+.piece img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.2,.8,.2,1),filter .6s;filter:brightness(.82) saturate(.9)}
+.piece:hover img{transform:scale(1.07);filter:none}
+.piece .fr::after{content:"";position:absolute;inset:14px;border:1px solid rgba(242,219,163,.0);transition:border-color .6s}
+.piece:hover .fr::after{border-color:rgba(242,219,163,.55)}
+.piece h4{font:500 28px 'Cormorant Garamond';margin-top:20px}
+.piece span{font:400 11px 'Hanken Grotesk';letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+.hint{display:flex;justify-content:space-between;padding:0 32px;margin-top:34px;color:var(--mute);font-size:13px;letter-spacing:.18em;text-transform:uppercase}
+/* b2b */
+.b2b .wrap{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center}
+.b2b .fr{aspect-ratio:3/4;position:relative;overflow:hidden;border:1px solid var(--line)}
+.b2b video{width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.05)}
+.b2b .fr::before{content:"";position:absolute;inset:-1px;border:1px solid var(--gold);transform:translate(16px,16px);z-index:-1;pointer-events:none}
+.b2b figure{position:relative}
+.b2b figure::before{content:"";position:absolute;inset:0;border:1px solid var(--gold);transform:translate(18px,18px);pointer-events:none}
+.b2b h2{font-size:clamp(40px,5.8vw,86px);margin:18px 0 26px}
+.b2b ul{list-style:none;padding:0;margin:30px 0 40px}
+.b2b li{padding:18px 0;border-top:1px solid var(--line);font:italic 300 25px 'Cormorant Garamond';display:flex;gap:18px;align-items:baseline}
+.b2b li::before{content:"—";color:var(--gold)}
+/* sobre */
+.sobre{background:var(--bg2);border-block:1px solid var(--line);text-align:center}
+.sobre blockquote{font:italic 300 clamp(28px,4.2vw,58px)/1.18 'Cormorant Garamond';max-width:1000px;margin:26px auto 40px}
+.sobre blockquote em{font-weight:500}
+.sobre .tri{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:70px;border-top:1px solid var(--line);text-align:left}
+.sobre .tri div{padding:34px 30px;border-right:1px solid var(--line)}
+.sobre .tri div:last-child{border:0}
+.sobre .tri h4{font:500 26px 'Cormorant Garamond';margin-bottom:8px}
+.sobre .tri p{color:var(--mute);font-size:15px}
+/* faq */
+.fq{max-width:900px;margin:0 auto}
+details{border-bottom:1px solid var(--line);padding:30px 0}
+details:first-child{border-top:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;font:400 32px 'Cormorant Garamond';display:flex;justify-content:space-between;gap:20px;transition:color .3s}
+summary:hover{color:var(--gold2)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--gold);font-weight:200;font-size:36px;line-height:.8;transition:transform .4s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin-top:14px;color:var(--mute);max-width:640px}
+.final{text-align:center;padding:170px 0;background:radial-gradient(800px 420px at 50% 100%,rgba(217,180,108,.2),transparent 70%)}
+.final h2{font-size:clamp(46px,8vw,128px);max-width:11ch;margin:20px auto 26px}
+.final p{color:var(--mute);margin-bottom:40px}
+footer{border-top:1px solid var(--line);padding:46px 0;position:relative;z-index:2;color:var(--mute);font-size:13px;letter-spacing:.1em}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+footer img{height:22px}
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1.2s,transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.rv.on{opacity:1;transform:none}
+.model-tag{position:fixed;left:14px;bottom:14px;z-index:99;background:var(--gold);color:#0a0908;font:500 11px 'Hanken Grotesk';letter-spacing:.14em;text-transform:uppercase;padding:8px 14px}
+.model-tag a{text-decoration:underline}
+@media(max-width:900px){nav{display:none}.hd,.b2b .wrap{grid-template-columns:1fr}.hd p{justify-self:start}.salas{grid-template-columns:1fr 1fr}.sobre .tri{grid-template-columns:1fr}.sobre .tri div{border-right:0;border-bottom:1px solid var(--line)}.scroll{display:none}.b2b .wrap{gap:50px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,.hero h1 span,.hero .row{opacity:1;transform:none;filter:none}}
+</style>
+</head>
+<body>
+<div id="spot"></div>
+<header id="hd"><div class="wrap"><a href="#"><img src="../midia/logo-dourado.png" alt="Habitat3D"></a>
+<nav><a href="#linhas">Linhas</a><a href="#galeria">Galeria</a><a href="#empresas">Empresas</a><a href="#sobre">Sobre</a><a href="#faq">Dúvidas</a></nav>
+<a class="cta" href="https://wa.me/5549988452253">WhatsApp</a></div></header>
+
+<section class="hero" style="padding:0">
+<video src="../midia/ganso.mp4" autoplay muted loop playsinline></video>
+<div class="wrap">
+<span class="k">Impressão 3D sob demanda · Joaçaba, Videira e região</span>
+<h1><span>A</span> <span><em>solução</em></span> <span>exata</span> <span>para a</span> <span>sua casa</span></h1>
+<div class="row"><p>Peças personalizadas com o seu nome, o seu tema ou a marca da sua empresa. Revisão e acabamento manual em cada uma, antes de sair.</p>
+<div style="display:flex;gap:14px;flex-wrap:wrap"><a class="cta solid" href="https://wa.me/5549988452253">Pedir orçamento</a><a class="cta" href="#galeria">Ver a galeria</a></div></div>
+</div>
+<span class="scroll">role para explorar</span>
+</section>
+
+<section id="linhas"><div class="wrap">
+<div class="hd rv"><div><span class="k">O que a gente faz</span><h2>Uma linha para <em>cada necessidade</em></h2></div><p>Do brinde da sua empresa ao chaveiro da sua loja: escolha um segmento e veja como podemos ajudar.</p></div>
+<div class="salas rv">
+<div class="sala"><span class="i">I</span><h3>Personalizados para Empresas</h3><p>Brindes, peças com a sua marca, expositores e soluções sob medida que valorizam o seu negócio.</p><a href="#">Ver no catálogo</a></div>
+<div class="sala"><span class="i">II</span><h3>Chaveiros &amp; Mostruários</h3><p>Linhas completas de chaveiros para revenda, com mostruário pronto para a sua loja vender mais.</p><a href="#">Ver no catálogo</a></div>
+<div class="sala"><span class="i">III</span><h3>Linha Pet</h3><p>Tags de identificação, comedouros, brinquedos e acessórios pensados para quem ama os pets.</p><a href="#">Ver no catálogo</a></div>
+<div class="sala"><span class="i">IV</span><h3>Acessórios Úteis</h3><p>Organizadores, suportes, peças de reposição e utilidades que resolvem o seu dia a dia.</p><a href="#">Ver no catálogo</a></div>
+</div></div></section>
+
+<section id="galeria" class="gal"><div class="wrap">
+<div class="hd rv"><div><span class="k">Catálogo</span><h2>Peças que <em>já saíram</em> da impressora</h2></div><p>Alguns destaques prontos para pedir. Tem muito mais no catálogo completo.</p></div></div>
+<div class="track" id="track">
+<a class="piece" href="#"><div class="fr"><img src="../midia/papai-noel.jpg" alt=""></div><span>Natal</span><h4>Papai Noel estilo tricô</h4></a>
+<a class="piece" href="#"><div class="fr"><img src="../midia/ganso.jpg" alt=""></div><span>Casa &amp; vinho</span><h4>Ganso porta-vinho</h4></a>
+<a class="piece" href="#"><div class="fr"><img src="../midia/rena.jpg" alt=""></div><span>Natal</span><h4>Rena de tricô</h4></a>
+<a class="piece" href="#"><div class="fr"><img src="../midia/alexa.jpg" alt=""></div><span>Time do coração</span><h4>Suporte para Alexa</h4></a>
+<a class="piece" href="#"><div class="fr"><img src="../midia/harry.jpg" alt=""></div><span>Casa</span><h4>Apoio de livros</h4></a>
+<a class="piece" href="#"><div class="fr"><img src="../midia/urso.jpg" alt=""></div><span>Natal</span><h4>Urso polar</h4></a>
+<a class="piece" href="#"><div class="fr"><img src="../midia/arvore.jpg" alt=""></div><span>Decoração</span><h4>Árvore articulada</h4></a>
+<a class="piece" href="#"><div class="fr"><img src="../midia/guardanapo.jpg" alt=""></div><span>Mesa posta</span><h4>Porta-guardanapo</h4></a>
+</div>
+<div class="hint"><span>← arraste →</span><a href="#" style="color:var(--gold2)">Ver catálogo completo</a></div>
+</section>
+
+<section id="empresas" class="b2b"><div class="wrap">
+<div class="rv"><span class="k">Para empresas · B2B</span><h2>Sua empresa com <em>peças sob encomenda</em></h2>
+<p style="color:var(--mute);max-width:44ch">De brindes que ninguém joga fora a peças técnicas. Tudo com a identidade da sua marca, no seu prazo e na quantidade que você precisa.</p>
+<ul><li>Brindes e peças com a sua marca</li><li>Produção sob demanda, do protótipo à série</li><li>Atendimento dedicado para empresas</li></ul>
+<a class="cta solid" href="https://wa.me/5549988452253">Solicitar um orçamento</a></div>
+<figure class="rv"><div class="fr" style="border:0"><video src="../midia/alexa.mp4" autoplay muted loop playsinline></video></div></figure>
+</div></section>
+
+<section id="sobre" class="sobre"><div class="wrap rv">
+<span class="k">Quem faz acontecer</span>
+<blockquote>A Habitat3D nasceu para transformar <em>ideias em coisas reais</em>, peça por peça, feita à mão.</blockquote>
+<p style="color:var(--mute);max-width:640px;margin:0 auto 38px">Uma grande vontade de empreender e um pouco de coragem foram o pontapé para comprarmos a nossa primeira impressora. Somos gente que gosta do que faz e trata o seu pedido como se fosse o nosso.</p>
+<a class="cta" href="https://wa.me/5549988452253">Falar com a Alessandra</a>
+<div class="tri"><div><h4>Atendimento humano</h4><p>Você fala direto com quem produz, do orçamento à entrega.</p></div><div><h4>Qualidade que se vê</h4><p>Revisão e acabamento manual em cada peça antes de sair.</p></div><div><h4>Compromisso com o prazo</h4><p>A gente combina e cumpre. Sem surpresa de última hora.</p></div></div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+<div class="hd rv" style="grid-template-columns:1fr"><div style="text-align:center"><span class="k">Dúvidas frequentes</span><h2>Tudo o que você <em>precisa saber</em></h2></div></div>
+<div class="fq rv">
+<details><summary>Quanto custa uma peça?</summary><p>Depende do tamanho e do material, por isso o orçamento é feito na hora e sem compromisso: você manda a ideia no WhatsApp e a gente passa o valor certinho.</p></details>
+<details><summary>Qual é o prazo de produção?</summary><p>O prazo varia conforme a peça e a fila de produção. Ele é informado junto com o orçamento, antes de você confirmar.</p></details>
+<details><summary>Quais cores e materiais estão disponíveis?</summary><p>Trabalhamos com diversas cores. Na hora do pedido mostramos as opções que combinam com a sua peça.</p></details>
+<details><summary>Vocês fazem peças totalmente personalizadas?</summary><p>Sim! Pode mandar uma foto ou um desenho: a gente modela e transforma em peça real.</p></details>
+<details><summary>Tem quantidade mínima?</summary><p>Para um item único, fazemos orçamento para análise de viabilidade. Para empresas e revenda, há condições especiais por volume.</p></details>
+</div></div></section>
+
+<section class="final"><div class="wrap rv"><span class="k">Vamos começar</span><h2>Pronto para tirar sua ideia <em>do papel?</em></h2><p>Manda uma mensagem agora. O orçamento é grátis e a resposta costuma sair em até 1 hora.</p>
+<div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap"><a class="cta solid" href="https://wa.me/5549988452253">Pedir no WhatsApp</a><a class="cta" href="https://www.instagram.com/habitat3dsc">Ver no Instagram</a></div></div></section>
+<footer><div class="wrap"><img src="../midia/logo-dourado.png" alt="Habitat3D"><span>(49) 98845-2253 · Santa Catarina · Seg a Sáb, 9h às 19h</span><span>© 2026 Habitat3D · Manufatura aditiva</span></div></footer>
+<div class="model-tag">Modelo 4 · Galeria · <a href="../index.html">voltar</a></div>
+<script>
+var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}})},{threshold:.1});
+document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
+var sp=document.getElementById('spot');addEventListener('pointermove',function(e){sp.style.setProperty('--x',e.clientX+'px');sp.style.setProperty('--y',e.clientY+'px')});
+var h=document.getElementById('hd');addEventListener('scroll',function(){h.classList.toggle('sc',scrollY>40)},{passive:true});
+var t=document.getElementById('track'),d=false,sx=0,sl=0;
+t.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse')return;d=true;sx=e.clientX;sl=t.scrollLeft;t.style.scrollSnapType='none'});
+addEventListener('pointerup',function(){d=false;t.style.scrollSnapType=''});
+addEventListener('pointermove',function(e){if(d){t.scrollLeft=sl-(e.clientX-sx)}});
+</script>
+</body>
+</html>

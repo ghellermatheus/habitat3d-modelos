@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Habitat3D Joaçaba | Peças 3D prontas e sob medida</title>
+<meta name="description" content="Escolha peças 3D prontas ou peça sob medida, monte a cesta e envie tudo numa mensagem de WhatsApp. Habitat3D, Joaçaba, Videira e região. Orçamento grátis.">
+<meta name="theme-color" content="#0b1b33">
+<link rel="canonical" href="https://www.habitat3d.com.br/">
+<meta property="og:title" content="Habitat3D | Peças 3D prontas e sob medida">
+<meta property="og:description" content="Monte a cesta e peça tudo numa só mensagem. Impressão 3D sob demanda em Joaçaba, Videira e região.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<link rel="icon" href="../midia/logo-mark-dourado.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="../midia/alexa.webp" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,700..900&family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<style type="text/tailwindcss">
+  @theme {
+    --color-ink: #0b1b33;
+    --color-volt: #ffd60a;
+    --color-hot: #d42a18;
+    --color-paper: #f1f4f8;
+  }
+</style>
+<link rel="stylesheet" href="loja.css">
+<script defer src="loja.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.14.8/dist/cdn.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Habitat3D",
+  "description": "Impressão 3D sob demanda: peças prontas, personalizados e brindes para empresas em Joaçaba, Videira e região (SC).",
+  "url": "https://www.habitat3d.com.br/",
+  "telephone": "+55 49 98845-2253",
+  "image": "../midia/logo-dourado.png",
+  "address": { "@type": "PostalAddress", "addressLocality": "Joaçaba", "addressRegion": "SC", "addressCountry": "BR" },
+  "areaServed": ["Joaçaba", "Videira", "Fraiburgo"],
+  "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "19:00" }],
+  "sameAs": ["https://www.instagram.com/habitat3dsc"]
+}
+</script>
+</head>
+<body x-data="vitrine" @keydown.window="if ($event.key === '/' && !['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName)) { $event.preventDefault(); $refs.buscaTopo.offsetParent ? $refs.buscaTopo.focus() : $refs.buscaMob.focus(); }">
+<a class="skip" href="#vitrine">Ir para os produtos</a>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <template x-for="n in 2"><div class="flex"><span>Orçamento grátis</span><span>Resposta em até 1 hora</span><span>Atendimento humano, direto com quem produz</span><span>Acabamento manual em cada peça</span><span>Joaçaba, Videira e região</span></div></template>
+  </div>
+</div>
+
+<header class="topo entra-topo">
+  <div class="wrap flex items-center gap-3 h-[60px]">
+    <a href="index.html" class="flex-none" aria-label="Habitat3D, página inicial"><img src="../midia/logo-fundo-escuro.png" alt="Habitat3D" width="130" height="34" class="h-8 w-auto"></a>
+    <nav aria-label="Principal" class="hidden lg:flex items-center gap-1 ml-2">
+      <a class="nav-link" href="#vitrine">Vitrine</a>
+      <a class="nav-link" href="#sob-medida">Sob medida</a>
+      <a class="nav-link" href="#empresas">Empresas</a>
+      <a class="nav-link" href="#faq">Dúvidas</a>
+    </nav>
+    <form role="search" class="busca hidden md:block flex-1 max-w-xl ml-auto" @submit.prevent="irVitrine()">
+      <label for="busca-topo" class="sr-only">Buscar produtos</label>
+      <i data-lucide="search" class="ic" aria-hidden="true"></i>
+      <input id="busca-topo" x-ref="buscaTopo" type="search" x-model.debounce.150ms="q" @input.debounce.400ms="irVitrine()" placeholder="Buscar: natal, vinho, chaveiro…  (tecle /)" autocomplete="off" enterkeyhint="search">
+    </form>
+    <button type="button" class="btn-cesta ml-auto md:ml-0" @click="$store.cesta.aberta = true; $store.cesta.aviso=''" :class="{ pulo: pulsar }" x-data="{ pulsar: false }" x-effect="$store.cesta.total; pulsar = true; setTimeout(() => pulsar = false, 500)" aria-haspopup="dialog">
+      <i data-lucide="shopping-basket" class="w-5 h-5" aria-hidden="true"></i>
+      <span>Cesta</span>
+      <span class="qtd" x-text="$store.cesta.total" aria-label="itens na cesta">0</span>
+    </button>
+  </div>
+</header>
+
+<main id="topo">
+  <!-- HERO -->
+  <section class="wrap pt-6 pb-5 md:pt-10 md:pb-8" aria-labelledby="h1">
+    <div class="grid grid-cols-[1fr_118px] sm:grid-cols-[1fr_190px] md:grid-cols-[1fr_270px] lg:grid-cols-[1fr_300px] gap-4 md:gap-10 items-center">
+      <div>
+        <p class="kicker entra" style="--d:150ms">Impressão 3D sob demanda · Joaçaba e região</p>
+        <h1 id="h1" class="display hero-h1 mt-2 entra" style="--d:250ms">Monte a cesta. <em>Peça tudo</em> numa só mensagem.</h1>
+        <p class="mt-4 max-w-xl text-[15.5px] md:text-lg text-[#2b3d58] entra" style="--d:380ms">Peças prontas e personalizados feitos na hora. Você escolhe, a gente confirma valor, prazo e entrega no WhatsApp.</p>
+        <ol class="passos mt-4 entra" style="--d:480ms">
+          <li><b>1</b>Escolha</li><li><b>2</b>Envie a cesta</li><li><b>3</b>Alessandra confirma</li>
+        </ol>
+        <div class="mt-5 flex flex-wrap gap-3 entra" style="--d:580ms">
+          <a href="#vitrine" class="btn btn-ink">Ver os produtos</a>
+          <a href="#sob-medida" class="btn btn-volt">Quero sob medida</a>
+        </div>
+      </div>
+      <a href="produto.html?p=suporte-alexa-flamengo" class="live entra block" style="--d:350ms" aria-label="Suporte para Alexa Flamengo saindo da impressora. Ver produto">
+        <video autoplay muted loop playsinline preload="metadata" poster="../midia/alexa.webp" width="540" height="960" aria-hidden="true" tabindex="-1">
+          <source src="../midia/alexa.mp4" type="video/mp4">
+        </video>
+        <span class="live-tag"><i></i>Na impressora</span>
+        <span class="live-cap">Suporte para Alexa Flamengo</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- VITRINE -->
+  <section id="vitrine" class="wrap pb-12 scroll-mt-16" aria-labelledby="h-vitrine">
+    <div class="flex flex-wrap items-end justify-between gap-2 mb-3">
+      <h2 id="h-vitrine" class="display titulo-sec">Vitrine</h2>
+      <p class="text-sm font-semibold text-[#46566f]" role="status" aria-live="polite" x-text="lista.length + (lista.length === 1 ? ' produto' : ' produtos')">21 produtos</p>
+    </div>
+
+    <form role="search" class="busca busca-claro md:hidden mb-3" @submit.prevent>
+      <label for="busca-mob" class="sr-only">Buscar produtos</label>
+      <i data-lucide="search" class="ic" aria-hidden="true"></i>
+      <input id="busca-mob" x-ref="buscaMob" type="search" x-model.debounce.150ms="q" placeholder="Buscar: natal, vinho, chaveiro…" autocomplete="off" enterkeyhint="search">
+    </form>
+
+    <div class="chips" role="group" aria-label="Filtrar por categoria">
+      <button type="button" class="chip" :aria-pressed="cat === 'todos'" @click="cat = 'todos'">Todos <small x-text="contar('todos')">21</small></button>
+      <template x-for="c in cats" :key="c.id">
+        <button type="button" class="chip" :aria-pressed="cat === c.id" @click="cat = c.id"><span x-text="c.nome"></span> <small x-text="contar(c.id)"></small></button>
+      </template>
+    </div>
+
+    <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mb-4 mt-1">
+      <label class="sel flex items-center gap-2 text-sm font-semibold">Ordenar
+        <select x-model="ordem">
+          <option value="destaque">Destaques</option>
+          <option value="menor">Menor preço</option>
+          <option value="maior">Maior preço</option>
+          <option value="az">A–Z</option>
+        </select>
+      </label>
+      <label class="switch"><input type="checkbox" x-model="soPreco"> Só com preço</label>
+      <button type="button" class="text-sm font-bold underline underline-offset-4" x-show="q || cat !== 'todos' || soPreco || ordem !== 'destaque'" x-cloak @click="limpar()">Limpar filtros</button>
+    </div>
+
+    <ul class="grid-loja list-none p-0 m-0">
+      <template x-for="(p, i) in lista" :key="p.id">
+        <li class="card entra" :style="'--i:' + Math.min(i, 9) + ';--d:650ms'">
+          <a class="ph" :href="'produto.html?p=' + p.id" tabindex="-1" aria-hidden="true">
+            <img :src="p.img[0]" :alt="''" :style="'object-position:' + p.pos" width="400" height="400" :loading="i < 4 ? 'eager' : 'lazy'" decoding="async">
+            <span class="etiqueta" x-show="p.badge" x-text="p.badge"></span>
+          </a>
+          <div class="corpo">
+            <span class="cat" x-text="cats.find(c => c.id === p.cat).nome"></span>
+            <h3><a :href="'produto.html?p=' + p.id" x-text="p.nome"></a></h3>
+            <div class="preco-linha">
+              <template x-if="p.preco"><div class="preco num"><small>R$</small><span x-text="p.preco.toLocaleString('pt-BR', {minimumFractionDigits: 2})"></span></div></template>
+              <template x-if="!p.preco"><div class="consulte">Consulte<small>valor no WhatsApp</small></div></template>
+            </div>
+            <template x-if="$store.cesta.qtdDe(p.id) === 0">
+              <button type="button" class="btn-add" @click="$store.cesta.add(p.id, p.cores ? p.cores[0] : '')" :aria-label="'Adicionar à cesta: ' + p.nome">
+                <svg class="bolt" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg> Cesta
+              </button>
+            </template>
+            <template x-if="$store.cesta.qtdDe(p.id) > 0">
+              <div class="passo-q" role="group" :aria-label="'Quantidade na cesta: ' + p.nome">
+                <button type="button" aria-label="Diminuir" @click="$store.cesta.menos($store.cesta.kDe(p.id))">−</button>
+                <output x-text="$store.cesta.qtdDe(p.id) + ' na cesta'"></output>
+                <button type="button" aria-label="Aumentar" @click="$store.cesta.mais($store.cesta.kDe(p.id))">+</button>
+              </div>
+            </template>
+          </div>
+        </li>
+      </template>
+    </ul>
+
+    <div x-show="lista.length === 0" x-cloak class="mt-4 rounded-xl border-2 border-dashed border-ink bg-white/80 p-6 text-center">
+      <p class="display text-3xl">Não achou?</p>
+      <p class="mt-2 text-[#2b3d58]">A gente faz sob medida. Conta o que você procura e a Alessandra responde em até 1 hora.</p>
+      <div class="mt-4 flex flex-wrap justify-center gap-3">
+        <a :href="urlNaoAchou" target="_blank" rel="noopener" class="btn btn-wa">Perguntar no WhatsApp</a>
+        <button type="button" class="btn btn-ink" @click="limpar()">Limpar filtros</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOB MEDIDA -->
+  <section id="sob-medida" class="faixa-ink py-12 scroll-mt-16" aria-labelledby="h-sm">
+    <div class="wrap">
+      <p class="kicker">Personalizados</p>
+      <h2 id="h-sm" class="display titulo-sec mt-1">Sob medida, do seu jeito</h2>
+      <p class="mt-3 max-w-2xl text-[#c6d3e8]">Nome, tema, cor, marca da empresa. Coloque na cesta junto com as peças prontas e a gente manda o orçamento de tudo de uma vez. Sem compromisso.</p>
+      <ul class="sm-rail list-none mt-6 mb-0" aria-label="Opções sob medida">
+        <template x-for="p in sobMedida" :key="p.id">
+          <li class="sm">
+            <div class="ph"><img :src="p.img[0]" alt="" :style="'object-position:' + p.pos" width="400" height="300" loading="lazy" decoding="async"></div>
+            <div class="corpo">
+              <h3 x-text="p.nome"></h3>
+              <p x-text="p.desc"></p>
+              <p class="!text-[11.5px] !text-[#8fa3c2]" x-text="p.foto"></p>
+              <template x-if="$store.cesta.qtdDe(p.id) === 0">
+                <button type="button" class="btn-add" @click="$store.cesta.add(p.id)" :aria-label="'Pedir orçamento, adicionar à cesta: ' + p.nome">
+                  <svg class="bolt" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg> Pedir orçamento
+                </button>
+              </template>
+              <template x-if="$store.cesta.qtdDe(p.id) > 0">
+                <div class="passo-q" role="group" :aria-label="'Quantidade na cesta: ' + p.nome">
+                  <button type="button" aria-label="Diminuir" @click="$store.cesta.menos($store.cesta.kDe(p.id))">−</button>
+                  <output x-text="$store.cesta.qtdDe(p.id) + ' na cesta'"></output>
+                  <button type="button" aria-label="Aumentar" @click="$store.cesta.mais($store.cesta.kDe(p.id))">+</button>
+                </div>
+              </template>
+            </div>
+          </li>
+        </template>
+      </ul>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="wrap py-12" aria-labelledby="h-como">
+    <h2 id="h-como" class="display titulo-sec">Como pedir em 3 passos</h2>
+    <ol class="mt-6 grid gap-3 md:grid-cols-3 list-none p-0">
+      <li class="rounded-xl border-2 border-ink bg-white p-5"><span class="num text-5xl text-hot">1</span><h3 class="mt-1 text-lg font-extrabold">Monte a cesta</h3><p class="mt-1 text-[#46566f]">Marque as peças prontas e os personalizados que você quer. Pode misturar à vontade.</p></li>
+      <li class="rounded-xl border-2 border-ink bg-white p-5"><span class="num text-5xl text-hot">2</span><h3 class="mt-1 text-lg font-extrabold">Envie no WhatsApp</h3><p class="mt-1 text-[#46566f]">Um toque e a lista inteira vai pronta, com quantidades, cores e observações.</p></li>
+      <li class="rounded-xl border-2 border-ink bg-white p-5"><span class="num text-5xl text-hot">3</span><h3 class="mt-1 text-lg font-extrabold">Alessandra confirma</h3><p class="mt-1 text-[#46566f]">Você recebe valor, prazo e forma de entrega, tudo combinado antes de fechar. Resposta em até 1 hora.</p></li>
+    </ol>
+  </section>
+
+  <!-- EMPRESAS -->
+  <section id="empresas" class="faixa-volt py-12 scroll-mt-16" aria-labelledby="h-b2b">
+    <div class="wrap grid gap-8 md:grid-cols-2 items-center">
+      <div>
+        <p class="kicker !text-ink">Para empresas · B2B</p>
+        <h2 id="h-b2b" class="display titulo-sec mt-1">Sua empresa com peças sob encomenda</h2>
+        <p class="mt-3 text-[17px]">De brindes que ninguém joga fora a peças técnicas, com a identidade da sua marca e na quantidade que você precisa.</p>
+        <ul class="mt-4 grid gap-2 list-none p-0 font-semibold">
+          <li class="flex gap-2"><i data-lucide="check" class="w-5 h-5 flex-none mt-0.5" aria-hidden="true"></i>Brindes e peças com a sua marca</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-5 h-5 flex-none mt-0.5" aria-hidden="true"></i>Produção sob demanda, do protótipo à série</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-5 h-5 flex-none mt-0.5" aria-hidden="true"></i>Chaveiros para revenda com mostruário em consignação</li>
+          <li class="flex gap-2"><i data-lucide="check" class="w-5 h-5 flex-none mt-0.5" aria-hidden="true"></i>Condições especiais por volume</li>
+        </ul>
+        <a class="btn btn-ink mt-6" target="_blank" rel="noopener" href="https://wa.me/5549988452253?text=Ol%C3%A1%2C%20Alessandra!%20Sou%20de%20uma%20empresa%20e%20quero%20um%20or%C3%A7amento%20de%20pe%C3%A7as%20ou%20brindes%20sob%20encomenda.">Solicitar orçamento para empresa</a>
+      </div>
+      <figure class="m-0 rounded-2xl overflow-hidden border-2 border-ink shadow-[6px_6px_0_#0b1b33]">
+        <img src="../midia/stock/loja-balcao-pexels-4079754.webp" alt="Balcão de uma loja com produtos expostos" width="940" height="627" loading="lazy" decoding="async" class="w-full h-auto aspect-[4/3] object-cover">
+      </figure>
+    </div>
+  </section>
+
+  <!-- CONFIANÇA -->
+  <section class="wrap py-12" aria-labelledby="h-confia">
+    <h2 id="h-confia" class="display titulo-sec">Por que pedir com a gente</h2>
+    <div class="confia mt-6">
+      <div><i data-lucide="message-circle" aria-hidden="true"></i><h3>Atendimento humano</h3><p>Você fala direto com quem produz, do orçamento à entrega.</p></div>
+      <div><i data-lucide="hand" aria-hidden="true"></i><h3>Acabamento manual</h3><p>Revisão e acabamento manual em cada peça antes de sair.</p></div>
+      <div><i data-lucide="zap" aria-hidden="true"></i><h3>Orçamento grátis</h3><p>Sem compromisso. A resposta costuma sair em até 1 hora.</p></div>
+      <div><i data-lucide="map-pin" aria-hidden="true"></i><h3>Empresa local</h3><p>Feito em Joaçaba, para Joaçaba, Videira e região.</p></div>
+    </div>
+    <div class="mt-4 grid gap-3 md:grid-cols-3" aria-label="Espaço reservado para avaliações">
+      <p class="exemplo m-0"><b>[exemplo] Avaliação de cliente.</b> Aqui entra o texto real, o nome, a cidade e a foto da peça entregue.</p>
+      <p class="exemplo m-0"><b>[exemplo] Avaliação de cliente.</b> Estrutura pronta para receber depoimentos reais autorizados.</p>
+      <p class="exemplo m-0"><b>[exemplo] Foto de cliente com a peça.</b> Espaço para fotos enviadas pelos clientes.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="wrap pb-12 scroll-mt-16" aria-labelledby="h-faq">
+    <div class="grid gap-6 md:grid-cols-[1fr_1.6fr]">
+      <div>
+        <h2 id="h-faq" class="display titulo-sec">Dúvidas frequentes</h2>
+        <p class="mt-3 text-[#46566f]">Não achou a resposta? Pergunta pra gente no WhatsApp.</p>
+        <a class="btn btn-wa mt-4" target="_blank" rel="noopener" href="https://wa.me/5549988452253?text=Ol%C3%A1%2C%20Alessandra!%20Tenho%20uma%20d%C3%BAvida%20sobre%20os%20produtos%20da%20Habitat3D.">Falar no WhatsApp</a>
+      </div>
+      <div>
+        <details class="faq"><summary>Como funciona a cesta?</summary><p>Você marca os produtos e, no fim, toca em "Enviar no WhatsApp". A lista vai pronta, com quantidades, cores e observações, e a Alessandra responde com valor, prazo e entrega. Nada é cobrado antes dessa conversa.</p></details>
+        <details class="faq"><summary>Quanto custa uma peça?</summary><p>Os produtos com preço na vitrine têm o valor mostrado. Os demais dependem do tamanho e do material, por isso o orçamento é feito na hora e sem compromisso.</p></details>
+        <details class="faq"><summary>Qual é o prazo de produção?</summary><p>O prazo varia conforme a peça e a fila de produção. Ele é informado junto com o orçamento, antes de você confirmar.</p></details>
+        <details class="faq"><summary>Quais cores e materiais estão disponíveis?</summary><p>Trabalhamos com diversas cores. Na hora do pedido mostramos as opções que combinam com a sua peça.</p></details>
+        <details class="faq"><summary>Vocês fazem peças totalmente personalizadas?</summary><p>Sim. Pode mandar uma foto ou um desenho que a gente modela e transforma em peça real.</p></details>
+        <details class="faq"><summary>Tem quantidade mínima?</summary><p>Para um item único, fazemos o orçamento para analisar a viabilidade. Para empresas e revenda, como chaveiros para loja, há condições especiais por volume.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="faixa-ink py-14 text-center" aria-labelledby="h-cta">
+    <div class="wrap">
+      <h2 id="h-cta" class="display titulo-sec">Pronto para tirar sua ideia do papel?</h2>
+      <p class="mt-3 mx-auto max-w-xl text-[#c6d3e8]">Manda uma mensagem agora. O orçamento é grátis e a resposta costuma sair em até 1 hora.</p>
+      <div class="mt-6 flex flex-wrap justify-center gap-3">
+        <a class="btn btn-wa" target="_blank" rel="noopener" href="https://wa.me/5549988452253?text=Ol%C3%A1%2C%20Alessandra!%20Vim%20pelo%20site%20da%20Habitat3D%20e%20quero%20pedir%20um%20or%C3%A7amento.">Pedir no WhatsApp</a>
+        <a class="btn btn-volt" target="_blank" rel="noopener" href="https://www.instagram.com/habitat3dsc">Ver no Instagram</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="rod pt-10 pb-28 md:pb-10">
+  <div class="wrap grid gap-8 md:grid-cols-4">
+    <div class="md:col-span-2">
+      <img src="../midia/logo-fundo-escuro.png" alt="Habitat3D" width="150" height="40" class="h-9 w-auto" loading="lazy">
+      <p class="mt-3 max-w-md">Impressão 3D sob demanda em Santa Catarina. Peças personalizadas, brindes corporativos e produção em série com acabamento de verdade.</p>
+    </div>
+    <div>
+      <h2>Contato</h2>
+      <p class="m-0"><a href="https://wa.me/5549988452253" target="_blank" rel="noopener">(49) 98845-2253</a></p>
+      <p class="m-0">Atendimento: Alessandra Soares Corrêa</p>
+      <p class="m-0">Seg a Sáb · 9h às 19h</p>
+      <p class="m-0"><a href="https://www.instagram.com/habitat3dsc" target="_blank" rel="noopener">@habitat3dsc</a></p>
+    </div>
+    <div>
+      <h2>Navegue</h2>
+      <p class="m-0"><a href="#vitrine">Vitrine</a></p>
+      <p class="m-0"><a href="#sob-medida">Sob medida</a></p>
+      <p class="m-0"><a href="#empresas">Para empresas</a></p>
+      <p class="m-0"><a href="#faq">Dúvidas</a></p>
+    </div>
+  </div>
+  <div class="wrap mt-8 text-[13px] text-[#8fa3c2]">© 2026 Habitat3D · Joaçaba, SC · Fotos: Pexels / Pixabay (imagens ilustrativas dos serviços sob medida)</div>
+</footer>
+
+<!-- barra flutuante mobile -->
+<button type="button" class="barra-cesta" x-show="$store.cesta.total > 0" x-cloak @click="$store.cesta.aberta = true; $store.cesta.aviso=''" aria-haspopup="dialog">
+  <span class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg> Cesta · <span x-text="$store.cesta.total + ($store.cesta.total === 1 ? ' item' : ' itens')"></span></span>
+  <span class="underline underline-offset-4">Ver e enviar</span>
+</button>
+
+<!-- gaveta da cesta -->
+<div x-data x-cloak x-show="$store.cesta.aberta" x-transition.opacity.duration.150ms class="veu" @click="$store.cesta.aberta = false" aria-hidden="true"></div>
+<aside x-data x-cloak x-show="$store.cesta.aberta" x-trap.noscroll="$store.cesta.aberta" @keydown.escape.window="$store.cesta.aberta = false"
+       x-transition:enter="transition ease-out duration-200" x-transition:enter-start="translate-y-8 opacity-0 md:translate-y-0 md:translate-x-8" x-transition:enter-end="translate-y-0 opacity-100 md:translate-x-0"
+       class="gaveta" role="dialog" aria-modal="true" aria-labelledby="t-cesta">
+  <header>
+    <h2 id="t-cesta" class="display text-3xl">Sua cesta</h2>
+    <button type="button" class="w-11 h-11 rounded-full bg-ink text-white text-2xl leading-none" @click="$store.cesta.aberta = false" aria-label="Fechar a cesta">×</button>
+  </header>
+  <div class="lista">
+    <p class="py-8 text-center text-[#46566f]" x-show="$store.cesta.total === 0">Sua cesta está vazia. Toque em <b>Cesta</b> nos produtos para começar.</p>
+    <template x-for="l in $store.cesta.linhas()" :key="l.k">
+      <div class="item">
+        <img :src="l.img" alt="" width="56" height="56" :style="'object-position:' + l.pos" loading="lazy">
+        <div>
+          <strong x-text="l.nome"></strong>
+          <small x-text="(l.cor ? 'Cor: ' + l.cor + ' · ' : '') + (l.preco ? l.preco.toLocaleString('pt-BR', {style:'currency', currency:'BRL'}) + ' cada' : 'valor a consultar')"></small>
+          <div class="mini" role="group" :aria-label="'Quantidade: ' + l.nome">
+            <button type="button" aria-label="Diminuir" @click="$store.cesta.menos(l.k)">−</button>
+            <output x-text="l.qtd"></output>
+            <button type="button" aria-label="Aumentar" @click="$store.cesta.mais(l.k)">+</button>
+          </div>
+        </div>
+        <div class="text-right">
+          <div class="num text-lg" x-text="l.linha"></div>
+          <button type="button" class="rm" @click="$store.cesta.remover(l.k)" :aria-label="'Remover ' + l.nome">×</button>
+        </div>
+      </div>
+    </template>
+  </div>
+  <footer x-show="$store.cesta.total > 0">
+    <label for="nota" class="text-sm font-bold">Observações (cores, nomes, prazo desejado)</label>
+    <textarea id="nota" x-model="$store.cesta.nota" @input.debounce.400ms="$store.cesta.salvar()" rows="2" placeholder="Ex.: quero o Papai Noel na cor vermelha"></textarea>
+    <div class="flex items-end justify-between mt-3">
+      <div>
+        <div class="text-xs font-bold uppercase tracking-wider text-[#46566f]">Itens com preço de vitrine</div>
+        <div class="num text-3xl" x-text="$store.cesta.subtotal > 0 ? $store.cesta.subtotal.toLocaleString('pt-BR', {style:'currency', currency:'BRL'}) : '—'"></div>
+      </div>
+      <div class="text-xs font-semibold text-right text-[#46566f]" x-show="$store.cesta.aConsultar > 0" x-text="$store.cesta.aConsultar + ($store.cesta.aConsultar === 1 ? ' item a consultar' : ' itens a consultar')"></div>
+    </div>
+    <p class="text-xs text-[#46566f] mt-1 mb-3">Valor final, prazo e entrega são confirmados no WhatsApp.</p>
+    <a :href="$store.cesta.url" target="_blank" rel="noopener" class="btn btn-wa w-full">Enviar a cesta no WhatsApp</a>
+    <button type="button" class="mt-2 w-full min-h-[40px] text-sm font-bold underline underline-offset-4" @click="$store.cesta.limpar()">Esvaziar cesta</button>
+  </footer>
+</aside>
+
+<div class="sr-only" role="status" aria-live="polite" x-data x-text="$store.cesta.aviso"></div>
+
+<a class="tag-modelo" href="../index.html"><span aria-hidden="true">←</span> Modelo 5 · Loja Relâmpago · voltar</a>
+
+<script>
+  document.addEventListener('alpine:initialized', function () { if (window.lucide) lucide.createIcons(); });
+  window.addEventListener('load', function () { if (window.lucide) lucide.createIcons(); });
+</script>
+</body>
+</html>

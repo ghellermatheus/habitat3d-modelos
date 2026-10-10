@@ -1,0 +1,152 @@
+[
+ {
+  "slug": "porta-incenso-darth-vader-2883115",
+  "nome": "Porta-incenso Ninja",
+  "preco": 87.1,
+  "preco_de": null,
+  "precos_qtd": [],
+  "badge": null,
+  "nicho": "Filmes e Desenhos",
+  "cores": [],
+  "tamanho_cm": null,
+  "imagens": [
+   {
+    "arquivo": "midia/produtos/porta-incenso-darth-vader-2883115-1.webp",
+    "w": 563,
+    "h": 1000
+   }
+  ],
+  "url": "https://www.habitat3d.com.br/p/porta-incenso-darth-vader-2883115"
+ },
+ {
+  "slug": "presente-de-natal-articulado-774384",
+  "nome": "Presente de Natal Articulado",
+  "preco": 46.08,
+  "preco_de": null,
+  "precos_qtd": [],
+  "badge": null,
+  "nicho": "Natal — Presentes e Decoração",
+  "cores": [],
+  "tamanho_cm": null,
+  "imagens": [
+   {
+    "arquivo": "midia/produtos/presente-de-natal-articulado-774384-1.webp",
+    "w": 563,
+    "h": 1000
+   }
+  ],
+  "url": "https://www.habitat3d.com.br/p/presente-de-natal-articulado-774384"
+ },
+ {
+  "slug": "apoio-para-paginas-de-livro-1687004",
+  "nome": "Apoio para Páginas de Livro",
+  "preco": 6.3,
+  "preco_de": null,
+  "precos_qtd": [],
+  "badge": null,
+  "nicho": "Acessórios Úteis",
+  "cores": [],
+  "tamanho_cm": null,
+  "imagens": [
+   {
+    "arquivo": "midia/produtos/apoio-para-paginas-de-livro-1687004-1.webp",
+    "w": 563,
+    "h": 1000
+   }
+  ],
+  "url": "https://www.habitat3d.com.br/p/apoio-para-paginas-de-livro-1687004"
+ },
+ {
+  "slug": "conjunto-de-cortadores-de-biscoito-de-natal-1956436",
+  "nome": "Conjunto de Cortadores de Biscoito de Natal",
+  "preco": 25.33,
+  "preco_de": null,
+  "precos_qtd": [],
+  "badge": "Novo",
+  "nicho": "Natal — Presentes e Decoração",
+  "cores": [],
+  "tamanho_cm": null,
+  "imagens": [
+   {
+    "arquivo": "midia/produtos/conjunto-de-cortadores-de-biscoito-de-na-1.webp",
+    "w": 1000,
+    "h": 563
+   },
+   {
+    "arquivo": "midia/produtos/conjunto-de-cortadores-de-biscoito-de-na-2.webp",
+    "w": 563,
+    "h": 1000
+   }
+  ],
+  "url": "https://www.habitat3d.com.br/p/conjunto-de-cortadores-de-biscoito-de-natal-1956436"
+ },
+ {
+  "slug": "porta-cartoes-para-dentista-2594018",
+  "nome": "Porta-Cartões para Dentista",
+  "preco": 82.32,
+  "preco_de": null,
+  "precos_qtd": [],
+  "badge": null,
+  "nicho": "Natal — Presentes e Decoração",
+  "cores": [],
+  "tamanho_cm": null,
+  "imagens": [
+   {
+    "arquivo": "midia/produtos/porta-cartoes-para-dentista-2594018-1.webp",
+    "w": 604,
+    "h": 601
+   }
+  ],
+  "url": "https://www.habitat3d.com.br/p/porta-cartoes-para-dentista-2594018"
+ },
+ {
+  "slug": "esqueleto-flexivel-de-tiranossauro-rex",
+  "nome": "Esqueleto Flexível de Tiranossauro Rex",
+  "preco": 32,
+  "preco_de": null,
+  "precos_qtd": [],
+  "badge": null,
+  "nicho": "Flexíveis",
+  "cores": [],
+  "tamanho_cm": null,
+  "imagens": [
+   {
+    "arquivo": "midia/produtos/esqueleto-flexivel-de-tiranossauro-rex-1.webp",
+    "w": 563,
+    "h": 1000
+   },
+   {
+    "arquivo": "midia/produtos/esqueleto-flexivel-de-tiranossauro-rex-2.webp",
+    "w": 563,
+    "h": 1000
+   },
+   {
+    "arquivo": "midia/produtos/esqueleto-flexivel-de-tiranossauro-rex-3.webp",
+    "w": 563,
+    "h": 1000
+   }
+  ],
+  "url": "https://www.habitat3d.com.br/p/esqueleto-flexivel-de-tiranossauro-rex"
+ },
+ {
+  "slug": "macaco-das-banana",
+  "nome": "Macaco Segura Bananas",
+  "preco": 30,
+  "preco_de": null,
+  "precos_qtd": [],
+  "badge": null,
+  "nicho": "Casa,Úteis",
+  "cores": [
+   "Marrom"
+  ],
+  "tamanho_cm": null,
+  "imagens": [
+   {
+    "arquivo": "midia/produtos/macaco-das-banana-1.webp",
+    "w": 563,
+    "h": 1000
+   }
+  ],
+  "url": "https://www.habitat3d.com.br/p/macaco-das-banana"
+ }
+]

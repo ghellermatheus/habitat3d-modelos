@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Esqueleto Flexível de T-Rex em 3D | Loja Relâmpago · Habitat3D</title>
+<meta name="description" content="Esqueleto flexível de tiranossauro rex impresso em 3D por R$ 32,00. Articulado, com acabamento manual. Peça pelo WhatsApp da Habitat3D, em Joaçaba e região.">
+<meta name="theme-color" content="#0b1b33">
+<link rel="canonical" href="https://www.habitat3d.com.br/p/esqueleto-flexivel-de-tiranossauro-rex">
+<meta property="og:title" content="Esqueleto Flexível de Tiranossauro Rex | Habitat3D">
+<meta property="og:description" content="Articulado, impresso em 3D, com acabamento manual. R$ 32,00. Peça pelo WhatsApp.">
+<meta property="og:type" content="product">
+<meta property="og:locale" content="pt_BR">
+<link rel="icon" href="../midia/logo-mark-dourado.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="../midia/produtos/esqueleto-flexivel-de-tiranossauro-rex-1.webp" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,700..900&family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<style type="text/tailwindcss">
+  @theme {
+    --color-ink: #0b1b33;
+    --color-volt: #ffd60a;
+    --color-hot: #d42a18;
+    --color-paper: #f1f4f8;
+  }
+</style>
+<link rel="stylesheet" href="loja.css">
+<script defer src="loja.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.14.8/dist/cdn.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js" defer></script>
+<script type="application/ld+json" id="ld-produto">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Esqueleto Flexível de Tiranossauro Rex",
+  "description": "Esqueleto de tiranossauro rex flexível e articulado, impresso em 3D sob demanda, com acabamento manual.",
+  "image": [
+    "../midia/produtos/esqueleto-flexivel-de-tiranossauro-rex-1.webp",
+    "../midia/produtos/esqueleto-flexivel-de-tiranossauro-rex-2.webp",
+    "../midia/produtos/esqueleto-flexivel-de-tiranossauro-rex-3.webp"
+  ],
+  "brand": { "@type": "Brand", "name": "Habitat3D" },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "BRL",
+    "price": "32.00",
+    "availability": "https://schema.org/InStock",
+    "url": "https://www.habitat3d.com.br/p/esqueleto-flexivel-de-tiranossauro-rex",
+    "seller": { "@type": "Organization", "name": "Habitat3D" }
+  }
+}
+</script>
+</head>
+<body x-data="produtoPagina">
+<a class="skip" href="#produto">Ir para o produto</a>
+
+<header class="topo">
+  <div class="wrap flex items-center gap-3 h-[60px]">
+    <a href="index.html" class="flex-none" aria-label="Habitat3D, voltar para a vitrine"><img src="../midia/logo-fundo-escuro.png" alt="Habitat3D" width="130" height="34" class="h-8 w-auto"></a>
+    <nav aria-label="Principal" class="hidden md:flex items-center gap-1 ml-2">
+      <a class="nav-link" href="index.html#vitrine">Vitrine</a>
+      <a class="nav-link" href="index.html#sob-medida">Sob medida</a>
+      <a class="nav-link" href="index.html#empresas">Empresas</a>
+      <a class="nav-link" href="index.html#faq">Dúvidas</a>
+    </nav>
+    <button type="button" class="btn-cesta ml-auto" @click="$store.cesta.aberta = true; $store.cesta.aviso=''" aria-haspopup="dialog">
+      <i data-lucide="shopping-basket" class="w-5 h-5" aria-hidden="true"></i>
+      <span>Cesta</span>
+      <span class="qtd" x-text="$store.cesta.total" aria-label="itens na cesta">0</span>
+    </button>
+  </div>
+</header>
+
+<main id="produto" class="wrap pt-4 pb-32 md:pb-14">
+  <nav aria-label="Você está em">
+    <ol class="migalha">
+      <li><a href="index.html">Vitrine</a></li>
+      <li><a href="index.html#vitrine" x-text="catNome(p.cat)">Geek &amp; Flexíveis</a></li>
+      <li aria-current="page" x-text="p.nome">Esqueleto Flexível de Tiranossauro Rex</li>
+    </ol>
+  </nav>
+
+  <div class="mt-4 grid gap-8 md:grid-cols-[1.05fr_1fr] lg:gap-14 items-start">
+    <!-- galeria -->
+    <section aria-label="Fotos do produto" class="md:sticky md:top-[76px]">
+      <div class="palco" x-ref="stage" @scroll.debounce.80ms="onScroll()" tabindex="0" role="group" aria-roledescription="carrossel" :aria-label="'Fotos de ' + p.nome">
+        <template x-for="(src, i) in p.img" :key="src">
+          <figure :aria-label="'Foto ' + (i + 1) + ' de ' + p.img.length">
+            <img :src="src" :alt="p.nome + ', foto ' + (i + 1)" width="563" height="704" :loading="i === 0 ? 'eager' : 'lazy'" :fetchpriority="i === 0 ? 'high' : 'auto'" decoding="async" :style="'object-position:' + (i === 0 ? p.pos : '50% 50%')">
+          </figure>
+        </template>
+      </div>
+      <div class="miniaturas" x-show="p.img.length > 1">
+        <template x-for="(src, i) in p.img" :key="'t' + src">
+          <button type="button" :aria-current="idx === i ? 'true' : 'false'" :aria-label="'Ver foto ' + (i + 1)" @click="ir(i)"><img :src="src" alt="" width="64" height="64" loading="lazy"></button>
+        </template>
+      </div>
+    </section>
+
+    <!-- informações -->
+    <section aria-labelledby="h1">
+      <p class="kicker" x-text="catNome(p.cat)">Geek &amp; Flexíveis</p>
+      <h1 id="h1" class="display text-[clamp(2.2rem,8vw,3.6rem)] mt-1" x-text="p.nome">Esqueleto Flexível de Tiranossauro Rex</h1>
+      <p class="mt-3 text-[#2b3d58] text-[16.5px]" x-text="p.desc">Esqueleto de tiranossauro rex flexível e articulado, impresso em 3D.</p>
+
+      <div class="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2">
+        <div class="preco-grande num"><span x-text="preco">R$ 32,00</span></div>
+        <p class="m-0 text-sm font-semibold text-[#46566f]" x-text="p.preco ? 'Preço de vitrine, por unidade.' : 'Cada peça é orçada na hora.'">Preço de vitrine, por unidade.</p>
+      </div>
+
+      <form class="mt-6 grid gap-5" @submit.prevent="add()">
+        <fieldset class="cores">
+          <legend class="mb-2 text-sm font-extrabold">Cor de preferência <span class="font-semibold text-[#46566f]">(opcional, confirmamos a disponibilidade)</span></legend>
+          <template x-for="c in cores" :key="c.nome">
+            <label class="cor">
+              <input type="radio" name="cor" :value="c.nome" x-model="cor">
+              <span><i :style="'background:' + c.hex"></i><b class="font-semibold" x-text="c.nome"></b></span>
+            </label>
+          </template>
+        </fieldset>
+
+        <div class="flex flex-wrap items-center gap-4">
+          <div>
+            <span id="l-qtd" class="block mb-1 text-sm font-extrabold">Quantidade</span>
+            <div class="qtd-ctl" role="group" aria-labelledby="l-qtd">
+              <button type="button" aria-label="Diminuir" @click="qtd = Math.max(1, qtd - 1)">−</button>
+              <output x-text="qtd" aria-live="polite">1</output>
+              <button type="button" aria-label="Aumentar" @click="qtd = Math.min(99, qtd + 1)">+</button>
+            </div>
+          </div>
+          <p class="m-0 text-lg font-extrabold" x-show="total" x-cloak>Total: <span class="num text-2xl" x-text="total"></span></p>
+        </div>
+
+        <div class="hidden md:flex flex-wrap gap-3">
+          <a :href="urlPedido" target="_blank" rel="noopener" class="btn btn-wa">Pedir no WhatsApp</a>
+          <button type="submit" class="btn btn-ink"><span x-text="adicionado ? 'Adicionado à cesta' : 'Adicionar à cesta'">Adicionar à cesta</span></button>
+        </div>
+      </form>
+
+      <div class="mt-8 rounded-xl border-2 border-ink bg-white p-5">
+        <h2 class="display text-2xl">O que vem</h2>
+        <ul class="vem mt-3">
+          <li><i data-lucide="circle-check" aria-hidden="true"></i><span>1 peça impressa em 3D sob demanda, do jeito que aparece nas fotos.</span></li>
+          <li><i data-lucide="circle-check" aria-hidden="true"></i><span>Revisão e acabamento manual antes de sair.</span></li>
+          <li><i data-lucide="circle-check" aria-hidden="true"></i><span>Cor de preferência combinada com você no WhatsApp.</span></li>
+          <li><i data-lucide="circle-check" aria-hidden="true"></i><span>Atendimento humano da Alessandra, do pedido à entrega.</span></li>
+        </ul>
+      </div>
+
+      <div class="mt-4 grid grid-cols-2 gap-3 text-[13.5px]">
+        <p class="m-0 flex items-start gap-2 rounded-lg bg-white border border-[var(--line)] p-3"><i data-lucide="zap" class="w-5 h-5 flex-none" aria-hidden="true"></i>Orçamento grátis, resposta em até 1 hora</p>
+        <p class="m-0 flex items-start gap-2 rounded-lg bg-white border border-[var(--line)] p-3"><i data-lucide="map-pin" class="w-5 h-5 flex-none" aria-hidden="true"></i>Empresa local: Joaçaba, Videira e região</p>
+      </div>
+
+      <div class="mt-8">
+        <h2 class="display text-2xl">Dúvidas rápidas</h2>
+        <details class="faq mt-2"><summary>Posso escolher outra cor?</summary><p>Pode. Diga a cor de preferência e a Alessandra confirma o que está disponível antes de produzir.</p></details>
+        <details class="faq"><summary>Qual é o prazo?</summary><p>O prazo depende da fila de produção e é informado junto com o pedido, antes de você confirmar.</p></details>
+        <details class="faq"><summary>Como recebo?</summary><p>A forma de entrega é combinada com você pelo WhatsApp, junto com o valor final.</p></details>
+        <details class="faq"><summary>Dá para personalizar?</summary><p>Dá. Manda a ideia, a foto ou o desenho que a gente faz um orçamento sob medida, sem compromisso.</p></details>
+      </div>
+    </section>
+  </div>
+
+  <!-- relacionados -->
+  <section class="mt-14" aria-labelledby="h-rel">
+    <div class="flex items-end justify-between gap-3 mb-4">
+      <h2 id="h-rel" class="display titulo-sec">Quem vê esse também vê</h2>
+      <a href="index.html#vitrine" class="text-sm font-bold underline underline-offset-4 whitespace-nowrap">Ver vitrine</a>
+    </div>
+    <ul class="grid-loja !grid-cols-2 lg:!grid-cols-4 list-none p-0 m-0">
+      <template x-for="r in relacionados" :key="r.id">
+        <li class="card">
+          <a class="ph" :href="'produto.html?p=' + r.id" tabindex="-1" aria-hidden="true"><img :src="r.img[0]" alt="" :style="'object-position:' + r.pos" width="400" height="400" loading="lazy" decoding="async"></a>
+          <div class="corpo">
+            <span class="cat" x-text="catNome(r.cat)"></span>
+            <h3><a :href="'produto.html?p=' + r.id" x-text="r.nome"></a></h3>
+            <div class="preco-linha">
+              <template x-if="r.preco"><div class="preco num"><small>R$</small><span x-text="r.preco.toLocaleString('pt-BR', {minimumFractionDigits: 2})"></span></div></template>
+              <template x-if="!r.preco"><div class="consulte">Consulte<small>valor no WhatsApp</small></div></template>
+            </div>
+            <button type="button" class="btn-add" @click="$store.cesta.add(r.id, r.cores ? r.cores[0] : '')" :aria-label="'Adicionar à cesta: ' + r.nome">
+              <svg class="bolt" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg> Cesta
+            </button>
+          </div>
+        </li>
+      </template>
+    </ul>
+  </section>
+</main>
+
+<!-- barra de compra fixa (mobile) -->
+<div class="buy-bar">
+  <div class="leading-tight">
+    <div class="text-[11px] font-bold uppercase tracking-wider text-[#46566f]">Preço</div>
+    <div class="num text-2xl" x-text="preco">R$ 32,00</div>
+  </div>
+  <a :href="urlPedido" target="_blank" rel="noopener" class="btn btn-wa flex-1 !min-h-[48px] !px-3">Pedir no WhatsApp</a>
+  <button type="button" class="btn btn-ink !min-h-[48px] !px-4" @click="add()" aria-label="Adicionar à cesta"><i data-lucide="shopping-basket" class="w-5 h-5" aria-hidden="true"></i></button>
+</div>
+
+<footer class="rod pt-8 pb-28 md:pb-8">
+  <div class="wrap flex flex-wrap items-center justify-between gap-4">
+    <img src="../midia/logo-fundo-escuro.png" alt="Habitat3D" width="130" height="34" class="h-8 w-auto" loading="lazy">
+    <p class="m-0">Atendimento: Alessandra Soares Corrêa · Seg a Sáb, 9h às 19h · <a href="https://wa.me/5549988452253" target="_blank" rel="noopener">(49) 98845-2253</a> · <a href="https://www.instagram.com/habitat3dsc" target="_blank" rel="noopener">@habitat3dsc</a></p>
+    <p class="m-0 text-[13px] text-[#8fa3c2] w-full">© 2026 Habitat3D · Joaçaba, SC</p>
+  </div>
+</footer>
+
+<!-- gaveta da cesta -->
+<div x-data x-cloak x-show="$store.cesta.aberta" x-transition.opacity.duration.150ms class="veu" @click="$store.cesta.aberta = false" aria-hidden="true"></div>
+<aside x-data x-cloak x-show="$store.cesta.aberta" x-trap.noscroll="$store.cesta.aberta" @keydown.escape.window="$store.cesta.aberta = false"
+       x-transition:enter="transition ease-out duration-200" x-transition:enter-start="translate-y-8 opacity-0 md:translate-y-0 md:translate-x-8" x-transition:enter-end="translate-y-0 opacity-100 md:translate-x-0"
+       class="gaveta" role="dialog" aria-modal="true" aria-labelledby="t-cesta">
+  <header>
+    <h2 id="t-cesta" class="display text-3xl">Sua cesta</h2>
+    <button type="button" class="w-11 h-11 rounded-full bg-ink text-white text-2xl leading-none" @click="$store.cesta.aberta = false" aria-label="Fechar a cesta">×</button>
+  </header>
+  <div class="lista">
+    <p class="py-8 text-center text-[#46566f]" x-show="$store.cesta.total === 0">Sua cesta está vazia. Adicione produtos para enviar tudo numa só mensagem.</p>
+    <template x-for="l in $store.cesta.linhas()" :key="l.k">
+      <div class="item">
+        <img :src="l.img" alt="" width="56" height="56" :style="'object-position:' + l.pos" loading="lazy">
+        <div>
+          <strong x-text="l.nome"></strong>
+          <small x-text="(l.cor ? 'Cor: ' + l.cor + ' · ' : '') + (l.preco ? l.preco.toLocaleString('pt-BR', {style:'currency', currency:'BRL'}) + ' cada' : 'valor a consultar')"></small>
+          <div class="mini" role="group" :aria-label="'Quantidade: ' + l.nome">
+            <button type="button" aria-label="Diminuir" @click="$store.cesta.menos(l.k)">−</button>
+            <output x-text="l.qtd"></output>
+            <button type="button" aria-label="Aumentar" @click="$store.cesta.mais(l.k)">+</button>
+          </div>
+        </div>
+        <div class="text-right">
+          <div class="num text-lg" x-text="l.linha"></div>
+          <button type="button" class="rm" @click="$store.cesta.remover(l.k)" :aria-label="'Remover ' + l.nome">×</button>
+        </div>
+      </div>
+    </template>
+  </div>
+  <footer x-show="$store.cesta.total > 0">
+    <label for="nota" class="text-sm font-bold">Observações (cores, nomes, prazo desejado)</label>
+    <textarea id="nota" x-model="$store.cesta.nota" @input.debounce.400ms="$store.cesta.salvar()" rows="2" placeholder="Ex.: quero o Papai Noel na cor vermelha"></textarea>
+    <div class="flex items-end justify-between mt-3">
+      <div>
+        <div class="text-xs font-bold uppercase tracking-wider text-[#46566f]">Itens com preço de vitrine</div>
+        <div class="num text-3xl" x-text="$store.cesta.subtotal > 0 ? $store.cesta.subtotal.toLocaleString('pt-BR', {style:'currency', currency:'BRL'}) : '—'"></div>
+      </div>
+      <div class="text-xs font-semibold text-right text-[#46566f]" x-show="$store.cesta.aConsultar > 0" x-text="$store.cesta.aConsultar + ($store.cesta.aConsultar === 1 ? ' item a consultar' : ' itens a consultar')"></div>
+    </div>
+    <p class="text-xs text-[#46566f] mt-1 mb-3">Valor final, prazo e entrega são confirmados no WhatsApp.</p>
+    <a :href="$store.cesta.url" target="_blank" rel="noopener" class="btn btn-wa w-full">Enviar a cesta no WhatsApp</a>
+    <button type="button" class="mt-2 w-full min-h-[40px] text-sm font-bold underline underline-offset-4" @click="$store.cesta.limpar()">Esvaziar cesta</button>
+  </footer>
+</aside>
+
+<div class="sr-only" role="status" aria-live="polite" x-data x-text="$store.cesta.aviso"></div>
+
+<a class="tag-modelo" href="../index.html"><span aria-hidden="true">←</span> Modelo 5 · Loja Relâmpago · voltar</a>
+
+<script>
+  document.addEventListener('alpine:initialized', function () { if (window.lucide) lucide.createIcons(); });
+  window.addEventListener('load', function () { if (window.lucide) lucide.createIcons(); });
+</script>
+</body>
+</html>

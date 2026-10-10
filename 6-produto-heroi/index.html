@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Habitat3D · Peças em 3D prontas para pedir | Joaçaba, SC</title>
+<meta name="description" content="Suportes, apoios e decoração impressos em 3D, com acabamento manual. Escolha a peça, peça no WhatsApp e receba em Joaçaba, Videira e região. Orçamento grátis.">
+<meta name="theme-color" content="#EFE8DA">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="../midia/produtos/esqueleto-flexivel-de-tiranossauro-rex-1.webp" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<link rel="stylesheet" href="estilo.css">
+<style>
+/* HERO */
+.hero{overflow-x:clip;padding-top:clamp(28px,5vw,64px);padding-bottom:clamp(40px,7vw,88px)}
+.hero .grid{display:grid;gap:36px;align-items:center}
+.hero h1{font-size:clamp(54px,13.5vw,148px);font-weight:900;line-height:.88}
+.hero h1 em{font-style:normal;color:var(--red);display:block}
+.hero .lead{margin-top:20px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero .mini{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:26px;font-size:14px;font-weight:600;color:var(--ink-2);list-style:none;padding:0}
+.hero .mini li{display:flex;align-items:center;gap:8px;min-height:24px}
+.hero .mini li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green)}
+.heroi{position:relative;isolation:isolate;max-width:480px;width:100%;margin-inline:auto}
+.heroi .aneis{position:absolute;z-index:-1;inset:-12% -14% auto auto;width:92%;aspect-ratio:1;border-radius:50%;
+  background:repeating-radial-gradient(circle,transparent 0 11px,rgba(200,40,30,.55) 11px 13px)}
+.heroi .quadro{background:var(--paper);padding:var(--pad-card);border-radius:28px;box-shadow:var(--shadow);transform:rotate(-1.5deg)}
+.heroi .quadro .ph{border-radius:20px;overflow:hidden;aspect-ratio:4/5;background:#2b2b2b}
+.heroi .quadro img{width:100%;height:100%;object-fit:cover;object-position:50% 58%}
+.heroi .info{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:14px 10px 8px}
+.heroi .info b{display:block;font:800 22px/1 var(--f-display);text-transform:uppercase}
+.heroi .info span{font-size:13px;color:var(--ink-2)}
+.selo{position:absolute;right:-6px;top:-18px;width:104px;height:104px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;text-align:center;
+  font:800 30px/.95 var(--f-display);transform:rotate(10deg);box-shadow:0 12px 24px -8px rgba(163,30,21,.7);font-variant-numeric:tabular-nums}
+.selo small{display:block;font:700 10px/1.1 var(--f-body);letter-spacing:.1em;text-transform:uppercase;margin-bottom:3px}
+.heroi .ver{display:flex;gap:10px;margin-top:16px}
+.heroi .ver .btn{flex:1}
+@media(min-width:900px){.hero .grid{grid-template-columns:1.15fr .85fr;gap:56px}.selo{right:-18px}}
+
+/* FAIXA */
+.faixa{padding-block:0;background:var(--ink);color:#EDE5D3}
+.faixa ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr}
+.faixa li{padding:18px 16px;border-bottom:1px solid rgba(255,255,255,.14);font-size:14px;line-height:1.35}
+.faixa li:nth-child(odd){border-right:1px solid rgba(255,255,255,.14)}
+.faixa li b{display:block;font:800 19px/1 var(--f-display);text-transform:uppercase;color:#fff;margin-bottom:5px;letter-spacing:.02em}
+@media(min-width:860px){.faixa ul{grid-template-columns:repeat(4,1fr)}.faixa li{border-bottom:0;border-right:1px solid rgba(255,255,255,.14);padding:24px 22px}.faixa li:last-child{border-right:0}}
+
+/* COLEÇÕES */
+.col-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:18px 28px;margin-bottom:12px}
+.col-head .n{font:900 clamp(70px,16vw,150px)/.75 var(--f-display);color:transparent;-webkit-text-stroke:2px var(--ink);opacity:.4;display:block;margin-bottom:10px;font-variant-numeric:tabular-nums}
+.col-head .lead{margin-top:14px}
+.col-head .txt{flex:1 1 380px}
+.dark .col-head .n{-webkit-text-stroke-color:#EDE5D3}
+.col-foot{display:flex;flex-wrap:wrap;gap:14px 20px;align-items:center;justify-content:space-between;margin-top:6px}
+.col-foot p{font-size:14px;color:var(--ink-2)}
+.dark .col-foot p{color:#C9C1AE}
+.dark .btn-line{color:#EDE5D3;box-shadow:inset 0 0 0 1.5px #EDE5D3}
+.dark .btn-line:hover{background:#EDE5D3;color:var(--ink)}
+
+/* VÍDEO */
+.feito{display:grid;gap:36px;align-items:center}
+.feito h2{margin-block:14px 18px}
+.feito .tel{max-width:290px;width:100%;margin-inline:auto;border-radius:34px;padding:9px;background:#0e100f;box-shadow:0 30px 50px -24px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.16) inset}
+.feito video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:26px;background:#222}
+.feito .passos{display:grid;gap:10px;margin-top:24px;padding:0;list-style:none}
+.feito .passos li{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:#C9C1AE}
+.feito .passos b{color:#fff}
+.feito .passos i{font:800 20px/1 var(--f-display);font-style:normal;background:var(--red);color:#fff;border-radius:50%;min-width:30px;height:30px;display:grid;place-items:center}
+@media(min-width:860px){.feito{grid-template-columns:1fr 320px;gap:72px}}
+
+/* PERSONALIZADOS */
+.pers{display:grid;gap:16px;margin-top:36px}
+.pcard{background:var(--paper);border-radius:var(--r-card);padding:var(--pad-card);box-shadow:var(--shadow);display:grid;gap:0}
+.pcard .ph{border-radius:var(--r-img);overflow:hidden;aspect-ratio:16/10;background:var(--bg-2)}
+.pcard .ph img{width:100%;height:100%;object-fit:cover}
+.pcard .bd{padding:18px 14px 14px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.pcard h3{font-size:34px}
+.pcard p{color:var(--ink-2)}
+.pcard ul{margin:2px 0 8px;padding-left:18px;color:var(--ink-2);font-size:15px;display:grid;gap:3px}
+@media(min-width:860px){.pers{grid-template-columns:1fr 1fr;gap:22px}}
+
+/* CONFIANÇA */
+.conf{display:grid;gap:14px;margin-top:34px}
+.conf article{border-top:3px solid var(--ink);padding-top:14px}
+.conf h3{font-size:30px;margin-bottom:8px}
+.conf p{color:var(--ink-2);font-size:15px}
+.exemplo{border:2px dashed var(--ink-2);border-radius:var(--r-card);padding:20px;background:rgba(255,255,255,.4);margin-top:26px;display:grid;gap:8px}
+.exemplo b{font:800 12px/1 var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--red-dk)}
+.exemplo q{font:italic 500 19px/1.4 var(--f-body);color:var(--ink-2)}
+.exemplo span{font-size:13px;color:var(--ink-2)}
+@media(min-width:860px){.conf{grid-template-columns:repeat(4,1fr);gap:26px}}
+
+/* COMO PEDIR */
+.passos3{display:grid;gap:14px;margin-top:34px;counter-reset:p;padding:0;list-style:none}
+.passos3 li{counter-increment:p;position:relative;padding:22px 20px 20px 84px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:var(--r-card);min-height:100px}
+.passos3 li::before{content:counter(p);position:absolute;left:18px;top:14px;font:900 56px/1 var(--f-display);color:#FF8B7E}
+.passos3 h3{font-size:28px;color:#fff;margin-bottom:6px}
+.passos3 p{color:#C9C1AE;font-size:15px}
+@media(min-width:860px){.passos3{grid-template-columns:repeat(3,1fr)}}
+
+/* FAQ */
+.faq{max-width:820px;margin:30px auto 0}
+details{border-bottom:1.5px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px;padding:14px 4px;font-weight:700;font-size:17px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:800 30px/1 var(--f-display);flex:none;width:44px;height:44px;display:grid;place-items:center;transition-property:transform;transition-duration:.2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 4px 20px;color:var(--ink-2);max-width:64ch}
+.faq-fim{text-align:center;margin-top:30px}
+
+/* CTA */
+.cta-final{text-align:center}
+.cta-final h2{font-size:clamp(46px,10vw,120px);max-width:14ch;margin:0 auto}
+.cta-final .lead{margin:20px auto 30px}
+.cta-final .row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.cta-final .btn-line{color:#EDE5D3;box-shadow:inset 0 0 0 1.5px #EDE5D3}
+.cta-final .btn-line:hover{background:#EDE5D3;color:var(--ink)}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Habitat3D","description":"Impressão 3D sob demanda: suportes, apoios, decoração, chaveiros e peças personalizadas.","url":"https://www.habitat3d.com.br","image":"../midia/logo-preto.png","telephone":"+55 49 98845-2253","address":{"@type":"PostalAddress","addressLocality":"Joaçaba","addressRegion":"SC","addressCountry":"BR"},"areaServed":["Joaçaba","Videira","Santa Catarina"],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"19:00"}],"sameAs":["https://www.instagram.com/habitat3dsc"]}
+</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 2.5a9.5 9.5 0 0 0-8.1 14.4L2.6 21.4l4.6-1.2A9.5 9.5 0 1 0 12 2.5z"/><path fill="currentColor" d="M8.6 7.9c.4 3 3.3 5.9 6.6 6.9l1.5-1.6-2.1-1-.9.9c-1-.4-2.2-1.5-2.6-2.6l.9-.9-1-2.1z"/></symbol>
+  <symbol id="i-prev" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M15 5l-7 7 7 7"/></symbol>
+  <symbol id="i-next" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></symbol>
+</svg>
+<a class="skip" href="#colecoes">Ir para os produtos</a>
+<div class="aviso">Orçamento <b>grátis</b> · resposta em até <b>1 hora</b> · Seg a Sáb, 9h às 19h</div>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Habitat3D — início"><img src="../midia/logo-preto.png" alt="Habitat3D" width="119" height="34"></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#suportes">Suportes</a><a href="#decoracao">Decoração</a><a href="#personalizados">Personalizados</a><a href="#como-pedir">Como pedir</a><a href="#faq">Dúvidas</a>
+    </nav>
+    <a class="btn btn-wa" href="https://wa.me/5549988452253?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Habitat3D%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+  </div>
+</header>
+
+<main id="topo">
+<section class="hero">
+  <div class="wrap grid">
+    <div>
+      <span class="eyebrow rise" style="--i:0">Impressão 3D · Joaçaba, Videira e região</span>
+      <h1 class="rise" style="--i:1;margin-top:16px">Escolha a peça.<em>A gente imprime.</em></h1>
+      <p class="lead rise" style="--i:2">Suportes, apoios e decoração prontos para pedir, feitos sob demanda com revisão e acabamento manual. Quer algo só seu? Também fazemos sob medida.</p>
+      <div class="cta rise" style="--i:3">
+        <a class="btn btn-lg btn-wa" href="#colecoes">Ver as coleções</a>
+        <a class="btn btn-lg btn-line" href="#personalizados">Quero personalizado</a>
+      </div>
+      <ul class="mini rise" style="--i:4"><li>Atendimento humano</li><li>Acabamento manual</li><li>Orçamento grátis</li></ul>
+    </div>
+    <aside class="heroi pop" aria-label="Produto em destaque">
+      <div class="aneis" aria-hidden="true"></div>
+      <div class="selo" aria-label="Preço R$ 32,00"><span><small>por</small>R$&nbsp;32</span></div>
+      <div class="quadro">
+        <div class="ph"><img src="../midia/produtos/esqueleto-flexivel-de-tiranossauro-rex-1.webp" width="563" height="1000" alt="Esqueleto flexível de T-Rex impresso em 3D, visto de lado" fetchpriority="high"></div>
+        <div class="info"><div><b>T-Rex flexível</b><span>Articulado · foto real da peça</span></div></div>
+      </div>
+      <div class="ver">
+        <a class="btn btn-line" href="produto.html">Ver o produto</a>
+        <a class="btn btn-wa" href="https://wa.me/5549988452253?text=Ol%C3%A1%21%20Quero%20pedir%3A%20Esqueleto%20Flex%C3%ADvel%20de%20Tiranossauro%20Rex%20%28R%24%2032%2C00%29.%20Pode%20me%20passar%20as%20cores%20dispon%C3%ADveis%3F" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="faixa" aria-label="Garantias">
+  <div class="wrap"><ul>
+    <li><b>Fale com gente</b>Direto com a Alessandra, do orçamento à entrega.</li>
+    <li><b>Feito à mão no final</b>Revisão e acabamento manual em cada peça.</li>
+    <li><b>Orçamento grátis</b>Resposta em até 1 hora, Seg a Sáb, 9h às 19h.</li>
+    <li><b>Empresa daqui</b>Joaçaba, Videira e região, Santa Catarina.</li>
+  </ul></div>
+</section>
+
+<div id="colecoes">
+<section class="colecao" id="suportes" aria-labelledby="t-suportes"><div class="wrap">
+<div class="col-head"><div class="txt"><span class="n" aria-hidden="true">01</span><span class="eyebrow">Suportes e apoios</span><h2 class="h2" id="t-suportes" style="margin-top:14px">Deixa tudo no lugar</h2><p class="lead">Suportes para a Alexa, apoio de livros, porta-incenso, porta-vinho e outras peças que resolvem o dia a dia — e ainda enfeitam.</p></div>
+<div class="nav-sw" role="group" aria-label="Rolar Suportes e apoios"><button class="sw-prev" type="button" aria-label="Anterior"><svg aria-hidden="true"><use href="#i-prev"/></svg></button><button class="sw-next" type="button" aria-label="Próximo"><svg aria-hidden="true"><use href="#i-next"/></svg></button></div></div>
+<div class="sw-wrap"><div class="swiper"><div class="swiper-wrapper"><article class="card swiper-slide"><div class="ph"><img src="../midia/alexa.webp" width="676" height="1200" alt="Suporte impresso em 3D para Alexa com escudo do Flamengo e o nome Gena em relevo" loading="lazy"></div><div class="bd"><h3><a href="produto.html?p=alexa">Suporte para Alexa personalizado</a></h3><div class="pr"><span class="consulte">Consulte<br>o valor</span><a class="wa" href="https://wa.me/5549988452253?text=Ol%C3%A1%21%20Quero%20pedir%3A%20Suporte%20para%20Alexa%20personalizado.%20Pode%20me%20passar%20o%20valor%20e%20as%20cores%20dispon%C3%ADveis%3F" target="_blank" rel="noopener" aria-label="Pedir Suporte para Alexa personalizado no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a></div></div></article><article class="card swiper-slide"><div class="ph"><img src="../midia/harry.webp" width="676" height="1200" alt="Apoio de livros impresso em 3D com bonequinho de bruxo segurando quatro livros" loading="lazy"></div><div class="bd"><h3><a href="produto.html?p=harry">Apoio de livros Bruxo</a></h3><div class="pr"><span class="consulte">Consulte<br>o valor</span><a class="wa" href="https://wa.me/5549988452253?text=Ol%C3%A1%21%20Quero%20pedir%3A%20Apoio%20de%20livros%20Bruxo.%20Pode%20me%20passar%20o%20valor%20e%20as%20cores%20dispon%C3%ADveis%3F" target="_blank" rel="noopener" aria-label="Pedir Apoio de livros Bruxo no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a></div></div></article><article class="card swiper-slide"><div class="ph"><img src="../midia/produtos/porta-incenso-darth-vader-2883115-1.webp" width="563" height="1000" alt="Porta-incenso em forma de guerreiro ninja sobre bandeja preta" loading="lazy"></div><div class="bd"><h3><a href="produto.html?p=ninja">Porta-incenso Ninja</a></h3><div class="pr"><span class="preco">R$ 87,10</span><a class="wa" href="https://wa.me/5549988452253?text=Ol%C3%A1%21%20Quero%20pedir%3A%20Porta-incenso%20Ninja.%20Pode%20me%20passar%20o%20valor%20e%20as%20cores%20dispon%C3%ADveis%3F" target="_blank" rel="noopener" aria-label="Pedir Porta-incenso Ninja no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a></div></div></article><article class="card swiper-slide"><div class="ph"><img src="../midia/ganso.webp" width="676" height="1200" alt="Suporte de garrafa de vinho em formato de ganso branco com bico laranja" loading="lazy"></div><div class="bd"><h3><a href="produto.html?p=ganso">Porta-vinho Ganso</a></h3><div class="pr"><span class="consulte">Consulte<br>o valor</span><a class="wa" href="https://wa.me/5549988452253?text=Ol%C3%A1%21%20Quero%20pedir%3A%20Porta-vinho%20Ganso.%20Pode%20me%20passar%20o%20valor%20e%20as%20cores%20dispon%C3%ADveis%3F" target="_blank" rel="noopener" aria-label="Pedir Porta-vinho Ganso no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a></div></div></article><article class="card swiper-slide"><div class="ph"><img src="../midia/produtos/macaco-das-banana-1.webp" width="563" height="1000" alt="Macaco impresso em 3D pendurado no puxador de um armário segurando um cacho de bananas" loading="lazy"></div><div class="bd"><h3><a href="produto.html?p=macaco">Macaco Segura Bananas</a></h3><div class="pr"><span class="preco">R$ 30,00</span><a class="wa" href="https://wa.me/5549988452253?text=Ol%C3%A1%21%20Quero%20pedir%3A%20Macaco%20Segura%20Bananas.%20Pode%20me%20passar%20o%20valor%20e%20as%20cores%20dispon%C3%ADveis%3F" target="_blank" rel="noopener" aria-label="Pedir Macaco Segura Bananas no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a></div></div></article><article class="card swiper-slide"><div class="ph"><img src="../midia/produtos/apoio-para-paginas-de-livro-1687004-1.webp" width="563" height="1000" alt="Apoio vermelho no polegar segurando as páginas de um livro aberto" loading="lazy"></div><div class="bd"><h3><a href="produto.html?p=apoio">Apoio para Páginas de Livro</a></h3><div class="pr"><span class="preco">R$ 6,30</span><a class="wa" href="https://wa.me/5549988452253?text=Ol%C3%A1%21%20Quero%20pedir%3A%20Apoio%20para%20P%C3%A1ginas%20de%20Livro.%20Pode%20me%20passar%20o%20valor%20e%20as%20cores%20dispon%C3%ADveis%3F" target="_blank" rel="noopener" aria-label="Pedir Apoio para Páginas de Livro no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a></div></div></article></div></div></div>
+<div class="col-foot"><p>Sem preço na vitrine? É porque o valor depende de cor e tamanho. Pergunte, é grátis.</p><a class="btn btn-line" href="https://wa.me/5549988452253?text=Ol%C3%A1%21%20Quero%20ver%20mais%20pe%C3%A7as%20da%20cole%C3%A7%C3%A3o%20Suportes%20e%20apoios.%20O%20que%20voc%C3%AAs%20t%C3%AAm%20dispon%C3%ADvel%3F" target="_blank" rel="noopener">Perguntar sobre esta coleção</a></div>
+</div></section>
+<section class="colecao dark" id="decoracao" aria-labelledby="t-decoracao"><div class="wrap">
+<div class="col-head"><div class="txt"><span class="n" aria-hidden="true">02</span><span class="eyebrow">Decoração e Natal</span><h2 class="h2" id="t-decoracao" style="margin-top:14px">Natal com cara de feito à mão</h2><p class="lead">Bichinhos de tricô, árvores, porta-guardanapo e cortadores de biscoito. Tudo em cores que você escolhe.</p></div>
+<div class="nav-sw" role="group" aria-label="Rolar Decoração e Natal"><button class="sw-prev" type="button" aria-label="Anterior"><svg aria-hidden="true"><use href="#i-prev"/></svg></button><button class="sw-next" type="button" aria-label="Próximo"><svg aria-hidden="true"><use href="#i-next"/></svg></button></div></div>
+<div class="sw-wrap"><div class="swiper"><div class="swiper-wrapper"><article class="card swiper-slide"><div class="ph"><img src="../midia/papai-noel.webp" width="676" height="1200" alt="Boneco de Papai Noel com textura de tricô" loading="lazy"></div><div class="bd"><h3><a href="produto.html?p=papainoel">Papai Noel estilo tricô</a></h3><div class="pr"><span class="consulte">Consulte<br>o valor</span><a class="wa" href="https://wa.me/5549988452253?text=Ol%C3%A1%21%20Quero%20pedir%3A%20Papai%20Noel%20estilo%20tric%C3%B4.%20Pode%20me%20passar%20o%20valor%20e%20as%20cores%20dispon%C3%ADveis%3F" target="_blank" rel="noopener" aria-label="Pedir Papai Noel estilo tricô no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a></div></div></article><article class="card swiper-slide"><div class="ph"><img src="../midia/rena.webp" width="676" height="1200" alt="Rena de tricô impressa em 3D com nariz vermelho" loading="lazy"></div><div class="bd"><h3><a href="produto.html?p=rena">Rena estilo tricô</a></h3><div class="pr"><span class="consulte">Consulte<br>o valor</span><a class="wa" href="https://wa.me/5549988452253?text=Ol%C3%A1%21%20Quero%20pedir%3A%20Rena%20estilo%20tric%C3%B4.%20Pode%20me%20passar%20o%20valor%20e%20as%20cores%20dispon%C3%ADveis%3F" target="_blank" rel="noopener" aria-label="Pedir Rena estilo tricô no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a></div></div></article><article class="card swiper-slide"><div class="ph"><img src="../midia/urso.webp" width="676" height="1200" alt="Urso polar de tricô com gorro de Papai Noel" loading="lazy"></div><div class="bd"><h3><a href="produto.html?p=urso">Urso polar com gorro</a></h3><div class="pr"><span class="consulte">Consulte<br>o valor</span><a class="wa" href="https://wa.me/5549988452253?text=Ol%C3%A1%21%20Quero%20pedir%3A%20Urso%20polar%20com%20gorro.%20Pode%20me%20passar%20o%20valor%20e%20as%20cores%20dispon%C3%ADveis%3F" target="_blank" rel="noopener" aria-label="Pedir Urso polar com gorro no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a></div></div></article><article class="card swiper-slide"><div class="ph"><img src="../midia/boneco-neve.webp" width="676" height="1200" alt="Boneco de neve de tricô com gorro e cachecol vermelhos" loading="lazy"></div><div class="bd"><h3><a href="produto.html?p=boneco">Boneco de neve</a></h3><div class="pr"><span class="consulte">Consulte<br>o valor</span><a class="wa" href="https://wa.me/5549988452253?text=Ol%C3%A1%21%20Quero%20pedir%3A%20Boneco%20de%20neve.%20Pode%20me%20passar%20o%20valor%20e%20as%20cores%20dispon%C3%ADveis%3F" target="_blank" rel="noopener" aria-label="Pedir Boneco de neve no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a></div></div></article><article class="card swiper-slide"><div class="ph"><img src="../midia/arvore.webp" width="675" height="1200" alt="Duas árvores de Natal impressas em 3D, uma vermelha e uma verde, sobre um corrimão de madeira" loading="lazy"></div><div class="bd"><h3><a href="produto.html?p=arvore">Árvore de Natal articulada</a></h3><div class="pr"><span class="consulte">Consulte<br>o valor</span><a class="wa" href="https://wa.me/5549988452253?text=Ol%C3%A1%21%20Quero%20pedir%3A%20%C3%81rvore%20de%20Natal%20articulada.%20Pode%20me%20passar%20o%20valor%20e%20as%20cores%20dispon%C3%ADveis%3F" target="_blank" rel="noopener" aria-label="Pedir Árvore de Natal articulada no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a></div></div></article><article class="card swiper-slide"><div class="ph"><img src="../midia/guardanapo.webp" width="676" height="1200" alt="Porta-guardanapos em forma de árvore de Natal, um vermelho e um verde" loading="lazy"></div><div class="bd"><h3><a href="produto.html?p=guardanapo">Porta-guardanapo de Natal</a></h3><div class="pr"><span class="consulte">Consulte<br>o valor</span><a class="wa" href="https://wa.me/5549988452253?text=Ol%C3%A1%21%20Quero%20pedir%3A%20Porta-guardanapo%20de%20Natal.%20Pode%20me%20passar%20o%20valor%20e%20as%20cores%20dispon%C3%ADveis%3F" target="_blank" rel="noopener" aria-label="Pedir Porta-guardanapo de Natal no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a></div></div></article><article class="card swiper-slide"><div class="ph"><img src="../midia/produtos/presente-de-natal-articulado-774384-1.webp" width="563" height="1000" alt="Presente de Natal articulado impresso em 3D" loading="lazy"></div><div class="bd"><h3><a href="produto.html?p=presente">Presente de Natal Articulado</a></h3><div class="pr"><span class="preco">R$ 46,08</span><a class="wa" href="https://wa.me/5549988452253?text=Ol%C3%A1%21%20Quero%20pedir%3A%20Presente%20de%20Natal%20Articulado.%20Pode%20me%20passar%20o%20valor%20e%20as%20cores%20dispon%C3%ADveis%3F" target="_blank" rel="noopener" aria-label="Pedir Presente de Natal Articulado no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a></div></div></article><article class="card swiper-slide"><div class="ph"><img src="../midia/produtos/conjunto-de-cortadores-de-biscoito-de-na-1.webp" width="1000" height="563" alt="Conjunto de cortadores de biscoito de Natal" loading="lazy"><span class="tag">Novo</span></div><div class="bd"><h3><a href="produto.html?p=cortadores">Conjunto de Cortadores de Biscoito de Natal</a></h3><div class="pr"><span class="preco">R$ 25,33</span><a class="wa" href="https://wa.me/5549988452253?text=Ol%C3%A1%21%20Quero%20pedir%3A%20Conjunto%20de%20Cortadores%20de%20Biscoito%20de%20Natal.%20Pode%20me%20passar%20o%20valor%20e%20as%20cores%20dispon%C3%ADveis%3F" target="_blank" rel="noopener" aria-label="Pedir Conjunto de Cortadores de Biscoito de Natal no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a></div></div></article></div></div></div>
+<div class="col-foot"><p>Sem preço na vitrine? É porque o valor depende de cor e tamanho. Pergunte, é grátis.</p><a class="btn btn-line" href="https://wa.me/5549988452253?text=Ol%C3%A1%21%20Quero%20ver%20mais%20pe%C3%A7as%20da%20cole%C3%A7%C3%A3o%20Decora%C3%A7%C3%A3o%20e%20Natal.%20O%20que%20voc%C3%AAs%20t%C3%AAm%20dispon%C3%ADvel%3F" target="_blank" rel="noopener">Perguntar sobre esta coleção</a></div>
+</div></section>
+<section class="colecao" id="articulados" aria-labelledby="t-articulados"><div class="wrap">
+<div class="col-head"><div class="txt"><span class="n" aria-hidden="true">03</span><span class="eyebrow">Articulados e chaveiros</span><h2 class="h2" id="t-articulados" style="margin-top:14px">Peças que mexem</h2><p class="lead">Articulados que sentam na estante, mexem a mandíbula ou viram chaveiro. Bons para presentear e para revender.</p></div>
+<div class="nav-sw" role="group" aria-label="Rolar Articulados e chaveiros"><button class="sw-prev" type="button" aria-label="Anterior"><svg aria-hidden="true"><use href="#i-prev"/></svg></button><button class="sw-next" type="button" aria-label="Próximo"><svg aria-hidden="true"><use href="#i-next"/></svg></button></div></div>
+<div class="sw-wrap"><div class="swiper"><div class="swiper-wrapper"><article class="card swiper-slide"><div class="ph"><img src="../midia/produtos/esqueleto-flexivel-de-tiranossauro-rex-1.webp" width="563" height="1000" alt="Esqueleto flexível de T-Rex impresso em 3D, visto de lado, sobre fundo cinza" loading="lazy"></div><div class="bd"><h3><a href="produto.html?p=trex">Esqueleto Flexível de Tiranossauro Rex</a></h3><div class="pr"><span class="preco">R$ 32,00</span><a class="wa" href="https://wa.me/5549988452253?text=Ol%C3%A1%21%20Quero%20pedir%3A%20Esqueleto%20Flex%C3%ADvel%20de%20Tiranossauro%20Rex.%20Pode%20me%20passar%20o%20valor%20e%20as%20cores%20dispon%C3%ADveis%3F" target="_blank" rel="noopener" aria-label="Pedir Esqueleto Flexível de Tiranossauro Rex no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a></div></div></article><article class="card swiper-slide"><div class="ph"><img src="../midia/pernudo-bola.webp" width="675" height="1200" alt="Bola de Natal vermelha com pernas articuladas sentada em um corrimão ao lado de uma árvore verde" loading="lazy"></div><div class="bd"><h3><a href="produto.html?p=pernudo">Bola de Natal Pernuda</a></h3><div class="pr"><span class="consulte">Consulte<br>o valor</span><a class="wa" href="https://wa.me/5549988452253?text=Ol%C3%A1%21%20Quero%20pedir%3A%20Bola%20de%20Natal%20Pernuda.%20Pode%20me%20passar%20o%20valor%20e%20as%20cores%20dispon%C3%ADveis%3F" target="_blank" rel="noopener" aria-label="Pedir Bola de Natal Pernuda no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a></div></div></article><article class="card swiper-slide"><div class="ph"><img src="../midia/anjinho.webp" width="675" height="1200" alt="Anjinho branco articulado com harpa sentado em um corrimão" loading="lazy"></div><div class="bd"><h3><a href="produto.html?p=anjinho">Anjinho articulado</a></h3><div class="pr"><span class="consulte">Consulte<br>o valor</span><a class="wa" href="https://wa.me/5549988452253?text=Ol%C3%A1%21%20Quero%20pedir%3A%20Anjinho%20articulado.%20Pode%20me%20passar%20o%20valor%20e%20as%20cores%20dispon%C3%ADveis%3F" target="_blank" rel="noopener" aria-label="Pedir Anjinho articulado no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a></div></div></article><article class="card swiper-slide"><div class="ph"><img src="../midia/polvos.webp" width="675" height="1200" alt="Polvo articulado vermelho em chaveiro ao lado de um T-Rex, com a impressora ao fundo" loading="lazy"></div><div class="bd"><h3><a href="produto.html?p=polvos">Polvo articulado chaveiro</a></h3><div class="pr"><span class="consulte">Consulte<br>o valor</span><a class="wa" href="https://wa.me/5549988452253?text=Ol%C3%A1%21%20Quero%20pedir%3A%20Polvo%20articulado%20chaveiro.%20Pode%20me%20passar%20o%20valor%20e%20as%20cores%20dispon%C3%ADveis%3F" target="_blank" rel="noopener" aria-label="Pedir Polvo articulado chaveiro no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a></div></div></article></div></div></div>
+<div class="col-foot"><p>Sem preço na vitrine? É porque o valor depende de cor e tamanho. Pergunte, é grátis.</p><a class="btn btn-line" href="https://wa.me/5549988452253?text=Ol%C3%A1%21%20Quero%20ver%20mais%20pe%C3%A7as%20da%20cole%C3%A7%C3%A3o%20Articulados%20e%20chaveiros.%20O%20que%20voc%C3%AAs%20t%C3%AAm%20dispon%C3%ADvel%3F" target="_blank" rel="noopener">Perguntar sobre esta coleção</a></div>
+</div></section>
+</div>
+
+<section class="dark" id="feito-aqui">
+  <div class="wrap feito">
+    <div>
+      <span class="eyebrow">Feito aqui</span>
+      <h2 class="h2">Camada por camada, na nossa impressora</h2>
+      <p class="lead">Cada peça nasce de filamento derretido e empilhado fio a fio. No vídeo, o suporte da Alexa em produção.</p>
+      <ol class="passos">
+        <li><i>1</i><span><b>Você escolhe</b> a peça e a cor no WhatsApp.</span></li>
+        <li><i>2</i><span><b>A impressora trabalha</b> pelo tempo que a peça pede.</span></li>
+        <li><i>3</i><span><b>A gente revisa</b> e dá o acabamento antes de entregar.</span></li>
+      </ol>
+    </div>
+    <div class="tel"><video src="../midia/alexa.mp4" poster="../midia/alexa.webp" muted loop playsinline autoplay preload="metadata" width="540" height="960" aria-label="Suporte da Alexa sendo impresso em 3D"></video></div>
+  </div>
+</section>
+
+<section id="personalizados">
+  <div class="wrap">
+    <span class="eyebrow">Sob medida</span>
+    <h2 class="h2" style="margin-top:14px;max-width:14ch">Não achou? A gente faz do seu jeito.</h2>
+    <p class="lead" style="margin-top:18px">Nome, time, tema ou a logo da sua empresa. Você manda a ideia, uma foto ou um desenho, e a gente transforma em peça.</p>
+    <div class="pers">
+      <article class="pcard">
+        <div class="ph"><img src="../midia/alexa.webp" alt="Suporte de Alexa personalizado com escudo e nome em relevo" width="676" height="1200" loading="lazy" style="object-position:50% 62%"></div>
+        <div class="bd">
+          <h3>Personalizados</h3>
+          <p>Peça única, pronta para presentear. Em muitos produtos dá para colocar nome, time ou tema.</p>
+          <ul><li>Nome ou tema em relevo</li><li>Cores combinadas com você</li><li>Orçamento grátis, sem compromisso</li></ul>
+          <a class="btn btn-wa" href="https://wa.me/5549988452253?text=Ol%C3%A1%21%20Quero%20uma%20pe%C3%A7a%20personalizada.%20Posso%20te%20mandar%20a%20ideia%3F" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Quero personalizar</a>
+        </div>
+      </article>
+      <article class="pcard">
+        <div class="ph"><img src="../midia/polvos.webp" alt="Chaveiros de polvo articulado e T-Rex ao lado da impressora 3D" width="675" height="1200" loading="lazy" style="object-position:50% 85%"></div>
+        <div class="bd">
+          <h3>Para empresas e revenda</h3>
+          <p>Brindes com a sua marca, chaveiros para vender na sua loja e peças em série, com condições especiais por volume.</p>
+          <ul><li>Brindes e peças com a sua marca</li><li>Chaveiros e mostruário para revenda</li><li>Atendimento dedicado para empresas</li></ul>
+          <a class="btn" href="https://wa.me/5549988452253?text=Ol%C3%A1%21%20Tenho%20uma%20empresa/loja%20e%20quero%20uma%20proposta%20de%20brindes%20ou%20chaveiros%20para%20revenda." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir proposta</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="confianca" style="background:rgba(255,255,255,.35);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <span class="eyebrow">Por que pedir aqui</span>
+    <h2 class="h2" style="margin-top:14px">Você sabe com quem está falando</h2>
+    <div class="conf">
+      <article><h3>Atendimento humano</h3><p>Você conversa direto com quem produz: Alessandra Soares Corrêa cuida do seu pedido.</p></article>
+      <article><h3>Acabamento manual</h3><p>Toda peça é revisada e finalizada à mão antes de sair.</p></article>
+      <article><h3>Orçamento em 1 hora</h3><p>Orçamento grátis e resposta em até 1 hora, de segunda a sábado, das 9h às 19h.</p></article>
+      <article><h3>Empresa local</h3><p>Joaçaba, Videira e região. Também no Instagram, <a href="https://www.instagram.com/habitat3dsc" target="_blank" rel="noopener">@habitat3dsc</a>.</p></article>
+    </div>
+    <div class="exemplo" role="note">
+      <b>[exemplo] espaço para avaliação de cliente</b>
+      <q>Aqui entra o texto de um cliente real, com autorização, nome e foto da peça recebida.</q>
+      <span>[exemplo] Nome do cliente, cidade</span>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="como-pedir">
+  <div class="wrap">
+    <span class="eyebrow">Como pedir</span>
+    <h2 class="h2" style="margin-top:14px">Três passos, sem formulário</h2>
+    <ol class="passos3">
+      <li><h3>Escolha a peça</h3><p>Navegue pelas coleções e toque em pedir. A mensagem já vai com o nome do produto.</p></li>
+      <li><h3>Confirme cor e valor</h3><p>A gente responde em até 1 hora com as cores disponíveis, o valor e o prazo do seu pedido.</p></li>
+      <li><h3>Receba a peça</h3><p>Produzimos, damos o acabamento e combinamos a entrega com você.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <span class="eyebrow">Dúvidas frequentes</span>
+    <h2 class="h2" style="margin-top:14px">Tudo o que você precisa saber</h2>
+    <div class="faq">
+      <details><summary>Quanto custa uma peça?</summary><p>Os produtos com preço na vitrine já têm valor fixo. Para os demais e para peças personalizadas, o valor depende do tamanho e do material: você manda a ideia no WhatsApp e recebe o orçamento certinho, grátis.</p></details>
+      <details><summary>Qual é o prazo de produção?</summary><p>Varia conforme a peça e a fila de produção. O prazo é informado junto com o orçamento, antes de você confirmar o pedido.</p></details>
+      <details><summary>Quais cores estão disponíveis?</summary><p>Trabalhamos com diversas cores. Na hora do pedido te mostramos as opções que combinam com a peça.</p></details>
+      <details><summary>Dá para colocar nome ou personalizar um produto da vitrine?</summary><p>Em muitos casos, sim. Pergunte no WhatsApp qual peça você quer e a gente diz o que dá para ajustar. Também aceitamos foto ou desenho para modelar algo do zero.</p></details>
+      <details><summary>Tem quantidade mínima?</summary><p>Para um item único, fazemos o orçamento com análise de viabilidade. Para empresas e revenda, como chaveiros para loja, temos condições especiais por volume.</p></details>
+    </div>
+    <p class="faq-fim"><a class="btn btn-line" href="https://wa.me/5549988452253?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Habitat3D%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener">Perguntar no WhatsApp</a></p>
+  </div>
+</section>
+
+<section class="dark cta-final">
+  <div class="wrap">
+    <h2>Pronto para tirar sua ideia do papel?</h2>
+    <p class="lead">Manda uma mensagem agora. O orçamento é grátis e a resposta costuma sair em até 1 hora.</p>
+    <div class="row">
+      <a class="btn btn-lg btn-wa" href="https://wa.me/5549988452253?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Habitat3D%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir no WhatsApp</a>
+      <a class="btn btn-lg btn-line" href="https://www.instagram.com/habitat3dsc" target="_blank" rel="noopener">Ver no Instagram</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div><img src="../midia/logo-fundo-escuro.png" alt="Habitat3D" width="140" height="40" loading="lazy" style="outline:0;margin-bottom:14px"><p>Impressão 3D sob demanda em Santa Catarina. Peças prontas, personalizados e brindes com acabamento de verdade.</p></div>
+      <div><h4>Navegue</h4><ul><li><a href="#suportes">Suportes e apoios</a></li><li><a href="#decoracao">Decoração e Natal</a></li><li><a href="#articulados">Articulados e chaveiros</a></li><li><a href="#personalizados">Personalizados e empresas</a></li></ul></div>
+      <div><h4>Contato</h4><ul><li><a href="https://wa.me/5549988452253?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Habitat3D%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener">WhatsApp (49) 98845-2253</a></li><li><a href="https://www.instagram.com/habitat3dsc" target="_blank" rel="noopener">@habitat3dsc</a></li><li>Seg a Sáb, 9h às 19h</li><li>Joaçaba · Videira · região</li></ul></div>
+    </div>
+    <div class="fim"><span>© 2026 Habitat3D</span><span>Atendimento: Alessandra Soares Corrêa</span></div>
+  </div>
+</footer>
+
+<a class="modelo-tag" href="../index.html">Modelo 6 · <b>Produto Herói</b> · voltar</a>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+<script>
+window.addEventListener('DOMContentLoaded',function(){
+  if(!window.Swiper) return;
+  document.querySelectorAll('.swiper').forEach(function(el){
+    var wrap=el.closest('section');
+    new Swiper(el,{slidesPerView:'auto',spaceBetween:14,freeMode:{enabled:true,sticky:false},grabCursor:true,
+      navigation:{prevEl:wrap.querySelector('.sw-prev'),nextEl:wrap.querySelector('.sw-next')},a11y:{enabled:true}});
+  });
+});
+</script>
+</body>
+</html>
