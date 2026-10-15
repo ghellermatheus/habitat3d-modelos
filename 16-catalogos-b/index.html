@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Habitat3D — Catálogos · Proposta B (por ocasião)</title>
+<meta name="description" content="Encontre o presente ou a peça certa por ocasião: presentes, casa e mesa, trabalho, pet, torcida e treino, Natal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,800;1,500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f0d0b;--panel:#171411;--ink:#f3ece1;--mute:#a79c8c;--line:#2d2822;--gold:#e0b45c;--head:70px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;overflow-x:clip;scroll-padding-top:130px}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.6 'DM Sans',sans-serif;overflow-x:clip}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(700px 420px at 85% -5%,rgba(224,180,92,.13),transparent 65%),radial-gradient(600px 400px at 0 100%,rgba(180,70,50,.1),transparent 60%)}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1260px;margin:0 auto;padding:0 20px}
+.serif{font-family:'Playfair Display',serif;font-weight:500;letter-spacing:-.01em}
+.top{position:sticky;top:0;z-index:70;background:rgba(15,13,11,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.top .bar{display:flex;align-items:center;justify-content:space-between;height:var(--head)}
+.top .bar img{height:28px;width:auto}
+.top nav{display:flex;gap:26px;font-size:.92rem;color:var(--mute)}
+.top nav a:hover{color:var(--gold)}
+.wa{background:var(--gold);color:#1b1408;font-weight:700;font-size:.88rem;padding:11px 18px;border-radius:99px}
+.chips{border-top:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chips ul{list-style:none;display:flex;gap:6px;padding:9px 20px;width:max-content;min-width:100%;max-width:1260px;margin:0 auto}
+.chips button{font:500 .86rem 'DM Sans';color:var(--mute);background:transparent;border:1px solid var(--line);border-radius:99px;padding:9px 16px;min-height:38px;cursor:pointer;white-space:nowrap;transition:all .25s}
+.chips button:hover{color:var(--ink);border-color:var(--mute)}
+.chips button[aria-pressed="true"]{background:var(--gold);color:#1b1408;border-color:var(--gold);font-weight:700}
+.intro{padding:44px 0 26px;display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:end}
+.intro h1{font-size:clamp(2.4rem,6.4vw,5rem);line-height:1;font-weight:800}
+.intro h1 em{color:var(--gold);font-weight:500}
+.intro p{color:var(--mute);max-width:42ch}
+.intro>*{opacity:0;transform:translateY(20px);animation:up .9s cubic-bezier(.2,.8,.2,1) forwards}
+.intro>*:nth-child(2){animation-delay:.12s}
+@keyframes up{to{opacity:1;transform:none}}
+/* trilhos (acordeão) */
+.rail{display:flex;gap:8px;height:min(64vh,520px);min-height:380px;margin-bottom:18px}
+.strip{position:relative;flex:1;min-width:0;border-radius:18px;overflow:hidden;cursor:pointer;border:1px solid var(--line);background:#000;text-align:left;color:var(--ink);padding:0;transition:flex .7s cubic-bezier(.2,.8,.2,1),border-color .3s}
+.strip img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.7) brightness(.62);transition:filter .6s,transform 1.2s}
+.strip::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(0,0,0,.88))}
+.strip .t{position:absolute;left:18px;right:18px;bottom:18px;z-index:2}
+.strip .t b{display:block;font:500 clamp(1.1rem,1.9vw,1.7rem)/1.1 'Playfair Display',serif}
+.strip .t span{display:block;font-size:.82rem;color:#d8cfc0;margin-top:6px;max-height:0;opacity:0;overflow:hidden;transition:all .5s}
+.strip .k{position:absolute;top:14px;left:16px;z-index:2;font:700 .72rem 'DM Sans';letter-spacing:.2em;color:var(--gold)}
+.strip:hover,.strip.on{flex:3.2;border-color:var(--gold)}
+.strip:hover img,.strip.on img{filter:none}
+.strip:hover .t span,.strip.on .t span{max-height:5em;opacity:1}
+/* conteúdo da seleção */
+.sel{padding:40px 0 20px;border-top:1px solid var(--line)}
+.sel header{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:26px}
+.sel h2{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;line-height:1}
+.sel header p{color:var(--mute);max-width:46ch;margin-top:8px}
+.sel .link{border:1px solid var(--gold);color:var(--gold);border-radius:99px;padding:10px 18px;font-weight:700;font-size:.88rem}
+.sel .link:hover{background:var(--gold);color:#1b1408}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.grid.sw{animation:fade .6s ease}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,border-color .3s}
+.card:hover{transform:translateY(-5px);border-color:var(--gold)}
+.card .ph{position:relative;aspect-ratio:4/5;overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .9s}
+.card:hover .ph img{transform:scale(1.06)}
+.card .tg{position:absolute;left:10px;top:10px;background:rgba(15,13,11,.82);border:1px solid var(--gold);color:var(--gold);font:700 .66rem 'DM Sans';letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border-radius:99px}
+.card .b{padding:14px;display:grid;gap:8px}
+.card h3{font:500 1.12rem/1.2 'Playfair Display',serif}
+.card .pr{font-weight:700;color:var(--gold)}
+.card .pr.c{color:var(--mute);font-weight:500;font-size:.88rem}
+.card .pedir{background:transparent;border:1px solid var(--line);border-radius:99px;text-align:center;padding:10px;font-weight:700;font-size:.86rem;transition:all .25s}
+.card .pedir:hover{background:var(--gold);color:#1b1408;border-color:var(--gold)}
+.nota{padding:46px 0 80px;color:var(--mute);font-size:.92rem;max-width:80ch}
+footer{border-top:1px solid var(--line);padding:26px 0 70px;color:var(--mute);font-size:.85rem}
+.tagmodelo{position:fixed;left:12px;bottom:12px;z-index:99;background:var(--gold);color:#1b1408;font:700 .72rem 'DM Sans';padding:7px 12px;border-radius:99px}
+.tagmodelo a{text-decoration:underline}
+@media (max-width:860px){
+ .top nav{display:none}
+ .intro{grid-template-columns:1fr}
+ .rail{flex-direction:column;height:auto;min-height:0;gap:8px}
+ .strip{flex:none;height:84px;transition:height .6s cubic-bezier(.2,.8,.2,1)}
+ .strip:hover{flex:none}
+ .strip.on{flex:none;height:260px}
+ .strip .t{bottom:14px}
+ .strip:hover .t span{max-height:0;opacity:0}
+ .strip.on .t span{max-height:5em;opacity:1}
+ .grid{grid-template-columns:repeat(2,1fr);gap:10px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.intro>*{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="top">
+ <div class="wrap bar"><a href="#" aria-label="Habitat3D"><img src="../midia/logo-fundo-escuro.png" alt="Habitat3D" width="98" height="28"></a>
+ <nav><a href="#">Catálogos</a><a href="#">Sob encomenda</a><a href="#">Empresas</a><a href="#">Dúvidas</a></nav>
+ <a class="wa" href="https://wa.me/5549988452253">WhatsApp</a></div>
+ <nav class="chips" aria-label="Ocasiões"><ul id="chips"></ul></nav>
+</div>
+<main class="wrap">
+ <div class="intro"><h1 class="serif">Para quem é <em>o presente?</em></h1><p>Em vez de procurar por tipo de peça, escolha pela ocasião ou pela pessoa. Seis portas, cada uma com as peças que combinam.</p></div>
+ <div class="rail" id="rail"></div>
+ <section class="sel" id="sel" aria-live="polite"></section>
+ <p class="nota"><b style="color:var(--ink)">Divisão desta proposta:</b> por ocasião e por quem recebe (Presentes · Casa &amp; Mesa · Trabalho · Pet · Torcida &amp; Treino · Natal). Uma mesma peça pode aparecer em mais de um grupo. Preços reais só dos produtos cadastrados; o resto aparece como “Consulte”.</p>
+</main>
+<footer><div class="wrap">© 2026 Habitat3D · (49) 98845-2253 · Seg a Sáb, 9h às 19h · Fotos livres: Pexels / Pixabay</div></footer>
+<div class="tagmodelo">Catálogos · Proposta B · <a href="../index.html">voltar</a></div>
+<script src="../midia/dados-catalogo.js"></script>
+<script>
+(function(){
+ var H=window.H3D,M=H.M;
+ var G=[
+  {id:'presentes',nome:'Presentes',txt:'Peças que viram presente na hora, prontas para embrulhar.',capa:M+'catalogos/pres-caixas.webp',itens:['ganso','presente','noel','ninja','dragao','chaveiros']},
+  {id:'casa',nome:'Casa & Mesa',txt:'Decoração e utilidades para a casa e a mesa posta.',capa:M+'catalogos/dec-janela-velas.webp',itens:['guardanapo','cortadores','apoio','harry','arvore','ganso']},
+  {id:'trabalho',nome:'Trabalho & Setup',txt:'Mesa de escritório com mais organização e personalidade.',capa:M+'catalogos/ia-trex-setupmesa.webp',itens:['cartoes','rex','macaco','alexa','dragao']},
+  {id:'pet',nome:'Pet & Família',txt:'Para os de quatro patas e para quem cuida deles.',capa:M+'catalogos/pet-coleira-tag.webp',itens:['tagpet','cachorro','polvo']},
+  {id:'torcida',nome:'Torcida & Treino',txt:'Para o torcedor e para quem vive na academia.',capa:M+'catalogos/gym-kettlebell-poeira.webp',itens:['alexa','kettle','chaveiros','brindes']},
+  {id:'natal',nome:'Natal',txt:'Enfeites e presentes de Natal, com nome e feitos sob encomenda.',capa:M+'papai-noel-duo.webp',itens:['noel','rena','urso','neve','anjinho','arvore','guardanapo','presente']}
+ ];
+ function card(p){return '<article class="card"><div class="ph"><img src="'+p.img+'" alt="'+p.nome+'" loading="lazy" width="440" height="550">'+(p.ilus?'<span class="tg">ilustrativa</span>':p.sob?'<span class="tg">sob encomenda</span>':'')+'</div><div class="b"><h3>'+p.nome+'</h3><div class="pr'+(p.preco==null?' c':'')+'">'+H.brl(p.preco)+'</div><a class="pedir" href="'+H.wa(p.nome)+'">Pedir no WhatsApp</a></div></article>'}
+ var rail=document.getElementById('rail'),chips=document.getElementById('chips'),sel=document.getElementById('sel');
+ G.forEach(function(g,i){
+  rail.insertAdjacentHTML('beforeend','<button class="strip" data-id="'+g.id+'" aria-pressed="false"><img src="'+g.capa+'" alt="" loading="'+(i<3?'eager':'lazy')+'" width="400" height="520"><span class="k">0'+(i+1)+'</span><span class="t"><b>'+g.nome+'</b><span>'+g.txt+'</span></span></button>');
+  chips.insertAdjacentHTML('beforeend','<li><button data-id="'+g.id+'" aria-pressed="false">'+g.nome+'</button></li>');
+ });
+ function mostrar(id,rolar){
+  var g=G.filter(function(x){return x.id===id})[0]||G[0];
+  document.querySelectorAll('[data-id]').forEach(function(b){var on=b.getAttribute('data-id')===g.id;b.setAttribute('aria-pressed',on);b.classList.toggle('on',on)});
+  sel.innerHTML='<header><div><h2 class="serif">'+g.nome+'</h2><p>'+g.txt+'</p></div><a class="link" href="#'+g.id+'">Ver catálogo completo →</a></header><div class="grid sw">'+H.lista(g.itens).map(card).join('')+'</div>';
+  if(history.replaceState)history.replaceState(null,'','#'+g.id);
+  if(rolar){var y=sel.getBoundingClientRect().top+scrollY-150;scrollTo({top:y,behavior:'smooth'})}
+ }
+ document.addEventListener('click',function(e){var b=e.target.closest('[data-id]');if(b&&b.tagName==='BUTTON')mostrar(b.getAttribute('data-id'),true)});
+ mostrar(location.hash?location.hash.slice(1):'presentes',false);
+})();
+</script>
+</body>
+</html>

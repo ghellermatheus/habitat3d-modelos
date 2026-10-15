@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Habitat3D — Catálogos · Proposta C (por tipo de peça)</title>
+<meta name="description" content="Catálogos da Habitat3D por tipo de peça: articulados, suportes e apoios, chaveiros e tags, decoração e Natal, sob encomenda.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ffd23f;--ink:#16110a;--acc:#ff4d2e;--on:#fff;--head:64px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;overflow-x:clip;scroll-padding-top:120px}
+body{font:400 16px/1.55 'Rubik',sans-serif;color:var(--ink);background:var(--bg);overflow-x:clip;transition:background .6s}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+.h{font-family:'Bowlby One',sans-serif;font-weight:400;line-height:.95}
+/* topo muda de cor com a seção ativa */
+.top{position:sticky;top:0;z-index:60;background:var(--sb,var(--bg));color:var(--si,var(--ink));border-bottom:3px solid var(--si,var(--ink));transition:background .5s,color .5s}
+.top .bar{display:flex;align-items:center;justify-content:space-between;height:var(--head)}
+.top img{height:28px;width:auto;transition:filter .4s}
+.top.inv img{filter:invert(1) hue-rotate(180deg)}
+.top nav.m{display:flex;gap:24px;font-weight:700;font-size:.92rem}
+.wa{background:var(--si,var(--ink));color:var(--sb,var(--bg));font-weight:700;font-size:.88rem;padding:10px 18px;border-radius:99px;transition:all .4s}
+.chips{border-top:3px solid var(--si,var(--ink));overflow-x:auto;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chips ul{list-style:none;display:flex;gap:8px;padding:9px 20px;width:max-content;min-width:100%;max-width:1240px;margin:0 auto}
+.chips a{display:inline-block;font:700 .84rem 'Rubik';letter-spacing:.02em;border:2.5px solid currentColor;border-radius:8px;padding:8px 14px;white-space:nowrap;transition:all .3s;min-height:38px}
+.chips a:hover{transform:translateY(-2px)}
+.chips a[aria-current="true"]{background:var(--si,var(--ink));color:var(--sb,var(--bg));box-shadow:3px 3px 0 var(--acc)}
+/* seções cheias */
+.sec{min-height:100svh;padding:70px 0 80px;position:relative;overflow:hidden;background:var(--sbg);color:var(--sink)}
+.sec .wrap{position:relative;z-index:2}
+.sec .top-row{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:34px}
+.sec .num{font:700 .8rem 'Rubik';letter-spacing:.3em;opacity:.8}
+.sec h2{font-size:clamp(2.6rem,9.5vw,7.6rem)}
+.sec p.sub{max-width:44ch;margin-top:14px;font-size:1.05rem}
+.sec .link{border:3px solid currentColor;border-radius:99px;padding:11px 20px;font-weight:700;white-space:nowrap}
+.sec .link:hover{background:var(--sink);color:var(--sbg)}
+.row{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
+.card{position:relative;display:flex;flex-direction:column;border:3px solid var(--sink);background:var(--cbg);color:var(--cink);overflow:hidden;box-shadow:6px 6px 0 var(--sink);transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translate(-4px,-4px) rotate(var(--rot,0deg));box-shadow:10px 10px 0 var(--sink)}
+.card .ph{aspect-ratio:1;overflow:hidden;position:relative}
+.card .ph img{width:100%;height:100%;object-fit:cover}
+.card .tg{position:absolute;right:8px;top:8px;background:var(--sink);color:var(--sbg);font:700 .66rem 'Rubik';letter-spacing:.08em;text-transform:uppercase;padding:4px 8px}
+.card .b{padding:12px 12px 14px;display:grid;gap:8px}
+.card h3{font:700 1rem/1.2 'Rubik'}
+.card .pr{font:400 1.25rem 'Bowlby One'}
+.card .pr.c{font:500 .85rem 'Rubik';opacity:.75}
+.card .pedir{background:var(--acc2);color:var(--on2);font-weight:700;font-size:.86rem;text-align:center;padding:10px;border:2px solid var(--sink)}
+.card .pedir:hover{filter:brightness(1.08)}
+/* 1 articulados: amarelo, cartões inclinados */
+#articulados{--sbg:#ffd23f;--sink:#16110a;--cbg:#fff;--cink:#16110a;--acc2:#ff4d2e;--on2:#fff}
+#articulados .card:nth-child(odd){transform:rotate(-1.6deg)}#articulados .card:nth-child(even){transform:rotate(1.4deg)}
+#articulados .card:hover{transform:translate(-4px,-4px) rotate(0)}
+#articulados .bg-word{position:absolute;right:-2%;bottom:-6%;font:400 clamp(8rem,30vw,26rem)/.8 'Bowlby One';color:#fff;opacity:.35;z-index:1;pointer-events:none}
+/* 2 suportes: azul planta */
+#suportes{--sbg:#1d3fd8;--sink:#f4f1e6;--cbg:#f4f1e6;--cink:#0d1b5e;--acc2:#1d3fd8;--on2:#fff;background-image:linear-gradient(rgba(255,255,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.12) 1px,transparent 1px);background-size:36px 36px}
+#suportes .card{box-shadow:6px 6px 0 rgba(0,0,0,.35);border-color:#f4f1e6;border-radius:2px}
+#suportes .cota{position:absolute;left:20px;right:20px;bottom:28px;height:0;border-top:2px dashed rgba(255,255,255,.5);z-index:1}
+#suportes .cota::before,#suportes .cota::after{content:"";position:absolute;top:-8px;width:2px;height:16px;background:rgba(255,255,255,.7)}
+#suportes .cota::before{left:0}#suportes .cota::after{right:0}
+/* 3 chaveiros: rosa com etiquetas */
+#chaveiros{--sbg:#ff8fc7;--sink:#2a0a1c;--cbg:#fff2f8;--cink:#2a0a1c;--acc2:#2a0a1c;--on2:#ffd23f}
+#chaveiros .card{border-radius:70px 70px 16px 16px}
+#chaveiros .card .ph{border-radius:70px 70px 0 0}
+#chaveiros .card::before{content:"";position:absolute;left:50%;top:10px;width:18px;height:18px;margin-left:-9px;border:3px solid var(--sink);border-radius:50%;background:var(--sbg);z-index:3}
+#chaveiros .dots{position:absolute;inset:0;background-image:radial-gradient(rgba(42,10,28,.18) 2px,transparent 2.4px);background-size:26px 26px;z-index:1}
+/* 4 decoração & natal: verde escuro com neve */
+#natal{--sbg:#0c3b2a;--sink:#f7ead2;--cbg:#114d37;--cink:#f7ead2;--acc2:#e11d2a;--on2:#fff}
+#natal .card{border-radius:14px;border-color:#f7ead2;box-shadow:6px 6px 0 #e11d2a}
+#natal .neve{position:absolute;inset:0;z-index:1;pointer-events:none}
+#natal .neve i{position:absolute;top:-24px;font-style:normal;color:#fff;opacity:.85;animation:cai linear infinite}
+@keyframes cai{to{transform:translateY(110vh) rotate(260deg)}}
+/* 5 sob encomenda: preto com acento neon */
+#sob{--sbg:#0b0b0c;--sink:#e7ff3b;--cbg:#161618;--cink:#f4f4f0;--acc2:#e7ff3b;--on2:#0b0b0c}
+#sob .card{border-radius:0;border-width:2px;box-shadow:none}
+#sob .card:hover{box-shadow:6px 6px 0 #e7ff3b}
+#sob .passos{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:2px solid #e7ff3b;margin:34px 0}
+#sob .passos div{padding:22px;border-right:2px solid #e7ff3b;color:#f4f4f0}
+#sob .passos div:last-child{border:0}
+#sob .passos b{display:block;font:400 2.4rem 'Bowlby One';color:#e7ff3b}
+.nota{padding:50px 0 70px;background:#fff;color:#333;font-size:.95rem}
+footer{background:#16110a;color:#e8e2d4;padding:28px 0 70px;font-size:.85rem}
+.tagmodelo{position:fixed;left:12px;bottom:12px;z-index:99;background:#16110a;color:#ffd23f;font:700 .72rem 'Rubik';padding:7px 12px;border-radius:99px;border:2px solid #ffd23f}
+.tagmodelo a{text-decoration:underline}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .7s,transform .7s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+#articulados .card.rv.in:nth-child(odd){transform:rotate(-1.6deg)}#articulados .card.rv.in:nth-child(even){transform:rotate(1.4deg)}
+@media (max-width:860px){
+ .top nav.m{display:none}
+ .row{grid-template-columns:repeat(2,1fr);gap:12px}
+ .sec{min-height:0;padding:56px 0}
+ #sob .passos{grid-template-columns:1fr}#sob .passos div{border-right:0;border-bottom:2px solid #e7ff3b}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="top" id="top">
+ <div class="wrap bar"><a href="#" aria-label="Habitat3D"><img src="../midia/logo-preto.png" alt="Habitat3D" width="98" height="28" id="logo"></a>
+ <nav class="m"><a href="#">Catálogos</a><a href="#">Sob encomenda</a><a href="#">Empresas</a><a href="#">Dúvidas</a></nav>
+ <a class="wa" href="https://wa.me/5549988452253">WhatsApp</a></div>
+ <nav class="chips" aria-label="Catálogos"><ul id="chips"></ul></nav>
+</div>
+<main id="main"></main>
+<div class="nota"><div class="wrap"><b>Divisão desta proposta:</b> por tipo de peça (Articulados · Suportes &amp; Apoios · Chaveiros &amp; Tags · Decoração &amp; Natal · Sob encomenda). Aqui o scroll troca de módulo: o topo muda de cor e cada seção tem o seu estilo. Preços reais só dos produtos cadastrados; o resto aparece como “Consulte”. Imagens “ilustrativa” são de banco ou IA.</div></div>
+<footer><div class="wrap">© 2026 Habitat3D · (49) 98845-2253 · Seg a Sáb, 9h às 19h · Fotos livres: Pexels / Pixabay</div></footer>
+<div class="tagmodelo">Catálogos · Proposta C · <a href="../index.html">voltar</a></div>
+<script src="../midia/dados-catalogo.js"></script>
+<script>
+(function(){
+ var H=window.H3D;
+ var S=[
+  {id:'articulados',nome:'Articulados',txt:'Dinossauros, dragões e bichinhos que mexem de verdade.',bg:'#ffd23f',ink:'#16110a',itens:['rex','dragao','polvo','macaco','presente'],extra:'<span class="bg-word">3D</span>'},
+  {id:'suportes',nome:'Suportes & Apoios',txt:'Para o celular, a Alexa, o livro e o controle: tudo no lugar.',bg:'#1d3fd8',ink:'#f4f1e6',itens:['alexa','apoio','harry','cartoes'],extra:'<i class="cota"></i>',inv:true},
+  {id:'chaveiros',nome:'Chaveiros & Tags',txt:'Chaveiros, tags pet e lembranças com nome ou tema.',bg:'#ff8fc7',ink:'#2a0a1c',itens:['chaveiros','tagpet','polvo','cachorro'],extra:'<div class="dots"></div>'},
+  {id:'natal',nome:'Decoração & Natal',txt:'Enfeites, presentes e peças de mesa para o Natal e o ano todo.',bg:'#0c3b2a',ink:'#f7ead2',itens:['noel','rena','urso','arvore','guardanapo','cortadores','ganso','ninja'],extra:'<div class="neve" id="neve"></div>',inv:true},
+  {id:'sob',nome:'Sob encomenda',txt:'Não achou? A gente modela do seu jeito: foto, desenho ou ideia.',bg:'#0b0b0c',ink:'#e7ff3b',itens:['kettle','brindes','chaveiros'],extra:'',inv:true,passos:true}
+ ];
+ function card(p){return '<article class="card rv"><div class="ph"><img src="'+p.img+'" alt="'+p.nome+'" loading="lazy" width="440" height="440">'+(p.ilus?'<span class="tg">ilustrativa</span>':p.sob?'<span class="tg">sob encomenda</span>':'')+'</div><div class="b"><h3>'+p.nome+'</h3><div class="pr'+(p.preco==null?' c':'')+'">'+H.brl(p.preco)+'</div><a class="pedir" href="'+H.wa(p.nome)+'">Pedir no WhatsApp</a></div></article>'}
+ var main=document.getElementById('main'),chips=document.getElementById('chips');
+ S.forEach(function(s,i){
+  chips.insertAdjacentHTML('beforeend','<li><a href="#'+s.id+'">'+s.nome+'</a></li>');
+  main.insertAdjacentHTML('beforeend','<section class="sec" id="'+s.id+'" data-bg="'+s.bg+'" data-ink="'+s.ink+'" data-inv="'+(s.inv?1:0)+'">'+s.extra+'<div class="wrap"><div class="top-row"><div><span class="num">0'+(i+1)+' / 05</span><h2 class="h">'+s.nome+'</h2><p class="sub">'+s.txt+'</p></div><a class="link" href="#'+s.id+'">Ver catálogo completo →</a></div>'+(s.passos?'<div class="passos"><div><b>1</b>Mande a ideia, foto ou desenho no WhatsApp.</div><div><b>2</b>A gente modela e passa o orçamento, grátis.</div><div><b>3</b>Você aprova, a peça é impressa e acabada à mão.</div></div>':'')+'<div class="row">'+H.lista(s.itens).map(card).join('')+'</div></div></section>');
+ });
+ var neve=document.getElementById('neve');
+ for(var k=0;k<22&&neve;k++){var f=document.createElement('i');f.textContent='✻';f.style.left=Math.random()*100+'%';f.style.fontSize=(12+Math.random()*20)+'px';f.style.animationDuration=(8+Math.random()*10)+'s';f.style.animationDelay=(-Math.random()*14)+'s';neve.appendChild(f)}
+ var top=document.getElementById('top'),links=[].slice.call(document.querySelectorAll('#chips a'));
+ function ativar(sec){
+  top.style.setProperty('--sb',sec.dataset.bg);top.style.setProperty('--si',sec.dataset.ink);
+  top.classList.toggle('inv',sec.dataset.inv==='1');
+  document.body.style.background=sec.dataset.bg;
+  links.forEach(function(a){var on=a.getAttribute('href')==='#'+sec.id;a.setAttribute('aria-current',on?'true':'false');if(on&&a.scrollIntoView)a.scrollIntoView({inline:'center',block:'nearest'})});
+ }
+ if('IntersectionObserver' in window){
+  var h0=location.hash&&document.getElementById(location.hash.slice(1));
+  if(h0)setTimeout(function(){h0.scrollIntoView({behavior:"instant",block:"start"})},60);
+  setTimeout(function(){
+   var spy=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){ativar(e.target);if(history.replaceState)history.replaceState(null,'','#'+e.target.id)}})},{rootMargin:'-35% 0px -60% 0px'});
+   document.querySelectorAll('.sec').forEach(function(s){spy.observe(s)});
+  },h0?900:0);
+  var rv=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');rv.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.rv').forEach(function(c,i){c.style.transitionDelay=(i%5)*60+'ms';rv.observe(c)});
+ } else document.querySelectorAll('.rv').forEach(function(c){c.classList.add('in')});
+ ativar(document.querySelector('.sec'));
+})();
+</script>
+</body>
+</html>

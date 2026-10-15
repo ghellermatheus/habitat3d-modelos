@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Habitat3D — Catálogos · Proposta A (5 módulos)</title>
+<meta name="description" content="Escolha o catálogo da Habitat3D: Pet, Gym, Decoração, Escritório ou Utilidades.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,100..900&family=Schibsted+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f1ebdf;--ink:#1b1712;--line:rgba(27,23,18,.16);--head:76px;--chips:56px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--head) + var(--chips) + 8px);overflow-x:clip}
+body{font:400 16px/1.55 'Schibsted Grotesk',sans-serif;color:var(--ink);background:var(--paper);overflow-x:clip}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(900px 500px at 15% 0,rgba(232,137,43,.16),transparent 60%),radial-gradient(800px 500px at 90% 20%,rgba(42,111,219,.12),transparent 60%)}
+a{color:inherit;text-decoration:none}
+img,video{display:block;max-width:100%}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+.display{font-family:'Anybody',sans-serif;line-height:.92;letter-spacing:-.01em}
+/* topo */
+.top{position:sticky;top:0;z-index:60;background:color-mix(in srgb,var(--paper) 86%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top .bar{display:flex;align-items:center;justify-content:space-between;height:var(--head)}
+.top .bar img{height:30px;width:auto}
+.top nav{display:flex;gap:26px;font-weight:700;font-size:.95rem}
+.top nav a:hover{text-decoration:underline;text-underline-offset:5px}
+.wa{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;font-weight:700;font-size:.9rem;padding:11px 18px;border-radius:99px;transition:transform .2s}
+.wa:hover{transform:translateY(-2px)}
+.chips{border-top:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chips ul{list-style:none;display:flex;gap:8px;padding:9px 20px;width:max-content;min-width:100%;max-width:1240px;margin:0 auto}
+.chips a{display:inline-flex;align-items:center;gap:8px;min-height:38px;padding:0 15px;border-radius:99px;border:1.5px solid var(--line);font-weight:700;font-size:.88rem;white-space:nowrap;transition:background .25s,color .25s,border-color .25s}
+.chips a i{width:11px;height:11px;border-radius:50%;background:var(--c);box-shadow:0 0 0 1.5px rgba(0,0,0,.25)}
+.chips a:hover{border-color:var(--ink)}
+.chips a[aria-current="true"]{background:var(--c);color:var(--on);border-color:var(--c)}
+.chips a[aria-current="true"] i{background:var(--on);box-shadow:none}
+/* hero */
+.hero{padding:44px 0 34px}
+.hero h1{font-size:clamp(2.6rem,9vw,6.6rem);font-weight:800;font-variation-settings:'wdth' 125;margin-bottom:14px;text-wrap:balance}
+.hero p.l{max-width:46ch;font-size:1.08rem;color:#5a5146}
+.hero .in>*{opacity:0;transform:translateY(22px);animation:up .9s cubic-bezier(.2,.8,.2,1) forwards}
+.hero .in>*:nth-child(2){animation-delay:.1s}
+@keyframes up{to{opacity:1;transform:none}}
+/* portas */
+.portas{display:flex;gap:12px;padding:8px 0 56px;height:min(68vh,560px);min-height:420px}
+.porta{position:relative;flex:1;border-radius:22px 22px 120px 22px;overflow:hidden;background:var(--bg);color:var(--on);display:flex;flex-direction:column;justify-content:flex-end;padding:22px;transition:flex .6s cubic-bezier(.2,.8,.2,1),transform .4s;isolation:isolate;min-width:0}
+.porta:hover,.porta:focus-visible{flex:2.1}
+.porta img{position:absolute;inset:0;width:100%;height:68%;object-fit:cover;z-index:-1;mask-image:linear-gradient(#000 55%,transparent);-webkit-mask-image:linear-gradient(#000 55%,transparent);transition:transform 1.2s}
+.porta:hover img{transform:scale(1.07)}
+.porta .n{font:700 .78rem 'Anybody';letter-spacing:.14em;opacity:.75}
+.porta h2{font-size:clamp(1.5rem,2.6vw,2.4rem);font-weight:var(--w);font-variation-settings:'wdth' var(--wd);text-transform:var(--tt);letter-spacing:var(--ls);margin-top:4px}
+.porta small{display:block;margin-top:6px;font-size:.82rem;opacity:.85;max-height:0;overflow:hidden;transition:max-height .5s}
+.porta:hover small,.porta:focus-visible small{max-height:3em}
+/* módulos */
+.mod{background:var(--bg);color:var(--on);padding:84px 0 70px;position:relative;overflow:hidden}
+.mod .ambient{position:absolute;inset:0;opacity:.18;z-index:0}
+.mod .ambient img{width:100%;height:100%;object-fit:cover}
+.mod .wrap{position:relative;z-index:1}
+.mod header.mh{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:end;margin-bottom:34px}
+.mod .num{font:700 .85rem 'Anybody';letter-spacing:.2em;opacity:.7}
+.mod h2.display{font-size:clamp(3rem,10vw,8rem);font-weight:var(--w);font-variation-settings:'wdth' var(--wd);text-transform:var(--tt);letter-spacing:var(--ls)}
+.mod p.sub{max-width:44ch;opacity:.85;margin-top:12px}
+.mod .link{font-weight:700;font-size:.9rem;border:1.5px solid currentColor;border-radius:99px;padding:10px 18px;white-space:nowrap}
+.mod .link:hover{background:var(--on);color:var(--bg)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
+.card{background:color-mix(in srgb,var(--on) 8%,var(--bg));border:1.5px solid color-mix(in srgb,var(--on) 22%,transparent);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,border-color .3s}
+.card:hover{transform:translateY(-6px);border-color:var(--acc)}
+.card .ph{aspect-ratio:4/5;overflow:hidden;position:relative;background:#0002}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .9s}
+.card:hover .ph img{transform:scale(1.06)}
+.card .tag{position:absolute;left:10px;top:10px;font:700 .68rem 'Schibsted Grotesk';letter-spacing:.08em;text-transform:uppercase;background:var(--acc);color:var(--acc-on);padding:4px 9px;border-radius:99px}
+.card .b{padding:14px 14px 16px;display:grid;gap:8px;flex:1;align-content:space-between}
+.card h3{font:700 1rem/1.25 'Schibsted Grotesk'}
+.card .pr{font:800 1.15rem 'Anybody';font-variation-settings:'wdth' 100}
+.card .pr.c{font:600 .85rem 'Schibsted Grotesk';opacity:.8}
+.card a.pedir{display:inline-flex;justify-content:center;background:var(--acc);color:var(--acc-on);font-weight:700;font-size:.88rem;padding:10px;border-radius:99px;transition:filter .2s}
+.card a.pedir:hover{filter:brightness(1.1)}
+.ilus{font-size:.72rem;opacity:.7;margin-top:14px}
+/* temas */
+[data-t="pet"]{--bg:#fdeccf;--on:#3a2412;--acc:#e8892b;--acc-on:#2a1606;--c:#e8892b;--w:800;--wd:140;--tt:none;--ls:0;--r:26px}
+[data-t="gym"]{--bg:#0c0c0d;--on:#f2f2ee;--acc:#d3ff2e;--acc-on:#0c0c0d;--c:#d3ff2e;--w:900;--wd:50;--tt:uppercase;--ls:.005em;--r:6px}
+[data-t="decoracao"]{--bg:#f3e4dc;--on:#4a1f1f;--acc:#b4533a;--acc-on:#fff;--c:#b4533a;--w:300;--wd:150;--tt:uppercase;--ls:.12em;--r:120px 120px 14px 14px}
+[data-t="escritorio"]{--bg:#e4ebf3;--on:#12243b;--acc:#2a6fdb;--acc-on:#fff;--c:#2a6fdb;--w:700;--wd:100;--tt:none;--ls:-.02em;--r:4px}
+[data-t="utilidades"]{--bg:#e9eed9;--on:#1f2a14;--acc:#5b7a1a;--acc-on:#fff;--c:#5b7a1a;--w:800;--wd:85;--tt:none;--ls:-.01em;--r:14px}
+[data-t="gym"] .card{border-width:2px}
+[data-t="gym"] .card .pr{color:var(--acc)}
+[data-t="decoracao"] .card .ph{border-radius:var(--r)}
+[data-t="decoracao"] .card{border-radius:var(--r)}
+[data-t="utilidades"]::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(31,42,20,.14) 1.2px,transparent 1.3px);background-size:20px 20px;pointer-events:none}
+[data-t="escritorio"]::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(18,36,59,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(18,36,59,.07) 1px,transparent 1px);background-size:34px 34px;pointer-events:none}
+.mod>*{position:relative;z-index:1}
+.mod .ambient{z-index:0}
+/* notas e rodapé */
+.nota{padding:46px 0;font-size:.95rem;color:#5a5146}
+.nota b{color:var(--ink)}
+footer{padding:30px 0 60px;border-top:1px solid var(--line);font-size:.85rem;color:#6a6054}
+.tagmodelo{position:fixed;left:12px;bottom:12px;z-index:99;background:#1b1712;color:#fff;font:700 .72rem 'Schibsted Grotesk';padding:7px 12px;border-radius:99px}
+.tagmodelo a{text-decoration:underline}
+@media (max-width:860px){
+ .top nav{display:none}
+ .portas{height:auto;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+ .porta{min-height:230px;border-radius:18px 18px 70px 18px;padding:16px}
+ .porta:last-child{grid-column:1/-1;min-height:190px}
+ .porta:hover{flex:1}
+ .porta small{max-height:3em}
+ .mod header.mh{grid-template-columns:1fr}
+ .grid{grid-template-columns:repeat(2,1fr);gap:10px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero .in>*{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="top">
+ <div class="wrap bar"><a href="#" aria-label="Habitat3D"><img src="../midia/logo-preto.png" alt="Habitat3D" width="105" height="30"></a>
+ <nav><a href="#">Catálogos</a><a href="#">Sob encomenda</a><a href="#">Empresas</a><a href="#">Dúvidas</a></nav>
+ <a class="wa" href="https://wa.me/5549988452253">WhatsApp</a></div>
+ <nav class="chips" aria-label="Catálogos"><ul id="chips"></ul></nav>
+</div>
+
+<main>
+<section class="hero"><div class="wrap in">
+ <h1 class="display">Escolha o seu catálogo</h1>
+ <p class="l">Cinco catálogos, cada um com o seu jeito. Toque num deles — cada catálogo tem endereço próprio e você troca de um para outro sem perder a barra de cima.</p>
+</div></section>
+<div class="wrap"><div class="portas" id="portas"></div></div>
+<div id="mods"></div>
+<div class="wrap nota"><b>Como vai funcionar no site:</b> cada catálogo é uma página com link próprio (ex.: <code>/catalogos/pet</code>), a barra de pílulas acompanha o scroll e cada módulo tem o seu estilo. Preços reais só dos produtos já cadastrados; o restante aparece como “Consulte”. Imagens marcadas “ilustrativa” são de banco ou IA.</div>
+</main>
+<footer><div class="wrap">© 2026 Habitat3D · (49) 98845-2253 · Seg a Sáb, 9h às 19h · Fotos livres: Pexels / Pixabay</div></footer>
+<div class="tagmodelo">Catálogos · Proposta A · <a href="../index.html">voltar</a></div>
+
+<script src="../midia/dados-catalogo.js"></script>
+<script>
+(function(){
+ var H=window.H3D, M=H.M;
+ var MODS=[
+  {id:'pet',nome:'Pet',txt:'Tags, brinquedos e mimos para quem tem um pet em casa.',capa:M+'catalogos/pet-poodle.webp',amb:M+'catalogos/pet-cachorro-tag.webp',itens:['tagpet','cachorro','polvo']},
+  {id:'gym',nome:'Gym',txt:'Peso, treino e brindes para academias e quem vive nelas.',capa:M+'catalogos/gym-kettlebell-poeira.webp',amb:M+'catalogos/gym-fileira.webp',itens:['kettle','chaveiros','brindes']},
+  {id:'decoracao',nome:'Decoração',txt:'Peças para a estante, a mesa e o Natal da casa.',capa:M+'catalogos/dec-janela-velas.webp',amb:M+'catalogos/dec-bola-vermelha.webp',itens:['ganso','noel','rena','arvore','presente','rex']},
+  {id:'escritorio',nome:'Escritório',txt:'Organização e personalidade para a mesa de trabalho.',capa:M+'catalogos/esc-mesa-madeira.webp',amb:M+'catalogos/ia-trex-setupmesa.webp',itens:['cartoes','rex','macaco','alexa']},
+  {id:'utilidades',nome:'Utilidades',txt:'Pequenas peças que resolvem o dia a dia.',capa:M+'harry.webp',amb:M+'catalogos/suporte-celular.webp',itens:['apoio','harry','cortadores','guardanapo','ninja']}
+ ];
+ var on={pet:'#2a1606',gym:'#0c0c0d',decoracao:'#fff',escritorio:'#fff',utilidades:'#fff'};
+ function card(p){
+  return '<article class="card"><div class="ph"><img src="'+p.img+'" alt="'+p.nome+'" loading="lazy" width="440" height="550">'+(p.ilus?'<span class="tag">ilustrativa</span>':p.sob?'<span class="tag">sob encomenda</span>':'')+'</div><div class="b"><h3>'+p.nome+'</h3>'+(p.preco==null?'<div class="pr c">'+H.brl(null)+'</div>':'<div class="pr">'+H.brl(p.preco)+'</div>')+'<a class="pedir" href="'+H.wa(p.nome)+'">Pedir no WhatsApp</a></div></article>';
+ }
+ var chips='',portas='',mods='';
+ MODS.forEach(function(m,i){
+  chips+='<li><a href="#'+m.id+'" data-t="'+m.id+'" style="--on:'+on[m.id]+'"><i></i>'+m.nome+'</a></li>';
+  portas+='<a class="porta" href="#'+m.id+'" data-t="'+m.id+'"><img src="'+m.capa+'" alt="" loading="'+(i<2?'eager':'lazy')+'" width="400" height="560"><span class="n">0'+(i+1)+'</span><h2 class="display">'+m.nome+'</h2><small>'+m.txt+'</small></a>';
+  mods+='<section class="mod" id="'+m.id+'" data-t="'+m.id+'"><div class="ambient"><img src="'+m.amb+'" alt="" loading="lazy"></div><div class="wrap"><header class="mh"><div><span class="num">0'+(i+1)+' / 05</span><h2 class="display">'+m.nome+'</h2><p class="sub">'+m.txt+'</p></div><a class="link" href="#'+m.id+'">Ver catálogo completo →</a></header><div class="grid">'+H.lista(m.itens).map(card).join('')+'</div><p class="ilus">Link próprio previsto: /catalogos/'+m.id+'</p></div></section>';
+ });
+ document.getElementById('chips').innerHTML=chips;
+ document.getElementById('portas').innerHTML=portas;
+ document.getElementById('mods').innerHTML=mods;
+ var links=[].slice.call(document.querySelectorAll('#chips a'));
+ function ativar(id){
+  links.forEach(function(a){var on=a.getAttribute('href')==='#'+id;a.setAttribute('aria-current',on?'true':'false');if(on&&a.scrollIntoView)a.scrollIntoView({inline:'center',block:'nearest'})});
+ }
+ var h0=location.hash&&document.getElementById(location.hash.slice(1));
+ if(h0){ativar(h0.id);setTimeout(function(){h0.scrollIntoView({behavior:"instant",block:"start"})},60)}
+ if('IntersectionObserver' in window){
+  setTimeout(function(){
+   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){ativar(e.target.id);if(history.replaceState)history.replaceState(null,'','#'+e.target.id)}})},{rootMargin:'-45% 0px -50% 0px'});
+   document.querySelectorAll('.mod').forEach(function(s){io.observe(s)});
+  },h0?900:0);
+ }
+})();
+</script>
+</body>
+</html>
