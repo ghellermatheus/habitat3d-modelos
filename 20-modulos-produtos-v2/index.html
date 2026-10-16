@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Habitat3D — 10 módulos de produtos (v2)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,100..900&family=Schibsted+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1b1712;--paper:#f3ede1;--r:26px}
+*{box-sizing:border-box;margin:0}
+html{overflow-x:clip;scroll-padding-top:64px}
+body{font:400 16px/1.55 'Schibsted Grotesk',sans-serif;color:var(--ink);background:var(--paper);overflow-x:clip}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+button{font:inherit;color:inherit;cursor:pointer}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+.D{font-family:'Anybody',sans-serif;line-height:.92}
+/* índice */
+.idx{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:1px solid #1b171226;overflow-x:auto;scrollbar-width:none}
+.idx::-webkit-scrollbar{display:none}
+.idx ul{list-style:none;display:flex;gap:8px;padding:9px 20px;width:max-content;min-width:100%;max-width:1200px;margin:0 auto;align-items:center}
+.idx a{display:inline-flex;align-items:center;gap:7px;min-height:38px;padding:0 15px;border-radius:99px;border:1.5px solid #1b171226;font-weight:700;font-size:.85rem;white-space:nowrap;transition:background .2s,color .2s,border-color .2s}
+.idx a i{width:11px;height:11px;border-radius:50%;background:var(--c);box-shadow:0 0 0 1.5px #0003}
+.idx a:hover{border-color:var(--ink)}
+.idx a[aria-current="true"]{background:var(--c);color:var(--on,#fff);border-color:var(--c)}
+.idx a[aria-current="true"] i{background:var(--on,#fff);box-shadow:none}
+.idx a.cut::after{content:"✂";font-size:.78rem}
+.intro{padding:40px 0 34px}
+.intro h1{font-size:clamp(2.6rem,8vw,5.6rem);font-weight:800;font-variation-settings:'wdth' 125;text-wrap:balance}
+.intro p{max-width:56ch;color:#5b5146;margin-top:12px}
+/* módulo base */
+.m{--bg:#fff;--on:#1b1712;--acc:#e8892b;--aon:#fff;background:var(--bg);color:var(--on);padding:0 0 78px;content-visibility:auto;contain-intrinsic-size:auto 900px;position:relative}
+.m .hd{padding:64px 0 34px;display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.m .num{font:700 .8rem 'Anybody';letter-spacing:.2em;opacity:.7}
+.m h2{font-size:clamp(2.8rem,9vw,7rem);font-weight:var(--w,800);font-variation-settings:'wdth' var(--wd,110);letter-spacing:var(--ls,-.01em);text-transform:var(--tt,none);margin-top:6px}
+.tags{display:flex;gap:8px;flex-wrap:wrap}
+.tags span{font:700 .72rem 'Schibsted Grotesk';letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border:1.5px solid currentColor;border-radius:99px;opacity:.85}
+.tags span.cut{background:var(--acc);color:var(--aon);border-color:var(--acc);opacity:1}
+.pedir{display:inline-flex;align-items:center;justify-content:center;gap:7px;background:var(--acc);color:var(--aon);font-weight:700;font-size:.85rem;padding:10px 15px;border-radius:99px;white-space:nowrap;transition:transform .2s,filter .2s}
+.pedir:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.pedir svg{width:15px;height:15px;flex:none}
+.pr{font:800 1.15rem 'Anybody';font-variation-settings:'wdth' 100}
+.pr.c{font:500 .84rem 'Schibsted Grotesk';opacity:.75}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s}
+.rv.in{opacity:1;transform:none}
+
+/* 1 PALCO (recortado) — azul céu */
+#m1{--bg:#d9e8ff;--on:#0f2a5e;--acc:#2a5bd7;--c:#2a5bd7;--wd:140}
+#m1 .st{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+#m1 .stage{position:relative;aspect-ratio:1.15;display:grid;place-items:center}
+#m1 .disc{position:absolute;width:76%;aspect-ratio:1;border-radius:50%;background:var(--d,#fff);transition:background .5s}
+#m1 .ring{position:absolute;width:92%;aspect-ratio:1;border-radius:50%;border:2px dashed #0f2a5e33}
+#m1 .stage img{position:relative;width:88%;max-height:92%;object-fit:contain;transition:opacity .3s,transform .3s}
+#m1 .stage img.out{opacity:0;transform:scale(.94)}
+#m1 .sh{position:absolute;bottom:7%;width:48%;height:22px;border-radius:50%;background:#0f2a5e33}
+#m1 .info small{font:700 .72rem 'Anybody';letter-spacing:.16em;text-transform:uppercase;opacity:.7}
+#m1 .info h3{font:800 clamp(1.7rem,3.4vw,2.6rem)/1.05 'Anybody';font-variation-settings:'wdth' 125;margin:8px 0 10px}
+#m1 .info .pr{font-size:2rem}
+#m1 .info p{margin:10px 0 18px;max-width:34ch;opacity:.85}
+#m1 .th{display:flex;gap:10px;margin-top:26px;flex-wrap:wrap}
+#m1 .th button{width:78px;height:78px;border-radius:22px;border:2px solid transparent;background:#fff;padding:6px;transition:border-color .2s,transform .2s}
+#m1 .th button img{width:100%;height:100%;object-fit:contain}
+#m1 .th button[aria-pressed="true"]{border-color:var(--acc);transform:translateY(-4px)}
+
+/* 2 PÔSTER (recortado) — laranja/vermelho */
+#m2{--bg:#e8421f;--on:#fff;--acc:#ffd23f;--aon:#1b1712;--c:#e8421f;--w:900;--wd:50;--tt:uppercase;overflow:hidden}
+#m2 .hd{padding-bottom:34px}
+#m2 .poster{position:relative;height:560px}
+#m2 .bgword{position:absolute;left:0;right:0;top:0;text-align:center;font:900 clamp(3.4rem,15vw,13rem)/.85 'Anybody';font-variation-settings:'wdth' 50;color:transparent;-webkit-text-stroke:2.5px #ffd23f;text-transform:uppercase;pointer-events:none;user-select:none;white-space:nowrap;margin:0}
+#m2 .cut{position:absolute;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+#m2 .cut:hover{transform:scale(1.05) rotate(var(--r2,0deg))}
+#m2 .c1{width:min(58%,640px);left:20%;top:90px;--r2:-3deg}
+#m2 .c2{width:min(40%,430px);right:0;top:40px;--r2:4deg}
+#m2 .c3{width:min(32%,340px);left:0;top:290px;--r2:-6deg}
+#m2 .sticker{position:absolute;z-index:3;width:100px;height:100px;border-radius:50%;background:#ffd23f;color:#1b1712;display:grid;place-items:center;text-align:center;font:800 .78rem/1.05 'Anybody';transform:rotate(-12deg);padding:8px;text-transform:none}
+#m2 .sticker b{display:block;font-size:1.4rem}
+#m2 .row{position:relative;z-index:3;display:flex;gap:12px;flex-wrap:wrap;justify-content:center;padding-top:14px}
+#m2 .row a{background:#1b1712;color:#fff;border-radius:99px;padding:12px 20px;display:flex;gap:14px;font-weight:700;transition:transform .2s}
+#m2 .row a:hover{transform:translateY(-3px)}
+#m2 .row a span:last-child{color:#ffd23f}
+
+/* 3 MOSAICO — verde Natal */
+#m3{--bg:#0e3a2b;--on:#f6ead3;--acc:#e8b84e;--aon:#2b1a00;--c:#c8403a;--w:300;--wd:150;--tt:uppercase;--ls:.08em}
+#m3 .ms{columns:4;column-gap:14px}
+#m3 figure{break-inside:avoid;margin-bottom:14px;position:relative;border-radius:22px;overflow:hidden;background:#0a2b20}
+#m3 figure img{width:100%;height:auto;transition:transform .7s}
+#m3 figure:hover img{transform:scale(1.06)}
+#m3 figcaption{position:absolute;inset:auto 0 0 0;padding:40px 14px 14px;background:linear-gradient(transparent,#06150fe6);display:grid;gap:6px;opacity:0;transition:opacity .3s}
+#m3 figure:hover figcaption,#m3 figure:focus-within figcaption{opacity:1}
+#m3 figcaption b{font-size:.95rem;line-height:1.2}
+#m3 .pedir{justify-self:start;padding:8px 12px;font-size:.78rem}
+
+/* 4 LISTA — terracota/creme */
+#m4{--bg:#f6e6d6;--on:#4a1f1f;--acc:#b4533a;--c:#b4533a;--w:800;--wd:85;--ls:-.02em}
+#m4 ol{list-style:none;border-top:2px solid var(--on)}
+#m4 li{display:grid;grid-template-columns:56px 1fr auto auto;gap:18px;align-items:center;padding:20px 6px;border-bottom:1.5px solid #4a1f1f30;transition:background .2s,padding .2s;border-radius:0}
+#m4 li:hover{background:#ecd2bb;padding-inline:16px}
+#m4 .no{font:800 1.3rem 'Anybody';color:var(--acc)}
+#m4 .nm{font:800 clamp(1.2rem,2.6vw,1.9rem)/1.05 'Anybody';font-variation-settings:'wdth' 90}
+#m4 .nm small{display:block;font:400 .84rem 'Schibsted Grotesk';opacity:.75;margin-top:5px}
+#m4 .float{position:fixed;left:0;top:0;width:190px;height:240px;pointer-events:none;z-index:50;border-radius:22px;overflow:hidden;opacity:0;transition:opacity .15s;background:#000;will-change:transform}
+#m4 .float.on{opacity:1}
+#m4 .float img{width:100%;height:100%;object-fit:cover}
+
+/* 5 CARROSSEL — azul marinho */
+#m5{--bg:#0b2545;--on:#e7f3ff;--acc:#7be0ff;--aon:#0b2545;--c:#7be0ff;--w:800;--wd:125}
+#m5 .ar button{width:50px;height:50px;border-radius:50%;border:2px solid var(--acc);background:transparent;font-size:1.3rem;color:var(--acc);margin-left:8px;transition:background .2s,color .2s}
+#m5 .ar button:hover{background:var(--acc);color:var(--aon)}
+#m5 .tr{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x proximity;padding:0 20px 18px;scrollbar-width:none;margin:0 -20px}
+#m5 .tr::-webkit-scrollbar{display:none}
+#m5 .cd{flex:0 0 min(290px,76vw);scroll-snap-align:start;border-radius:var(--r);overflow:hidden;position:relative;aspect-ratio:3/4.1;background:#102f58}
+#m5 .cd img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#m5 .cd .t{position:absolute;inset:auto 0 0 0;padding:60px 16px 16px;background:linear-gradient(transparent,#0b2545ee 62%);display:grid;gap:8px}
+#m5 .cd .t b{font:800 1.08rem/1.15 'Anybody';font-variation-settings:'wdth' 100}
+#m5 .bar{height:4px;background:#fff2;border-radius:9px}
+#m5 .bar i{display:block;height:100%;width:20%;background:var(--acc);border-radius:9px}
+
+/* 6 BENTO — lilás */
+#m6{--bg:#ece6fb;--on:#2a1a63;--acc:#5a3bd1;--c:#5a3bd1;--w:800;--wd:135}
+#m6 .bg{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:170px;grid-template-areas:"a a b c" "a a d e" "f g g e";gap:14px}
+#m6 .t{border-radius:var(--r);overflow:hidden;position:relative;background:#fff}
+#m6 .t img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s}
+#m6 .t:hover img{transform:scale(1.05)}
+#m6 .t .cap{position:absolute;left:10px;right:10px;bottom:10px;display:flex;justify-content:space-between;align-items:center;gap:8px;background:#fff;color:#1b1712;border-radius:18px;padding:9px 13px;font-size:.82rem;font-weight:700}
+#m6 .a{grid-area:a}#m6 .b{grid-area:b}#m6 .c{grid-area:c}#m6 .d{grid-area:d}#m6 .e{grid-area:e}#m6 .f{grid-area:f}#m6 .g{grid-area:g}
+#m6 .txt{display:grid;align-content:center;padding:20px;background:var(--acc);color:#fff}
+#m6 .txt.y{background:#ffd23f;color:#1b1712}
+#m6 .txt b{font:800 1.9rem 'Anybody';font-variation-settings:'wdth' 125}
+#m6 .tg{position:absolute;left:12px;top:12px;background:#1b1712;color:#fff;font:700 .66rem 'Schibsted Grotesk';letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border-radius:99px;z-index:2}
+
+/* 7 POLAROIDS — mostarda */
+#m7{--bg:#f0b429;--on:#3a2500;--acc:#1b1712;--aon:#fff;--c:#f0b429;--w:900;--wd:50;--tt:uppercase}
+#m7 .mu{display:flex;flex-wrap:wrap;gap:30px 24px;justify-content:center}
+#m7 .po{width:min(236px,44vw);background:#fffdf7;padding:11px 11px 14px;border-radius:6px;box-shadow:0 12px 0 #0002;transform:rotate(var(--r));transition:transform .3s;position:relative;color:#1b1712}
+#m7 .po:nth-child(3n){margin-top:26px}
+#m7 .po:hover{transform:rotate(0) translateY(-6px)}
+#m7 .po::before{content:"";position:absolute;left:50%;top:-11px;width:70px;height:22px;margin-left:-35px;background:#e8421fcc;transform:rotate(-3deg)}
+#m7 .po img{width:100%;aspect-ratio:1;object-fit:cover;background:#ddd;border-radius:3px}
+#m7 .po p{font:800 1rem/1.15 'Anybody';font-variation-settings:'wdth' 90;margin:10px 2px 6px}
+#m7 .po .pedir{padding:7px 12px;font-size:.76rem;margin-top:8px}
+
+/* 8 DESTAQUE + ABAS — verde limão */
+#m8{--bg:#e4f5c7;--on:#173a14;--acc:#1f7a2e;--c:#1f7a2e;--w:800;--wd:100;--ls:-.02em}
+#m8 .sp{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+#m8 .big{position:sticky;top:80px;aspect-ratio:1;border-radius:34px;overflow:hidden;background:#c9e7a2;border:2px solid var(--acc)}
+#m8 .big img{width:100%;height:100%;object-fit:cover}
+#m8 .tabs{display:grid;gap:10px}
+#m8 .tab{display:grid;grid-template-columns:68px 1fr auto;gap:14px;align-items:center;padding:10px 14px 10px 10px;border-radius:24px;border:2px solid #1f7a2e33;background:#fff;text-align:left;transition:background .2s,color .2s,transform .2s}
+#m8 .tab img{width:68px;height:68px;border-radius:16px;object-fit:cover}
+#m8 .tab b{display:block;line-height:1.15}
+#m8 .tab small{opacity:.7}
+#m8 .tab[aria-selected="true"]{background:var(--acc);color:#fff;border-color:var(--acc);transform:translateX(6px)}
+#m8 .det{margin-top:16px;padding:16px 18px;border-radius:24px;background:#fff;border:2px dashed var(--acc);display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+
+/* 9 PILHA — roxo/magenta */
+#m9{--bg:#3a1c82;--on:#fff;--acc:#ff5fa2;--aon:#fff;--c:#ff5fa2;--w:900;--wd:125;text-align:center}
+#m9 .hd{justify-content:center;text-align:center}
+#m9 .deck{position:relative;width:min(320px,80vw);aspect-ratio:3/4.3;margin:0 auto 28px}
+#m9 .ca{position:absolute;inset:0;border-radius:var(--r);overflow:hidden;background:#2a1760;border:3px solid #fff;transition:transform .5s cubic-bezier(.3,1.3,.5,1),opacity .35s;text-align:left}
+#m9 .ca img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#m9 .ca .t{position:absolute;inset:auto 0 0 0;padding:50px 16px 16px;background:linear-gradient(transparent,#1b0f3add 60%);display:grid;gap:6px}
+#m9 .ca .t b{font:800 1.05rem 'Anybody'}
+#m9 .ctl{display:flex;gap:14px;justify-content:center;align-items:center}
+#m9 .ctl button{width:54px;height:54px;border-radius:50%;border:2px solid #fff;background:transparent;color:#fff;font-size:1.4rem;transition:background .2s,color .2s}
+#m9 .ctl button:hover{background:#fff;color:#3a1c82}
+
+/* 10 GRADE DENSA — amarelo */
+#m10{--bg:#ffd23f;--on:#1b1712;--acc:#1b1712;--aon:#ffd23f;--c:#ffd23f;--w:900;--wd:50;--tt:uppercase}
+#m10 .fl{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+#m10 .fl button{border:2px solid var(--on);background:transparent;padding:8px 16px;font:700 .84rem 'Schibsted Grotesk';border-radius:99px;transition:background .2s,color .2s}
+#m10 .fl button[aria-pressed="true"]{background:var(--on);color:var(--bg)}
+#m10 .dg{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+#m10 .dc{background:#fff;border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s}
+#m10 .dc:hover{transform:translateY(-4px)}
+#m10 .dc img{aspect-ratio:1;width:100%;object-fit:cover}
+#m10 .dc .b{padding:10px;display:grid;gap:6px;flex:1;align-content:space-between}
+#m10 .dc h3{font:700 .82rem/1.2 'Schibsted Grotesk'}
+#m10 .dc .pedir{padding:8px;font-size:.75rem}
+#m10 .dc .pr{font-size:1rem}
+
+.nota{padding:46px 0 80px;font-size:.94rem;color:#5b5146;max-width:80ch}
+.tagmodelo{position:fixed;left:12px;bottom:12px;z-index:99;background:#1b1712;color:#fff;font:700 .72rem 'Schibsted Grotesk';padding:7px 12px;border-radius:99px}
+.tagmodelo a{text-decoration:underline}
+@media (max-width:860px){
+ #m1 .st{grid-template-columns:1fr}
+ #m2 .c1{width:74%;left:8%;top:110px}#m2 .c2{width:46%;top:50px}#m2 .c3{width:42%;top:330px}#m2 .poster{height:520px}
+ #m3 .ms{columns:2}
+ #m4 li{grid-template-columns:36px 1fr auto;gap:10px}#m4 li .pedir{display:none}#m4 .float{display:none}
+ #m6 .bg{grid-template-columns:1fr 1fr;grid-auto-rows:150px;grid-template-areas:"a a" "a a" "b c" "d e" "f g"}
+ #m6 .e{grid-row:auto}
+ #m8 .sp{grid-template-columns:1fr}#m8 .big{position:relative;top:0}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav class="idx" aria-label="Módulos"><ul id="idx"></ul></nav>
+<header class="intro"><div class="wrap"><h1 class="D">10 jeitos de mostrar produtos</h1><p>Mesma família visual do catálogo que você aprovou (cores por módulo, cantos arredondados, fonte variável). Os módulos 1 e 2 usam produtos <b>recortados</b> ✂; os outros 8, foto inteira. Preço real só dos produtos cadastrados; o resto é “Consulte”.</p></div></header>
+
+<section class="m" id="m1"><div class="wrap">
+ <div class="hd"><div><span class="num">01 / 10</span><h2 class="D">Palco</h2></div><div class="tags"><span class="cut">Recortado</span><span>Seletor</span><span>Destaque primeiro</span></div></div>
+ <div class="st rv"><div class="stage"><div class="ring"></div><div class="disc" id="disc"></div><div class="sh"></div><img id="stImg" src="../midia/recortes/rex-a.webp" alt="" width="640" height="560"></div><div class="info" id="stInfo"></div></div>
+ <div class="th" id="th" role="group" aria-label="Escolher produto"></div>
+</div></section>
+
+<section class="m" id="m2"><div class="wrap">
+ <div class="hd"><div><span class="num">02 / 10</span></div><div class="tags"><span class="cut">Recortado</span><span>Pôster</span><span>Composição livre</span></div></div>
+ <div class="poster">
+  <h2 class="bgword D">Articulados</h2>
+  <img class="cut c1" src="../midia/recortes/rex-b.webp" alt="Esqueleto Flexível de T-Rex" loading="lazy" decoding="async">
+  <img class="cut c2" src="../midia/recortes/dragao.webp" alt="Dragão articulado (ilustrativa)" loading="lazy" decoding="async">
+  <img class="cut c3" src="../midia/recortes/rex-a.webp" alt="T-Rex articulado" loading="lazy" decoding="async">
+  <span class="sticker" style="left:2%;top:150px"><span><b>R$ 32</b>T-Rex</span></span>
+  <span class="sticker" style="right:8%;top:380px;transform:rotate(9deg);background:#fff"><span><b>mexe</b>de verdade</span></span>
+ </div>
+ <div class="row" id="m2row"></div>
+</div></section>
+
+<section class="m" id="m3"><div class="wrap">
+ <div class="hd"><div><span class="num">03 / 10</span><h2 class="D">Mural</h2></div><div class="tags"><span>Foto inteira</span><span>Mosaico</span><span>Mais recentes</span></div></div>
+ <div class="ms" id="ms"></div>
+</div></section>
+
+<section class="m" id="m4"><div class="wrap">
+ <div class="hd"><div><span class="num">04 / 10</span><h2 class="D">O índice</h2></div><div class="tags"><span>Foto inteira</span><span>Lista</span><span>Menor preço primeiro</span></div></div>
+ <ol id="lst"></ol><div class="float" id="fl"><img alt="" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></div>
+</div></section>
+
+<section class="m" id="m5"><div class="wrap">
+ <div class="hd"><div><span class="num">05 / 10</span><h2 class="D">Passeio</h2></div><div class="ar"><button id="pv" aria-label="Anterior">←</button><button id="nx" aria-label="Próximo">→</button></div></div>
+ <div class="tr" id="tr"></div><div class="bar"><i id="bar"></i></div>
+</div></section>
+
+<section class="m" id="m6"><div class="wrap">
+ <div class="hd"><div><span class="num">06 / 10</span><h2 class="D">Destaques</h2></div><div class="tags"><span>Foto inteira</span><span>Bento</span><span>Curadoria</span></div></div>
+ <div class="bg" id="bento"></div>
+</div></section>
+
+<section class="m" id="m7"><div class="wrap">
+ <div class="hd"><div><span class="num">07 / 10</span><h2 class="D">Mural do ateliê</h2></div><div class="tags"><span>Foto inteira</span><span>Polaroids</span><span>Ordem solta</span></div></div>
+ <div class="mu" id="mu"></div>
+</div></section>
+
+<section class="m" id="m8"><div class="wrap">
+ <div class="hd"><div><span class="num">08 / 10</span><h2 class="D">Escolha e veja</h2></div><div class="tags"><span>Foto inteira</span><span>Destaque + abas</span><span>Mais pedidos</span></div></div>
+ <div class="sp"><div class="big"><img id="bigImg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></div><div><div class="tabs" id="tabs" role="tablist"></div><div class="det" id="det"></div></div></div>
+</div></section>
+
+<section class="m" id="m9"><div class="wrap">
+ <div class="hd"><div><span class="num">09 / 10</span><h2 class="D">Qual você leva?</h2></div><div class="tags"><span>Foto inteira</span><span>Pilha de cartas</span><span>Uma por vez</span></div></div>
+ <div class="deck" id="deck"></div>
+ <div class="ctl"><button id="dp" aria-label="Anterior">←</button><span id="dc">1 / 5</span><button id="dn" aria-label="Próximo">→</button></div>
+</div></section>
+
+<section class="m" id="m10"><div class="wrap">
+ <div class="hd"><div><span class="num">10 / 10</span><h2 class="D">Todas as peças</h2></div><div class="tags"><span>Foto inteira</span><span>Grade + filtro</span><span>A–Z</span></div></div>
+ <div class="fl" id="fl10"></div><div class="dg" id="dg"></div>
+</div></section>
+
+<div class="wrap nota"><b>Nota:</b> cada módulo é independente e pode virar o bloco de um catálogo. Os recortados vêm de fotos de fundo limpo; para recortar os demais produtos é preciso refazer a foto ou usar recorte por IA. Fotos “ilustrativas” são de IA.</div>
+<div class="tagmodelo">10 módulos v2 · <a href="../index.html">voltar</a></div>
+<script src="../midia/dados-catalogo.js"></script>
+<script>
+(function(){
+ var H=window.H3D,P=H.P,M=H.M,$=function(i){return document.getElementById(i)};
+ var WA='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.300A10 10 0 1 0 12 2zm0 18.200a8.200 8.200 0 0 1-4.200-1.200l-.3-.2-2.900.8.8-2.800-.2-.3A8.200 8.200 0 1 1 12 20.200z"/></svg>';
+ function pedir(p,t){return '<a class="pedir" href="'+H.wa(p.nome)+'">'+WA+(t||'Pedir')+'</a>'}
+ function pr(p){return '<span class="pr'+(p.preco==null?' c':'')+'">'+H.brl(p.preco)+'</span>'}
+ var L=function(ids){return H.lista(ids)};
+ /* índice */
+ var CORES=[['#2a5bd7','#fff'],['#e8421f','#fff'],['#0e3a2b','#fff'],['#b4533a','#fff'],['#0b2545','#fff'],['#5a3bd1','#fff'],['#f0b429','#1b1712'],['#1f7a2e','#fff'],['#ff5fa2','#fff'],['#ffd23f','#1b1712']];
+ $('idx').innerHTML=CORES.map(function(c,i){return '<li><a href="#m'+(i+1)+'" class="'+(i<2?'cut':'')+'" style="--c:'+c[0]+';--on:'+c[1]+'"><i></i>'+(i<9?'0':'')+(i+1)+'</a></li>'}).join('');
+ /* 1 palco */
+ var PAL=[
+  {nome:'Esqueleto Flexível de T-Rex',img:M+'recortes/rex-a.webp',p:P.rex,d:'#ffffff',txt:'Articula de verdade: cabeça, braços, pernas e cauda.'},
+  {nome:'T-Rex — vista lateral',img:M+'recortes/rex-b.webp',p:P.rex,d:'#bcd4ff',txt:'O mesmo esqueleto, em pose de ataque.'},
+  {nome:'Dragão Articulado',img:M+'recortes/dragao.webp',p:{nome:'Dragão Articulado',preco:null},d:'#ffe9a8',txt:'Escamas, cauda e patas que mexem. Imagem ilustrativa.'},
+  {nome:'Cortadores de Biscoito de Natal',img:M+'recortes/cortadores.webp',p:P.cortadores,d:'#ffd5d0',txt:'Sete formas natalinas para biscoitos e massinhas.'}
+ ];
+ var th=$('th');th.innerHTML=PAL.map(function(x,i){return '<button aria-pressed="'+(i===0)+'" data-i="'+i+'" aria-label="'+x.nome+'"><img src="'+x.img+'" alt="" loading="lazy" decoding="async"></button>'}).join('');
+ function palco(i){
+  var x=PAL[i],im=$('stImg');im.classList.add('out');
+  setTimeout(function(){im.src=x.img;im.alt=x.nome;im.classList.remove('out');$('disc').style.background=x.d},220);
+  $('stInfo').innerHTML='<small>Peça '+(i+1)+' de '+PAL.length+'</small><h3>'+x.nome+'</h3><div class="pr'+(x.p.preco==null?' c':'')+'">'+H.brl(x.p.preco)+'</div><p>'+x.txt+'</p>'+pedir(x.p,'Pedir no WhatsApp');
+  [].forEach.call(th.children,function(b,k){b.setAttribute('aria-pressed',k===i)})
+ }
+ th.addEventListener('click',function(e){var b=e.target.closest('button');if(b)palco(+b.dataset.i)});palco(0);
+ /* 2 pôster */
+ $('m2row').innerHTML=[P.rex,P.cortadores,{nome:'Dragão Articulado',preco:null}].map(function(p){return '<a href="'+H.wa(p.nome)+'"><span>'+p.nome+'</span><span>'+H.brl(p.preco)+'</span></a>'}).join('');
+ /* 3 mosaico */
+ $('ms').innerHTML=L(['noel','arvore','rena','ganso','urso','presente','neve','guardanapo','anjinho','ninja','harry','cachorro']).map(function(p){return '<figure><img src="'+p.img+'" alt="'+p.nome+'" loading="lazy" decoding="async"><figcaption><b>'+p.nome+'</b>'+pr(p)+pedir(p)+'</figcaption></figure>'}).join('');
+ /* 4 lista */
+ $('lst').innerHTML=L(['apoio','cortadores','macaco','rex','presente','cartoes','ninja','ganso','harry','alexa']).map(function(p,i){return '<li data-img="'+p.img+'"><span class="no">'+(i+1<10?'0':'')+(i+1)+'</span><span class="nm">'+p.nome+'<small>'+(p.preco==null?'sob consulta':'pronta para pedir')+'</small></span>'+pr(p)+pedir(p)+'</li>'}).join('');
+ var fl=$('fl'),fi=fl.firstElementChild,mx=0,my=0,raf=0;
+ function mover(){raf=0;fl.style.transform='translate3d('+(mx+22)+'px,'+(my-110)+'px,0) rotate(-4deg)'}
+ document.querySelectorAll('#lst li').forEach(function(li){li.addEventListener('mouseenter',function(){fi.src=li.dataset.img;fl.classList.add('on')});li.addEventListener('mouseleave',function(){fl.classList.remove('on')});li.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;if(!raf)raf=requestAnimationFrame(mover)},{passive:true})});
+ /* 5 carrossel */
+ var tr=$('tr');tr.innerHTML=L(['alexa','harry','ganso','guardanapo','arvore','polvo','cachorro','anjinho']).map(function(p){return '<article class="cd"><img src="'+p.img+'" alt="'+p.nome+'" loading="lazy" decoding="async"><div class="t"><b>'+p.nome+'</b>'+pr(p)+pedir(p)+'</div></article>'}).join('');
+ function bar(){$('bar').style.width=(20+80*tr.scrollLeft/Math.max(1,tr.scrollWidth-tr.clientWidth))+'%'}
+ tr.addEventListener('scroll',bar,{passive:true});$('nx').onclick=function(){tr.scrollBy({left:310,behavior:'smooth'})};$('pv').onclick=function(){tr.scrollBy({left:-310,behavior:'smooth'})};
+ /* 6 bento */
+ function tile(c,p,tag){return '<div class="t '+c+'">'+(tag?'<span class="tg">'+tag+'</span>':'')+'<img src="'+p.img+'" alt="'+p.nome+'" loading="lazy" decoding="async"><div class="cap"><span>'+p.nome+'</span>'+pr(p)+'</div></div>'}
+ $('bento').innerHTML=tile('a',P.rex,'Mais pedido')+tile('b',P.presente,'Novo')+'<div class="t c txt"><b>Sob medida</b><span>Mande a ideia, a gente modela.</span></div>'+tile('d',P.noel)+tile('e',P.ninja)+'<div class="t f txt y"><b>1h</b><span>para o orçamento</span></div>'+tile('g',P.macaco);
+ /* 7 polaroids */
+ var rot=[-4,3,-2,5,-5,2,4,-3];
+ $('mu').innerHTML=L(['ganso','noel','harry','rena','alexa','urso','arvore','guardanapo']).map(function(p,i){return '<div class="po" style="--r:'+rot[i]+'deg"><img src="'+p.img+'" alt="'+p.nome+'" loading="lazy" decoding="async"><p>'+p.nome+'</p>'+pr(p)+'<br>'+pedir(p)+'</div>'}).join('');
+ /* 8 abas */
+ var ab=L(['rex','ninja','presente','cartoes','macaco','apoio']);
+ function aba(i){var p=ab[i];$('bigImg').src=p.img;$('bigImg').alt=p.nome;$('det').innerHTML='<div><b>'+p.nome+'</b><br>'+pr(p)+'</div>'+pedir(p,'Pedir no WhatsApp');[].forEach.call($('tabs').children,function(b,k){b.setAttribute('aria-selected',k===i)})}
+ $('tabs').innerHTML=ab.map(function(p,i){return '<button class="tab" role="tab" data-i="'+i+'" aria-selected="false"><img src="'+p.img+'" alt="" loading="lazy" decoding="async"><span><b>'+p.nome+'</b><small>'+(p.preco==null?'Consulte':'a partir de '+H.brl(p.preco))+'</small></span><span>→</span></button>'}).join('');
+ $('tabs').addEventListener('click',function(e){var b=e.target.closest('.tab');if(b)aba(+b.dataset.i)});aba(0);
+ /* 9 pilha */
+ var dk=L(['ganso','harry','alexa','polvo','noel']),top=0,deck=$('deck');
+ deck.innerHTML=dk.map(function(p){return '<article class="ca"><img src="'+p.img+'" alt="'+p.nome+'" loading="lazy" decoding="async"><div class="t"><b>'+p.nome+'</b>'+pr(p)+pedir(p)+'</div></article>'}).join('');
+ function pilha(){var cs=deck.children,n=cs.length;for(var i=0;i<n;i++){var d=(i-top+n)%n;cs[i].style.zIndex=n-d;cs[i].style.transform=d===0?'none':'translate('+(d*14)+'px,'+(d*10)+'px) rotate('+(d*3.2)+'deg) scale('+(1-d*.05)+')';cs[i].style.opacity=d>3?0:1}$('dc').textContent=(top+1)+' / '+n}
+ $('dn').onclick=function(){top=(top+1)%dk.length;pilha()};$('dp').onclick=function(){top=(top-1+dk.length)%dk.length;pilha()};
+ var sx=null;deck.addEventListener('pointerdown',function(e){sx=e.clientX});deck.addEventListener('pointerup',function(e){if(sx==null)return;var d=e.clientX-sx;if(Math.abs(d)>40){d<0?$('dn').click():$('dp').click()}sx=null});pilha();
+ /* 10 grade */
+ var cat={rex:'Casa',ninja:'Casa',presente:'Natal',apoio:'Escritório',cortadores:'Natal',cartoes:'Escritório',macaco:'Casa',ganso:'Casa',harry:'Escritório',alexa:'Escritório',polvo:'Chaveiros',noel:'Natal',rena:'Natal',urso:'Natal',neve:'Natal',anjinho:'Natal',arvore:'Natal',guardanapo:'Natal',cachorro:'Pet'};
+ var all=Object.keys(cat).map(function(k){return P[k]}).sort(function(a,b){return a.nome.localeCompare(b.nome,'pt-BR')});
+ var cats=['Todas'].concat(Array.from(new Set(Object.keys(cat).map(function(k){return cat[k]}))));
+ $('fl10').innerHTML=cats.map(function(c,i){return '<button aria-pressed="'+(i===0)+'" data-c="'+c+'">'+c+'</button>'}).join('');
+ function grade(c){$('dg').innerHTML=all.filter(function(p){return c==='Todas'||cat[p.id]===c}).map(function(p){return '<article class="dc"><img src="'+p.img+'" alt="'+p.nome+'" loading="lazy" decoding="async" width="200" height="200"><div class="b"><h3>'+p.nome+'</h3>'+pr(p)+pedir(p)+'</div></article>'}).join('');[].forEach.call($('fl10').children,function(b){b.setAttribute('aria-pressed',b.dataset.c===c)})}
+ $('fl10').addEventListener('click',function(e){var b=e.target.closest('button');if(b)grade(b.dataset.c)});grade('Todas');
+ /* spy do índice (sem animações pesadas) */
+ var links=[].slice.call(document.querySelectorAll('#idx a'));
+ var spy=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){var on=a.getAttribute('href')==='#'+e.target.id;a.setAttribute('aria-current',on);if(on)a.scrollIntoView({inline:'center',block:'nearest'})})}})},{rootMargin:'-45% 0px -50% 0px'});
+ document.querySelectorAll('.m').forEach(function(s){spy.observe(s)});
+})();
+</script>
+</body>
+</html>
