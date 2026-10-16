@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Habitat3D — 10 módulos de produtos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,400&family=Bowlby+One&family=Caveat:wght@600&family=Schibsted+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#16130f;--body:'Schibsted Grotesk',sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;overflow-x:clip;scroll-padding-top:62px}
+body{font:400 16px/1.55 var(--body);color:var(--ink);background:#fff;overflow-x:clip}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+button{font:inherit;color:inherit;cursor:pointer}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+/* índice fixo */
+.idx{position:sticky;top:0;z-index:80;background:#16130f;color:#fff;overflow-x:auto;scrollbar-width:none}
+.idx::-webkit-scrollbar{display:none}
+.idx ul{list-style:none;display:flex;gap:6px;padding:9px 14px;width:max-content;min-width:100%;align-items:center}
+.idx b{font:700 .72rem var(--body);letter-spacing:.14em;text-transform:uppercase;color:#ffd23f;margin-right:6px;white-space:nowrap}
+.idx a{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:0 13px;border-radius:99px;border:1.5px solid #ffffff44;font:700 .82rem var(--body);white-space:nowrap;transition:all .2s}
+.idx a:hover{border-color:#fff}
+.idx a[aria-current="true"]{background:#ffd23f;color:#16130f;border-color:#ffd23f}
+.idx a.cut::after{content:"✂";font-size:.8rem}
+.intro{padding:34px 0 22px;background:#f5f2ea}
+.intro h1{font:800 clamp(1.7rem,4.5vw,3rem)/1.05 'Unbounded',sans-serif;max-width:20ch}
+.intro p{max-width:62ch;color:#5a5348;margin-top:10px}
+/* cabeçalho de módulo (rótulo para decisão) */
+.lab{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.lab span{font:700 .7rem var(--body);letter-spacing:.12em;text-transform:uppercase;padding:5px 10px;border-radius:99px;border:1.5px solid currentColor}
+.lab .n{background:currentColor}.lab .n i{font-style:normal;color:var(--bgc,#fff);mix-blend-mode:normal}
+.pedir{display:inline-flex;align-items:center;justify-content:center;gap:7px;font-weight:700;font-size:.86rem;padding:10px 16px;border-radius:99px;background:var(--a);color:var(--ac);transition:filter .2s,transform .2s;white-space:nowrap}
+.pedir:hover{filter:brightness(1.1);transform:translateY(-2px)}
+.pedir svg{width:15px;height:15px}
+.pr{font-weight:800}
+.pr.c{font-weight:500;font-size:.84rem;opacity:.75}
+.m{position:relative;padding:76px 0;overflow:hidden}
+.m h2{line-height:1}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+/* ============ 01 PALCO (recortado) ============ */
+#m1{--a:#2a2fd8;--ac:#fff;background:#eef1ff;transition:background .6s}
+#m1 .st{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center}
+#m1 h2{font:800 clamp(2rem,5vw,3.6rem)/1 'Unbounded',sans-serif}
+#m1 .stage{position:relative;aspect-ratio:1.2;display:grid;place-items:center}
+#m1 .disc{position:absolute;width:74%;aspect-ratio:1;border-radius:50%;background:var(--disc,#cfe0ff);transition:background .6s}
+#m1 .stage img{position:relative;width:86%;max-height:92%;object-fit:contain;filter:drop-shadow(0 26px 22px rgba(20,20,60,.28));animation:bob 5s ease-in-out infinite;transition:opacity .35s,transform .35s}
+#m1 .stage img.out{opacity:0;transform:scale(.92) translateY(10px)}
+#m1 .sh{position:absolute;bottom:6%;width:46%;height:26px;border-radius:50%;background:rgba(20,20,60,.2);filter:blur(14px);animation:sh 5s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-16px) rotate(-1.2deg)}}
+@keyframes sh{50%{transform:scale(.8);opacity:.6}}
+#m1 .info small{font:700 .72rem var(--body);letter-spacing:.14em;text-transform:uppercase;color:#2a2fd8}
+#m1 .info h3{font:800 clamp(1.5rem,3vw,2.2rem)/1.1 'Unbounded',sans-serif;margin:8px 0 10px}
+#m1 .info .pr{font-size:2rem;font-family:'Unbounded'}
+#m1 .info p{color:#4a4d78;margin:10px 0 18px;max-width:34ch}
+#m1 .th{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+#m1 .th button{width:74px;height:74px;border-radius:18px;border:2px solid transparent;background:#fff;padding:6px;transition:all .25s}
+#m1 .th button img{width:100%;height:100%;object-fit:contain}
+#m1 .th button[aria-pressed="true"]{border-color:#2a2fd8;transform:translateY(-4px)}
+
+/* ============ 02 PÔSTER (recortado) ============ */
+#m2{--a:#ffd23f;--ac:#16130f;background:#e8301c;color:#fff;min-height:760px}
+#m2 .big{position:absolute;left:50%;top:8%;transform:translateX(-50%);white-space:nowrap;font:400 clamp(3.4rem,12.4vw,12rem)/.85 'Bowlby One',sans-serif;color:transparent;-webkit-text-stroke:3px #ffd23f;opacity:.9;pointer-events:none;user-select:none}
+#m2 .wrap{position:relative;z-index:2;min-height:620px}
+#m2 .cut{position:absolute;filter:drop-shadow(0 30px 24px rgba(0,0,0,.4));transition:transform .5s cubic-bezier(.2,.8,.2,1);will-change:transform}
+#m2 .cut:hover{transform:scale(1.06) rotate(var(--r2,0deg))!important}
+#m2 .c1{width:min(56%,620px);left:18%;top:150px;--r2:-3deg}
+#m2 .c2{width:min(40%,430px);right:-2%;top:70px;--r2:4deg}
+#m2 .c3{width:min(34%,360px);left:-1%;top:340px;--r2:-6deg}
+#m2 .sticker{position:absolute;z-index:3;width:104px;height:104px;border-radius:50%;background:#ffd23f;color:#16130f;display:grid;place-items:center;text-align:center;font:400 .8rem/1.05 'Bowlby One';transform:rotate(-12deg);box-shadow:0 8px 0 #16130f;padding:8px}
+#m2 .sticker b{display:block;font-size:1.35rem}
+#m2 .row{position:relative;z-index:3;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:560px}
+#m2 .row a{background:#16130f;color:#fff;border-radius:16px;padding:12px 18px;display:flex;gap:14px;align-items:center;font-weight:700}
+#m2 .row a span:last-child{color:#ffd23f}
+
+/* ============ 03 MASONRY ============ */
+#m3{--a:#f4b942;--ac:#1a1205;background:#12100e;color:#f3ece1}
+#m3 h2{font:800 clamp(2rem,5vw,3.6rem) 'Unbounded';margin-bottom:26px}
+#m3 .ms{columns:4;column-gap:14px}
+#m3 figure{break-inside:avoid;margin-bottom:14px;position:relative;border-radius:14px;overflow:hidden;background:#222}
+#m3 figure img{width:100%;height:auto;transition:transform .8s}
+#m3 figure:hover img{transform:scale(1.07)}
+#m3 figcaption{position:absolute;inset:auto 0 0 0;padding:34px 14px 14px;background:linear-gradient(transparent,rgba(0,0,0,.88));display:grid;gap:6px;opacity:0;transform:translateY(10px);transition:all .35s}
+#m3 figure:hover figcaption,#m3 figure:focus-within figcaption{opacity:1;transform:none}
+#m3 figcaption b{font-size:.95rem;line-height:1.2}
+#m3 .pedir{padding:8px 12px;font-size:.78rem;justify-self:start}
+
+/* ============ 04 LISTA EDITORIAL ============ */
+#m4{--a:#8f2d1b;--ac:#fff;background:#f4ecdd;color:#2a1c12}
+#m4 h2{font:300 clamp(2.4rem,6vw,4.6rem)/1 'Fraunces',serif;margin-bottom:6px}
+#m4 h2 em{font-style:italic;color:#8f2d1b}
+#m4 .sub{color:#6d5a48;margin-bottom:30px}
+#m4 ol{list-style:none;border-top:2px solid #2a1c12}
+#m4 li{display:grid;grid-template-columns:54px 1fr auto auto;gap:18px;align-items:center;padding:20px 4px;border-bottom:1px solid #2a1c1233;transition:background .25s,padding .25s}
+#m4 li:hover{background:#ebdcc3;padding-inline:14px}
+#m4 .no{font:italic 300 1.2rem 'Fraunces';color:#8f2d1b}
+#m4 .nm{font:600 clamp(1.2rem,2.6vw,1.9rem)/1.1 'Fraunces',serif}
+#m4 .nm small{display:block;font:400 .82rem var(--body);color:#6d5a48;margin-top:4px}
+#m4 .pr{font:600 1.3rem 'Fraunces'}
+#m4 .pr.c{font:italic 400 .95rem 'Fraunces'}
+#m4 .pedir{background:transparent;border:1.5px solid #2a1c12;color:#2a1c12}
+#m4 .pedir:hover{background:#2a1c12;color:#f4ecdd}
+#m4 .float{position:fixed;width:200px;height:250px;pointer-events:none;z-index:70;border-radius:12px;overflow:hidden;box-shadow:0 20px 40px -10px rgba(0,0,0,.5);opacity:0;transform:scale(.8) rotate(-4deg);transition:opacity .2s,transform .2s;background:#000}
+#m4 .float.on{opacity:1;transform:scale(1) rotate(-4deg)}
+#m4 .float img{width:100%;height:100%;object-fit:cover}
+
+/* ============ 05 CARROSSEL ============ */
+#m5{--a:#7be0ff;--ac:#06203a;background:#06203a;color:#e8f6ff}
+#m5 .hd{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:24px;flex-wrap:wrap}
+#m5 h2{font:800 clamp(2rem,5vw,3.6rem) 'Unbounded'}
+#m5 .ar button{width:48px;height:48px;border-radius:50%;border:2px solid #7be0ff;background:transparent;font-size:1.3rem;color:#7be0ff;margin-left:8px;transition:all .2s}
+#m5 .ar button:hover{background:#7be0ff;color:#06203a}
+#m5 .tr{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 20px 20px;scrollbar-width:none;margin:0 -20px}
+#m5 .tr::-webkit-scrollbar{display:none}
+#m5 .cd{flex:0 0 min(300px,78vw);scroll-snap-align:start;border-radius:26px;overflow:hidden;position:relative;aspect-ratio:3/4.1;background:#0c3358}
+#m5 .cd img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#m5 .cd .t{position:absolute;inset:auto 0 0 0;padding:60px 18px 18px;background:linear-gradient(transparent,#06203aee 65%);display:grid;gap:8px}
+#m5 .cd .t b{font:800 1.1rem/1.15 'Unbounded'}
+#m5 .bar{height:4px;background:#ffffff22;border-radius:9px;margin-top:6px}
+#m5 .bar i{display:block;height:100%;width:20%;background:#7be0ff;border-radius:9px;transition:width .15s}
+
+/* ============ 06 BENTO ============ */
+#m6{--a:#16130f;--ac:#fff;background:#f1eefb}
+#m6 h2{font:800 clamp(2rem,5vw,3.4rem) 'Unbounded';margin-bottom:24px}
+#m6 .bg{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:150px;gap:14px}
+#m6 .t{border-radius:28px;overflow:hidden;position:relative;background:#fff;padding:0;transition:transform .3s}
+#m6 .t:hover{transform:scale(1.02)}
+#m6 .t img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#m6 .t .cap{position:absolute;left:12px;bottom:12px;right:12px;display:flex;justify-content:space-between;align-items:center;gap:8px;background:#fffffff2;border-radius:18px;padding:9px 12px;font-size:.84rem;font-weight:700;backdrop-filter:blur(8px)}
+#m6 .a{grid-column:span 3;grid-row:span 3}
+#m6 .b{grid-column:span 3;grid-row:span 2}
+#m6 .c{grid-column:span 2;grid-row:span 2}
+#m6 .d{grid-column:span 1;grid-row:span 2}
+#m6 .e{grid-column:span 2;grid-row:span 1;background:#16130f;color:#fff;padding:18px;display:grid;align-content:center}
+#m6 .e b{font:800 1.1rem 'Unbounded'}
+#m6 .f{grid-column:span 2;grid-row:span 1;background:#ffd23f;padding:18px;display:grid;align-content:center}
+#m6 .f b{font:800 2rem 'Unbounded'}
+#m6 .g{grid-column:span 2;grid-row:span 2}
+#m6 .tg{position:absolute;left:12px;top:12px;background:#16130f;color:#fff;font:700 .68rem var(--body);letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border-radius:99px;z-index:2}
+
+/* ============ 07 POLAROIDS ============ */
+#m7{--a:#16130f;--ac:#fff;background:#b98b5e;background-image:radial-gradient(#00000014 1.5px,transparent 1.6px),radial-gradient(#ffffff10 1px,transparent 1.2px);background-size:18px 18px,11px 11px}
+#m7 h2{font:400 clamp(2.8rem,8vw,6rem) 'Caveat',cursive;color:#fff;text-shadow:3px 3px 0 #00000033;margin-bottom:26px;line-height:.9}
+#m7 .mu{display:flex;flex-wrap:wrap;gap:34px 26px;justify-content:center}
+#m7 .po{width:min(240px,44vw);background:#fffdf7;padding:11px 11px 14px;box-shadow:0 14px 24px -8px rgba(0,0,0,.55);transform:rotate(var(--r));transition:transform .35s cubic-bezier(.3,1.6,.5,1);position:relative}
+#m7 .po:nth-child(3n){margin-top:30px}
+#m7 .po:hover{transform:rotate(0) scale(1.07) translateY(-6px);z-index:5}
+#m7 .po::before{content:"";position:absolute;left:50%;top:-12px;width:74px;height:24px;margin-left:-37px;background:#ffd23fbb;transform:rotate(-3deg)}
+#m7 .po img{width:100%;aspect-ratio:1;object-fit:cover;background:#ddd}
+#m7 .po p{font:600 1.45rem/1 'Caveat';margin:10px 2px 4px;color:#2a1c12}
+#m7 .po .pr{font:600 1.1rem 'Caveat'}
+#m7 .po .pedir{padding:7px 12px;font-size:.76rem;margin-top:8px}
+
+/* ============ 08 DESTAQUE + ABAS ============ */
+#m8{--a:#1c7a3a;--ac:#fff;background:#e9f9d9}
+#m8 h2{font:800 clamp(2rem,5vw,3.4rem) 'Unbounded';margin-bottom:24px}
+#m8 .sp{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+#m8 .big{position:sticky;top:90px;aspect-ratio:1;border-radius:30px;overflow:hidden;background:#cfe9b4;box-shadow:12px 12px 0 #1c7a3a}
+#m8 .big img{width:100%;height:100%;object-fit:cover;transition:opacity .3s}
+#m8 .tabs{display:grid;gap:10px}
+#m8 .tab{display:grid;grid-template-columns:70px 1fr auto;gap:14px;align-items:center;padding:12px;border-radius:20px;border:2px solid #1c7a3a33;background:#fff;text-align:left;transition:all .25s}
+#m8 .tab img{width:70px;height:70px;border-radius:14px;object-fit:cover}
+#m8 .tab b{display:block;line-height:1.15}
+#m8 .tab small{color:#4c6b4a}
+#m8 .tab[aria-selected="true"]{border-color:#1c7a3a;background:#1c7a3a;color:#fff;transform:translateX(8px)}
+#m8 .tab[aria-selected="true"] small{color:#d4efc9}
+#m8 .det{margin-top:16px;padding:18px;border-radius:20px;background:#fff;border:2px dashed #1c7a3a;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+#m8 .det .pr{font:800 1.6rem 'Unbounded'}
+
+/* ============ 09 PILHA DE CARTAS ============ */
+#m9{--a:#ff5fa2;--ac:#fff;background:radial-gradient(900px 500px at 50% 0,#4b2a96,#1b0f3a);color:#fff}
+#m9 h2{font:800 clamp(2rem,5vw,3.4rem) 'Unbounded';text-align:center;margin-bottom:6px}
+#m9 .sub{text-align:center;color:#cfc2ff;margin-bottom:26px}
+#m9 .deck{position:relative;width:min(320px,80vw);aspect-ratio:3/4.3;margin:0 auto 26px}
+#m9 .ca{position:absolute;inset:0;border-radius:28px;overflow:hidden;background:#2a1760;border:3px solid #fff;box-shadow:0 24px 40px -14px rgba(0,0,0,.6);transition:transform .55s cubic-bezier(.3,1.3,.5,1),opacity .4s}
+#m9 .ca img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#m9 .ca .t{position:absolute;inset:auto 0 0 0;padding:50px 16px 16px;background:linear-gradient(transparent,#1b0f3add 60%);display:grid;gap:6px}
+#m9 .ca .t b{font:800 1.05rem 'Unbounded'}
+#m9 .ctl{display:flex;gap:14px;justify-content:center;align-items:center}
+#m9 .ctl button{width:54px;height:54px;border-radius:50%;border:2px solid #fff;background:transparent;color:#fff;font-size:1.4rem;transition:all .2s}
+#m9 .ctl button:hover{background:#fff;color:#1b0f3a}
+
+/* ============ 10 GRID DENSO ============ */
+#m10{--a:#16130f;--ac:#ffd23f;background:#ffd23f;border-top:4px solid #16130f}
+#m10 h2{font:800 clamp(2rem,5vw,3.4rem) 'Unbounded';margin-bottom:16px}
+#m10 .fl{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+#m10 .fl button{border:2.5px solid #16130f;background:transparent;padding:8px 14px;font:700 .84rem var(--body);border-radius:8px;transition:all .2s}
+#m10 .fl button[aria-pressed="true"]{background:#16130f;color:#ffd23f;box-shadow:3px 3px 0 #e8301c}
+#m10 .dg{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+#m10 .dc{background:#fff;border:2.5px solid #16130f;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+#m10 .dc:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 #16130f}
+#m10 .dc img{aspect-ratio:1;width:100%;object-fit:cover;border-bottom:2.5px solid #16130f}
+#m10 .dc .b{padding:8px;display:grid;gap:5px;flex:1;align-content:space-between}
+#m10 .dc h3{font:700 .8rem/1.2 var(--body)}
+#m10 .dc .pedir{padding:7px;font-size:.74rem;border-radius:6px}
+#m10 .dc .pr{font-size:.95rem}
+
+.nota{padding:50px 0 80px;background:#f5f2ea;color:#5a5348;font-size:.94rem}
+.tagmodelo{position:fixed;left:12px;bottom:12px;z-index:99;background:#16130f;color:#ffd23f;font:700 .72rem var(--body);padding:7px 12px;border-radius:99px}
+.tagmodelo a{text-decoration:underline}
+@media (max-width:860px){
+ #m1 .st{grid-template-columns:1fr}
+ #m2 .big{top:14%}
+ #m2 .c1{width:70%;left:10%;top:170px}#m2 .c2{width:46%;top:90px}#m2 .c3{width:40%;top:400px}
+ #m2 .row{margin-top:600px}
+ #m3 .ms{columns:2}
+ #m4 li{grid-template-columns:34px 1fr auto;gap:10px}#m4 li .pedir{display:none}#m4 .float{display:none}
+ #m6 .bg{grid-template-columns:repeat(2,1fr);grid-auto-rows:130px}
+ #m6 .a{grid-column:span 2;grid-row:span 3}#m6 .b{grid-column:span 2;grid-row:span 2}#m6 .c,#m6 .g{grid-column:span 1;grid-row:span 2}#m6 .d{grid-column:span 1;grid-row:span 2}#m6 .e,#m6 .f{grid-column:span 2}
+ #m8 .sp{grid-template-columns:1fr}#m8 .big{position:relative;top:0}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav class="idx" aria-label="Módulos"><ul id="idx"><li><b>10 módulos</b></li></ul></nav>
+<header class="intro"><div class="wrap"><h1>10 jeitos de mostrar produtos</h1><p>Uma página só, dez módulos completamente diferentes (estilo, ordem e formato). Os módulos 1 e 2 usam produtos <b>recortados</b> (✂); os outros 8 usam as fotos inteiras. Diga os números que você quer levar para o site. Preço real só dos produtos cadastrados; o resto aparece como “Consulte”.</p></div></header>
+
+<!-- 01 -->
+<section class="m" id="m1"><div class="wrap">
+ <div class="lab" style="color:#2a2fd8"><span>Módulo 01</span><span>Recortado</span><span>Palco + seletor</span><span>Ordem: destaque primeiro</span></div>
+ <div class="st rv">
+  <div><h2>Palco</h2><div class="stage" id="stage"><div class="disc"></div><div class="sh"></div><img id="stImg" src="../midia/recortes/rex-a.webp" alt="" width="640" height="560"></div></div>
+  <div class="info" id="stInfo"></div>
+ </div>
+ <div class="th" id="th" role="group" aria-label="Escolher produto"></div>
+</div></section>
+<!-- 02 -->
+<section class="m" id="m2">
+ <div class="big" aria-hidden="true">ARTICULADOS</div>
+ <div class="wrap">
+  <div class="lab" style="color:#ffd23f"><span>Módulo 02</span><span>Recortado</span><span>Pôster tipográfico</span><span>Ordem: composição livre</span></div>
+  <img class="cut c1" data-sp=".06" src="../midia/recortes/rex-b.webp" alt="Esqueleto Flexível de T-Rex" loading="lazy">
+  <img class="cut c2" data-sp="-.05" src="../midia/recortes/dragao.webp" alt="Dragão articulado (imagem ilustrativa)" loading="lazy">
+  <img class="cut c3" data-sp=".1" src="../midia/recortes/rex-a.webp" alt="T-Rex articulado" loading="lazy">
+  <span class="sticker" style="left:6%;top:70px"><span><b>R$ 32</b>T-Rex</span></span>
+  <span class="sticker" style="right:12%;top:420px;transform:rotate(9deg);background:#fff"><span><b>mexe</b>de verdade</span></span>
+  <div class="row" id="m2row"></div>
+ </div>
+</section>
+<!-- 03 -->
+<section class="m" id="m3"><div class="wrap">
+ <div class="lab" style="color:#f4b942"><span>Módulo 03</span><span>Foto inteira</span><span>Mosaico (masonry)</span><span>Ordem: mais recentes</span></div>
+ <h2>Mural</h2><div class="ms" id="ms"></div>
+</div></section>
+<!-- 04 -->
+<section class="m" id="m4"><div class="wrap">
+ <div class="lab" style="color:#8f2d1b"><span>Módulo 04</span><span>Foto inteira</span><span>Lista editorial</span><span>Ordem: menor preço primeiro</span></div>
+ <h2>O <em>índice</em> da casa</h2><p class="sub">Passe o mouse e a foto aparece. Do mais em conta ao mais caprichado.</p>
+ <ol id="lst"></ol><div class="float" id="fl"><img alt="" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></div>
+</div></section>
+<!-- 05 -->
+<section class="m" id="m5"><div class="wrap">
+ <div class="lab" style="color:#7be0ff"><span>Módulo 05</span><span>Foto inteira</span><span>Carrossel horizontal</span><span>Ordem: por ambiente</span></div>
+ <div class="hd"><h2>Passeio</h2><div class="ar"><button id="pv" aria-label="Anterior">←</button><button id="nx" aria-label="Próximo">→</button></div></div>
+ <div class="tr" id="tr"></div><div class="bar"><i id="bar"></i></div>
+</div></section>
+<!-- 06 -->
+<section class="m" id="m6"><div class="wrap">
+ <div class="lab" style="color:#5a3bd1"><span>Módulo 06</span><span>Foto inteira</span><span>Bento</span><span>Ordem: curadoria da loja</span></div>
+ <h2>Em destaque</h2><div class="bg" id="bento"></div>
+</div></section>
+<!-- 07 -->
+<section class="m" id="m7"><div class="wrap">
+ <div class="lab" style="color:#fff"><span>Módulo 07</span><span>Foto inteira</span><span>Mural de polaroids</span><span>Ordem: aleatória (mural)</span></div>
+ <h2>Do ateliê pra você</h2><div class="mu" id="mu"></div>
+</div></section>
+<!-- 08 -->
+<section class="m" id="m8"><div class="wrap">
+ <div class="lab" style="color:#1c7a3a"><span>Módulo 08</span><span>Foto inteira</span><span>Destaque + abas</span><span>Ordem: mais pedidos</span></div>
+ <h2>Escolha e veja</h2>
+ <div class="sp"><div class="big"><img id="bigImg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></div><div><div class="tabs" id="tabs" role="tablist"></div><div class="det" id="det"></div></div></div>
+</div></section>
+<!-- 09 -->
+<section class="m" id="m9"><div class="wrap">
+ <div class="lab" style="color:#ff5fa2;justify-content:center"><span>Módulo 09</span><span>Foto inteira</span><span>Pilha de cartas</span><span>Ordem: uma de cada vez</span></div>
+ <h2>Qual você leva?</h2><p class="sub">Passe as cartas com as setas ou arraste.</p>
+ <div class="deck" id="deck"></div>
+ <div class="ctl"><button id="dp" aria-label="Anterior">←</button><span id="dc">1 / 5</span><button id="dn" aria-label="Próximo">→</button></div>
+</div></section>
+<!-- 10 -->
+<section class="m" id="m10"><div class="wrap">
+ <div class="lab" style="color:#16130f"><span>Módulo 10</span><span>Foto inteira</span><span>Grade densa + filtro</span><span>Ordem: A–Z, filtrável</span></div>
+ <h2>Todas as peças</h2><div class="fl" id="fl10"></div><div class="dg" id="dg"></div>
+</div></section>
+
+<div class="nota"><div class="wrap"><b>Como usar este mostruário:</b> cada módulo é independente e pode virar o bloco de uma página de catálogo. Os 2 recortados exigem fotos com fundo limpo (aqui recortados de fotos de estúdio); para os demais produtos, precisaríamos refazer a foto ou usar recorte por IA. Fotos “ilustrativas” são de banco/IA.</div></div>
+<div class="tagmodelo">10 módulos · <a href="../index.html">voltar</a></div>
+<script src="../midia/dados-catalogo.js"></script>
+<script>
+(function(){
+ var H=window.H3D,P=H.P,M=H.M,$=function(i){return document.getElementById(i)};
+ var WA='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.300A10 10 0 1 0 12 2zm0 18.200a8.200 8.200 0 0 1-4.200-1.200l-.3-.2-2.900.8.8-2.800-.2-.3A8.200 8.200 0 1 1 12 20.200z"/></svg>';
+ function pedir(p,t){return '<a class="pedir" href="'+H.wa(p.nome)+'">'+WA+(t||'Pedir')+'</a>'}
+ function pr(p){return '<span class="pr'+(p.preco==null?' c':'')+'">'+H.brl(p.preco)+'</span>'}
+ var L=function(ids){return H.lista(ids)};
+ /* índice */
+ var idx=$('idx');for(var i=1;i<=10;i++)idx.insertAdjacentHTML('beforeend','<li><a href="#m'+i+'" class="'+(i<3?'cut':'')+'">'+(i<10?'0':'')+i+'</a></li>');
+ /* 01 palco */
+ var PAL=[
+  {nome:'Esqueleto Flexível de T-Rex',img:M+'recortes/rex-a.webp',p:P.rex,disc:'#cfe0ff',txt:'Articula de verdade: cabeça, braços, pernas e cauda.'},
+  {nome:'T-Rex — vista lateral',img:M+'recortes/rex-b.webp',p:P.rex,disc:'#d9ecff',txt:'O mesmo esqueleto, em pose de ataque.'},
+  {nome:'Dragão Articulado',img:M+'recortes/dragao.webp',p:{nome:'Dragão Articulado',preco:null},disc:'#ffe9a8',txt:'Escamas, cauda e patas que mexem. Imagem ilustrativa.'},
+  {nome:'Cortadores de Biscoito de Natal',img:M+'recortes/cortadores.webp',p:P.cortadores,disc:'#ffd5d0',txt:'Sete formas natalinas para biscoitos e massinhas.'}
+ ],cur=0;
+ var th=$('th');PAL.forEach(function(x,i){th.insertAdjacentHTML('beforeend','<button aria-pressed="'+(i===0)+'" data-i="'+i+'" aria-label="'+x.nome+'"><img src="'+x.img+'" alt="" loading="lazy"></button>')});
+ function palco(i){
+  var x=PAL[i],im=$('stImg');im.classList.add('out');
+  setTimeout(function(){im.src=x.img;im.alt=x.nome;im.classList.remove('out');document.querySelector('#m1 .disc').style.setProperty('--disc',x.disc);document.querySelector('#m1 .disc').style.background=x.disc;document.getElementById('m1').style.background=x.disc+'66'},260);
+  $('stInfo').innerHTML='<small>Peça '+(i+1)+' de '+PAL.length+'</small><h3>'+x.nome+'</h3><div class="pr'+(x.p.preco==null?' c':'')+'" style="font-family:Unbounded">'+H.brl(x.p.preco)+'</div><p>'+x.txt+'</p>'+pedir(x.p,'Pedir no WhatsApp');
+  [].forEach.call(th.children,function(b,k){b.setAttribute('aria-pressed',k===i)})
+ }
+ th.addEventListener('click',function(e){var b=e.target.closest('button');if(b)palco(+b.dataset.i)});palco(0);
+ /* 02 pôster */
+ $('m2row').innerHTML=[P.rex,P.cortadores,{nome:'Dragão Articulado',preco:null}].map(function(p){return '<a href="'+H.wa(p.nome)+'"><span>'+p.nome+'</span><span>'+H.brl(p.preco)+'</span></a>'}).join('');
+ var cuts=[].slice.call(document.querySelectorAll('#m2 .cut'));
+ addEventListener('scroll',function(){var s=document.getElementById('m2').getBoundingClientRect();if(s.bottom<0||s.top>innerHeight)return;cuts.forEach(function(c){c.style.transform='translateY('+(-s.top*parseFloat(c.dataset.sp))+'px)'})},{passive:true});
+ /* 03 masonry */
+ $('ms').innerHTML=L(['noel','arvore','rena','ganso','urso','presente','neve','guardanapo','anjinho','ninja','harry','cachorro']).map(function(p){return '<figure><img src="'+p.img+'" alt="'+p.nome+'" loading="lazy"><figcaption><b>'+p.nome+'</b>'+pr(p)+pedir(p)+'</figcaption></figure>'}).join('');
+ /* 04 lista */
+ var lst=L(['apoio','cortadores','macaco','rex','presente','cartoes','ninja','ganso','harry','alexa']);
+ $('lst').innerHTML=lst.map(function(p,i){return '<li data-img="'+p.img+'"><span class="no">'+(i+1<10?'0':'')+(i+1)+'</span><span class="nm">'+p.nome+'<small>'+(p.preco==null?'sob consulta':'pronta para pedir')+'</small></span>'+pr(p)+pedir(p)+'</li>'}).join('');
+ var fl=$('fl'),fi=fl.firstElementChild;
+ document.querySelectorAll('#lst li').forEach(function(li){li.addEventListener('mouseenter',function(){fi.src=li.dataset.img;fl.classList.add('on')});li.addEventListener('mouseleave',function(){fl.classList.remove('on')});li.addEventListener('mousemove',function(e){fl.style.left=(e.clientX+24)+'px';fl.style.top=(e.clientY-120)+'px'})});
+ /* 05 carrossel */
+ var tr=$('tr');tr.innerHTML=L(['alexa','harry','ganso','guardanapo','arvore','polvo','cachorro','anjinho']).map(function(p){return '<article class="cd"><img src="'+p.img+'" alt="'+p.nome+'" loading="lazy"><div class="t"><b>'+p.nome+'</b>'+pr(p)+pedir(p)+'</div></article>'}).join('');
+ function bar(){$('bar').style.width=(20+80*tr.scrollLeft/Math.max(1,tr.scrollWidth-tr.clientWidth))+'%'}
+ tr.addEventListener('scroll',bar,{passive:true});$('nx').onclick=function(){tr.scrollBy({left:320,behavior:'smooth'})};$('pv').onclick=function(){tr.scrollBy({left:-320,behavior:'smooth'})};
+ /* 06 bento */
+ function tile(c,p,tag){return '<div class="t '+c+'">'+(tag?'<span class="tg">'+tag+'</span>':'')+'<img src="'+p.img+'" alt="'+p.nome+'" loading="lazy"><div class="cap"><span>'+p.nome+'</span>'+pr(p)+'</div></div>'}
+ $('bento').innerHTML=tile('a',P.rex,'Mais pedido')+tile('b',P.presente,'Novo')+tile('c',P.noel)+'<div class="t e"><b>Sob medida</b><span>Mande a ideia, a gente modela.</span></div>'+tile('d',P.apoio,'R$ 6')+'<div class="t f"><b>1h</b><span>para o orçamento</span></div>'+tile('g',P.ninja)+tile('c',P.macaco);
+ /* 07 polaroids */
+ var rot=[-4,3,-2,5,-5,2,4,-3];
+ $('mu').innerHTML=L(['ganso','noel','harry','rena','alexa','urso','arvore','guardanapo']).map(function(p,i){return '<div class="po" style="--r:'+rot[i]+'deg"><img src="'+p.img+'" alt="'+p.nome+'" loading="lazy"><p>'+p.nome+'</p>'+pr(p)+'<br>'+pedir(p)+'</div>'}).join('');
+ /* 08 abas */
+ var ab=L(['rex','ninja','presente','cartoes','macaco','apoio']),sel=0;
+ function aba(i){sel=i;var p=ab[i];$('bigImg').src=p.img;$('bigImg').alt=p.nome;$('det').innerHTML='<div><b>'+p.nome+'</b><br>'+pr(p)+'</div>'+pedir(p,'Pedir no WhatsApp');[].forEach.call($('tabs').children,function(b,k){b.setAttribute('aria-selected',k===i)})}
+ $('tabs').innerHTML=ab.map(function(p,i){return '<button class="tab" role="tab" data-i="'+i+'" aria-selected="false"><img src="'+p.img+'" alt="" loading="lazy"><span><b>'+p.nome+'</b><small>'+(p.preco==null?'Consulte':'a partir de '+H.brl(p.preco))+'</small></span><span>→</span></button>'}).join('');
+ $('tabs').addEventListener('click',function(e){var b=e.target.closest('.tab');if(b)aba(+b.dataset.i)});aba(0);
+ /* 09 pilha */
+ var dk=L(['ganso','harry','alexa','polvo','noel']),top=0,deck=$('deck');
+ deck.innerHTML=dk.map(function(p){return '<article class="ca"><img src="'+p.img+'" alt="'+p.nome+'" loading="lazy"><div class="t"><b>'+p.nome+'</b>'+pr(p)+pedir(p)+'</div></article>'}).join('');
+ function pilha(){var cs=deck.children,n=cs.length;for(var i=0;i<n;i++){var d=(i-top+n)%n;cs[i].style.zIndex=n-d;cs[i].style.transform=d===0?'none':'translate('+(d*14)+'px,'+(d*10)+'px) rotate('+(d*3.2)+'deg) scale('+(1-d*.05)+')';cs[i].style.opacity=d>3?0:1}$('dc').textContent=(top+1)+' / '+n}
+ $('dn').onclick=function(){top=(top+1)%dk.length;pilha()};$('dp').onclick=function(){top=(top-1+dk.length)%dk.length;pilha()};
+ var sx=null;deck.addEventListener('pointerdown',function(e){sx=e.clientX});deck.addEventListener('pointerup',function(e){if(sx==null)return;var d=e.clientX-sx;if(Math.abs(d)>40){d<0?$('dn').click():$('dp').click()}sx=null});pilha();
+ /* 10 grade densa */
+ var cat={rex:'Casa',ninja:'Casa',presente:'Natal',apoio:'Escritório',cortadores:'Natal',cartoes:'Escritório',macaco:'Casa',ganso:'Casa',harry:'Escritório',alexa:'Escritório',polvo:'Chaveiros',noel:'Natal',rena:'Natal',urso:'Natal',neve:'Natal',anjinho:'Natal',arvore:'Natal',guardanapo:'Natal',cachorro:'Pet'};
+ var all=Object.keys(cat).map(function(k){return P[k]}).sort(function(a,b){return a.nome.localeCompare(b.nome,'pt-BR')});
+ var cats=['Todas'].concat(Array.from(new Set(Object.keys(cat).map(function(k){return cat[k]}))));
+ $('fl10').innerHTML=cats.map(function(c,i){return '<button aria-pressed="'+(i===0)+'" data-c="'+c+'">'+c+'</button>'}).join('');
+ function grade(c){$('dg').innerHTML=all.filter(function(p){return c==='Todas'||cat[p.id]===c}).map(function(p){return '<article class="dc"><img src="'+p.img+'" alt="'+p.nome+'" loading="lazy" width="200" height="200"><div class="b"><h3>'+p.nome+'</h3>'+pr(p)+pedir(p)+'</div></article>'}).join('');[].forEach.call($('fl10').children,function(b){b.setAttribute('aria-pressed',b.dataset.c===c)})}
+ $('fl10').addEventListener('click',function(e){var b=e.target.closest('button');if(b)grade(b.dataset.c)});grade('Todas');
+ /* revelar + índice */
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+ document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
+ var links=[].slice.call(document.querySelectorAll('#idx a'));
+ var spy=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){var on=a.getAttribute('href')==='#'+e.target.id;a.setAttribute('aria-current',on);if(on)a.scrollIntoView({inline:'center',block:'nearest'})})}})},{rootMargin:'-45% 0px -50% 0px'});
+ document.querySelectorAll('.m').forEach(function(s){spy.observe(s)});
+})();
+</script>
+</body>
+</html>
